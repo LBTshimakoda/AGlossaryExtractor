@@ -1,0 +1,9 @@
+﻿Level	en-gb	ru-ru
+Check	drop	Капля
+Check	Implant	Имплантат
+Check	Implantation	Имплантация
+Check	Injection	Инъекция
+Check	System	Система
+Check	tube	Туба
+Check	valve	Клапан
+Check	Vessel	Сосуд

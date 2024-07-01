@@ -1,0 +1,82 @@
+﻿Level	en-gb	de-de
+Level: LLT	Ache	Schmerz
+Level: LLT/PT	Adverse event	Unerwuenschtes Ereignis
+Level: LLT	Allergic reaction	Allergische Reaktion
+Level: LLT	Anesthesia	Ausgeschaltetes Schmerzempfinden
+Level: LLT/PT	Bacterial infection	Bakterielle Infektion
+Level: LLT	Bed rest	Bettruhe
+Level: LLT	Bleeding	Bluten
+Level: LLT/PT	Bleeding time	Blutungszeit
+Level: LLT	Blind	Blind
+Level: LLT	Blood pressure	Blutdruck
+Level: LLT/PT	Blood test	Bluttest
+Level: LLT	Brain damage	Hirnschaden
+Level: LLT	Bruise	Blauer Fleck
+Level: LLT	Bruising	Blaue Flecken
+Level: LLT	Cardiac catheterization	Herzkatheterisierung
+Level: LLT/PT	Chest pain	Brustkorbschmerz
+Level: LLT/PT	Chest X-ray	Roentgen Thorax
+Level: LLT	Confusion	Verwirrtheit
+Level: LLT/PT	COVID-19	COVID-19
+Level: LLT/PT	Death	Tod
+Level: LLT/PT	Delivery	Entbindung
+Level: LLT/PT	Dental cleaning	Zahnreinigung
+Level: LLT	Device embolization	Embolisation bedingt durch Medizinprodukt
+Level: LLT/PT	Device malfunction	Funktionsstoerung eines Medizinprodukts
+Level: LLT/PT	Discharge	Absonderung
+Level: LLT/PT	Discomfort	Unbehagen
+Level: LLT/PT	Dry mouth	Mundtrockenheit
+Level: LLT	ECG	EKG
+Level: LLT	Echocardiography	Echokardiographie
+Level: LLT/PT	Ejection fraction	Auswurffraktion
+Level: LLT/PT	Electrocardiogram	Elektrokardiogramm
+Level: LLT	Fainting	Bewusstlos werden
+Level: LLT/PT	Fatigue	Ermuedung
+Level: LLT	General anesthesia	Allgemeine Anaesthesie
+Level: LLT	Head pain	Kopfschmerz
+Level: LLT/PT	Headache	Kopfschmerzen
+Level: LLT	Heart attack	Herzanfall
+Level: LLT	Heart failure	Kardiales Versagen
+Level: LLT	Heart failure with preserved ejection fraction	Herzinsuffizienz mit erhaltener Auswurffraktion
+Level: LLT	Heart failure with reduced ejection fraction	Herzinsuffizienz mit verringerter Auswurffraktion
+Level: LLT	Hemoglobin	Haemoglobin
+Level: LLT	Hemorrhage	Blutung
+Level: LLT/PT	Hypertension	Hypertonie
+Level: LLT/PT	Infant	Saeugling
+Level: LLT/PT	Infection	Infektion
+Level: LLT/PT	Injection	Injektion
+Level: LLT/PT	Injury	Verletzung
+Level: LLT/PT	Interventional procedure	Interventionelles Verfahren
+Level: LLT	Invasive procedure	Invasives Verfahren
+Level: LLT/PT	Investigation	Untersuchung
+Level: LLT	Itching	Jucken
+Level: LLT	Lead	Blei
+Level: LLT	Lung infection	Lungeninfektion
+Level: LLT/PT	Medical procedure	Medizinisches Verfahren
+Level: LLT/PT	Migraine	Migraene
+Level: LLT	Muscle ache	Muskelschmerz
+Level: LLT/PT	Nausea	Uebelkeit
+Level: LLT/PT	Obstruction	Obstruktion
+Level: LLT/PT	Office visit	Sprechstundenbesuch
+Level: LLT/PT	Oxygen saturation	Sauerstoffsaettigung
+Level: LLT/PT	Pain	Schmerz
+Level: LLT	Paresthesia	Paraesthesie
+Level: LLT/PT	Perforation	Perforation
+Level: LLT/PT	Physical examination	Koerperliche Untersuchung
+Level: LLT	Pregnant	Schwanger
+Level: LLT/PT	Pulmonary hypertension	Pulmonale Hypertonie
+Level: LLT/PT	Rash	Ausschlag
+Level: LLT/PT	Regurgitation	Regurgitation
+Level: LLT	Scarring	Narben
+Level: LLT/PT	Sedation	Sedierung
+Level: LLT/PT	Seizure	Krampfanfall
+Level: LLT	Sore throat	Rauer Hals
+Level: LLT	Stroke	Schlaganfall
+Level: LLT/PT	Surgery	Operativer Eingriff
+Level: LLT	Surgical intervention	Operative Intervention
+Level: LLT/PT	Swelling	Schwellung
+Level: LLT	TIA	TIA
+Level: LLT	Tingling	Kribbeln
+Level: LLT	Transesophageal echocardiography	Transoesophageale Echokardiographie
+Level: LLT/PT	Vomiting	Erbrechen
+Level: LLT/PT	X-ray	Roentgen

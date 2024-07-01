@@ -1,0 +1,82 @@
+﻿Level	en-gb	ar-xm
+Level: LLT	Ache	وَجَع
+Level: LLT/PT	Adverse event	حَدَث غَيْر مَرْغُوب
+Level: LLT	Allergic reaction	رد فعل تحسسي
+Level: LLT	Anesthesia	تَخْدير
+Level: LLT/PT	Bacterial infection	عدوى جرثومية
+Level: LLT	Bed rest	الراحة في الفراش
+Level: LLT	Bleeding	نزيف
+Level: LLT/PT	Bleeding time	وقت النزف
+Level: LLT	Blind	العمى
+Level: LLT	Blood pressure	ضغط الدم
+Level: LLT/PT	Blood test	اختبار الدم
+Level: LLT	Brain damage	تلف الدماغ
+Level: LLT	Bruise	كدمة
+Level: LLT	Bruising	كدمة
+Level: LLT	Cardiac catheterization	قسطرة القلب
+Level: LLT/PT	Chest pain	ألم الصَدْر
+Level: LLT/PT	Chest X-ray	الأشعة السينية على الصَدْر
+Level: LLT	Confusion	ارتباك
+Level: LLT/PT	COVID-19	مرض كوفيد 2019 (كورونا)
+Level: LLT/PT	Death	الوفاة
+Level: LLT/PT	Delivery	الولادة
+Level: LLT/PT	Dental cleaning	تنظيف الأسنان
+Level: LLT	Device embolization	انصمام مرتبط بجهاز
+Level: LLT/PT	Device malfunction	اختلال وظيفة الجهاز/خلل وظيفي للجهاز
+Level: LLT/PT	Discharge	التفريغ
+Level: LLT/PT	Discomfort	عدم الارتياح
+Level: LLT/PT	Dry mouth	جفاف الفَم
+Level: LLT	ECG	تخطيط كهربية القلب ECG
+Level: LLT	Echocardiography	تخطيط صدى القلب
+Level: LLT/PT	Ejection fraction	الكسر القذفي
+Level: LLT/PT	Electrocardiogram	تخطيط كهربية القلب
+Level: LLT	Fainting	الإغماء
+Level: LLT/PT	Fatigue	التَّعَب
+Level: LLT	General anesthesia	التخدير العام
+Level: LLT	Head pain	ألم في الرأس
+Level: LLT/PT	Headache	صداع
+Level: LLT	Heart attack	نوبة قلبية
+Level: LLT	Heart failure	فشل قلبي
+Level: LLT	Heart failure with preserved ejection fraction	فشل قلبي مع حفظ الكسر القذفيّ
+Level: LLT	Heart failure with reduced ejection fraction	فشل قلبي مع تقليل الكسر القذفيّ
+Level: LLT	Hemoglobin	الهيموغلوبين
+Level: LLT	Hemorrhage	نزيف
+Level: LLT/PT	Hypertension	فرط ضغط الدم
+Level: LLT/PT	Infant	رضيع
+Level: LLT/PT	Infection	عدوى
+Level: LLT/PT	Injection	حقن
+Level: LLT/PT	Injury	إصابة
+Level: LLT/PT	Interventional procedure	إجراء تدخلي
+Level: LLT	Invasive procedure	إجراء باضع
+Level: LLT/PT	Investigation	فحص استقصائي لمعرفة التشخيص أو تأكيده
+Level: LLT	Itching	حِكَّة
+Level: LLT	Lead	الرصاص
+Level: LLT	Lung infection	عدوى الرئة
+Level: LLT/PT	Medical procedure	إجراء طبي
+Level: LLT/PT	Migraine	شقيقة
+Level: LLT	Muscle ache	ألم العضلات
+Level: LLT/PT	Nausea	الغَثَيان
+Level: LLT/PT	Obstruction	انسداد
+Level: LLT/PT	Office visit	الزيارة المكتبية
+Level: LLT/PT	Oxygen saturation	تشبع الأكسجين
+Level: LLT/PT	Pain	ألم
+Level: LLT	Paresthesia	مذل
+Level: LLT/PT	Perforation	الانثقاب
+Level: LLT/PT	Physical examination	الفحص البدني
+Level: LLT	Pregnant	حامل
+Level: LLT/PT	Pulmonary hypertension	ارتفاع ضَغْطِ الدَّم الرِئَوِيّ
+Level: LLT/PT	Rash	طَفْح
+Level: LLT/PT	Regurgitation	القَلَس
+Level: LLT	Scarring	تندب
+Level: LLT/PT	Sedation	تهدئة
+Level: LLT/PT	Seizure	نوبة
+Level: LLT	Sore throat	الْتِهابُ الحَلْق
+Level: LLT	Stroke	سكتة دماغية
+Level: LLT/PT	Surgery	جراحة
+Level: LLT	Surgical intervention	تدخل جراحي
+Level: LLT/PT	Swelling	التَوَرُّم
+Level: LLT	TIA	نوبة إقفارية عابرة (TIA)
+Level: LLT	Tingling	تنميل
+Level: LLT	Transesophageal echocardiography	تخطيط صدى القلب عبر المريء
+Level: LLT/PT	Vomiting	تَقَيُّء
+Level: LLT/PT	X-ray	تصوير بالأشعة السينية
