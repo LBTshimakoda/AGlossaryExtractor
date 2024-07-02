@@ -8,21 +8,33 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using Microsoft.VisualBasic.Devices;
 using Microsoft.VisualBasic.FileIO;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AGlossaryExtractor
 {
     public partial class Form1 : Form
     {
         public static List<string> langs = new List<string>()
-            { "ar-xm", "cs-cz", "de-de", "el-gr", "es-es", "et-ee", "fi-fi", "fr-fr", "hu-hu", "it-it",
-                "ja-jp", "ko-kr", "lv-lv", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ru-ru", "sv-se", "zh-cn" };
+        { "en-gb", "en-us", "ar-xm", "cs-cz", "de-de", "el-gr", "es-es", "et-ee", "fi-fi", "fr-fr", "hu-hu", "it-it",
+                "ja-jp", "ko-kr", "lv-lv", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ru-ru", "sv-se", "zh-cn",
+                "bg-bg", "da-dk", "qa", "hr-hr", "is-is", "kk-kz", "lt-lt", "mk-mk", "mt-mt", "nb-no", 
+                "ro-ro", "sk-sk", "sl-si", "sq-al", "sr-rs", "tr-tr", "uk-ua", "bs-ba"
+        };
+        public static List<string> slangs = new List<string>()
+        { "en-gb", "en-us", "ar-xm", "cs-cz", "de-de", "el-gr", "es-es", "et-ee", "fi-fi", "fr-fr", "hu-hu", "it-it",
+                "ja-jp", "ko-kr", "lv-lv", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ru-ru", "sv-se", "zh-cn",
+                "bg-bg", "da-dk", "qa", "hr-hr", "is-is", "kk-kz", "lt-lt", "mk-mk", "mt-mt", "nb-no",
+                "ro-ro", "sk-sk", "sl-si", "sq-al", "sr-rs", "tr-tr", "uk-ua", "bs-ba"
+        };
         private BindingSource bindingSource;
         public Form1()
         {
@@ -38,7 +50,10 @@ namespace AGlossaryExtractor
             tabPage1.Text = @"TXT";
             tabPage2.Text = @"XLZ";
             this.bindingSource = new BindingSource();
+            comboBox2.DataSource = slangs;
             comboBox1.DataSource = langs;
+            comboBox2.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 2;
         }
         void textBox1_DragDrop(object sender, DragEventArgs e)
         {
@@ -282,8 +297,8 @@ namespace AGlossaryExtractor
 
                                 i++;
                             }
-                        if (term.Level == null || term.Level == "") term.Level = "Check";
-                        if (term.en_gb == null || term.en_gb == "") term.en_gb = term.en_us;
+                        //if (term.Level == null || term.Level == "") term.Level = "";
+                        //if (term.en_gb == null || term.en_gb == "") term.en_gb = term.en_us;
                         terms.Add(term);
                     }
                 }
@@ -301,9 +316,10 @@ namespace AGlossaryExtractor
                 return;
             }
             int newCounter = 0;
+            var slang = comboBox2.Text;
             var lang = comboBox1.Text;
             //richTextBox2.Text += lang + "\n";
-            var terms = extractLangGlossaryTerms(lang);
+            var terms = extractLangGlossaryTerms(slang, lang);
             richTextBox2.Text = ""; //terms.Count + "\n";
 
             var xlz = new Xlz(inputFile);
@@ -315,8 +331,8 @@ namespace AGlossaryExtractor
                 Dictionary<string, List<string>> foundTerms = extractor.ExtractTermsFromText(source);
                 if (foundTerms.Count > 0)
                 {
-                    richTextBox2.Text += "\nSource id: " + tu.TransUnitID() + " \t";
-                    richTextBox2.Text += "\tFound terms: " + foundTerms.Count + "\t";
+                    richTextBox2.Text += "\nSource id: " + tu.TransUnitID() + " ";
+                    richTextBox2.Text += "(" + foundTerms.Count + "): ";
                     foreach (var term in foundTerms)
                     {
                         richTextBox2.Text += "| " + term.Key + " |";
@@ -324,10 +340,10 @@ namespace AGlossaryExtractor
                     newCounter += foundTerms.Count;
                 }
             }
-            richTextBox2.Text += "\nFound terms: " + newCounter + "\n";
+            richTextBox2.Text += "\nFound terms in file: " + newCounter + "\n";
             richTextBox2.Text += "End " + DateTime.Now + "\n";
         }
-        public List<GlossaryTermScript> extractLangGlossaryTerms(string tLang)
+        public List<GlossaryTermScript> extractLangGlossaryTerms(string sLang, string tLang)
         {
             List<GlossaryTermScript> glossaryTerms1 = new List<GlossaryTermScript>();
 
@@ -338,6 +354,11 @@ namespace AGlossaryExtractor
             {
                 propertyNames.Add(property.Name);
                 //richTextBox2.Text += property.Name + "\n";
+            }
+            if (!propertyNames.Contains(sLang.Replace("-", "_")))
+            {
+                richTextBox2.Text += "No terms available for this source language " + sLang + "\n";
+                return null;
             }
             if (!propertyNames.Contains(tLang.Replace("-", "_")))
             {
@@ -354,8 +375,17 @@ namespace AGlossaryExtractor
                     PropertyInfo propertyInfo = type.GetProperty(propertyName);
                     if (propertyInfo != null && propertyName == "Level")
                         glossaryTerm1.Level = term.Level;
-                    if (propertyInfo != null && propertyName == "en_gb")
-                        glossaryTerm1.en_gb = term.en_gb;
+                    //if (propertyInfo != null && propertyName == sLang)
+                        //glossaryTerm1.sLang = term.sLang;
+                    if (propertyInfo != null && propertyName == sLang.Replace("-", "_"))
+                    {
+                        var value = propertyInfo.GetValue(term, null);
+                        if (value != null)
+                            glossaryTerm1.sLang = value.ToString();
+                        else
+                            glossaryTerm1.sLang = null;
+                        //richTextBox2.Text += value.ToString() + "\n";
+                    }
                     if (propertyInfo != null && propertyName == tLang.Replace("-", "_"))
                     {
                         var value = propertyInfo.GetValue(term, null);
@@ -380,9 +410,10 @@ namespace AGlossaryExtractor
                 richTextBox2.Text += "Load glossary TXT first.\n";
                 return;
             }
+            var slang = comboBox2.Text;
             var lang = comboBox1.Text;
             //richTextBox2.Text = lang;
-            var terms = extractLangGlossaryTerms(lang);
+            var terms = extractLangGlossaryTerms(slang, lang);
             var xlz = new Xlz(inputFile);
             var tus = xlz.TranslatableTransUnits;
             GlossaryExtractor extractor = new GlossaryExtractor(terms);
@@ -397,16 +428,19 @@ namespace AGlossaryExtractor
                 {
                     //Console.WriteLine("Source id: " + tu.TransUnitID() + " ---------------");
                     //Console.WriteLine("Found terms: " + foundTerms.Count);
+                    richTextBox2.Text += "\nSource id: " + tu.TransUnitID() + " ";
+                    richTextBox2.Text += "(" + foundTerms.Count + "): ";
                     var note = "";
                     foreach (var term in foundTerms)
                     {
                         note += term.Key + " = " + term.Value[0] + "\n";
                         //Console.WriteLine("Term: " + term.Key);
-                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], en_gb = term.Key, tLang = term.Value[0] };
+                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
                         if (!checks.Contains(term.Key))
                         {
                             checks.Add(term.Key);
                             extractedTerms.Add(extractedTerm);
+                            richTextBox2.Text += "| " + term.Key + " |";
                         }
                     }
                     tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", "MedDRA"), note));
@@ -415,9 +449,11 @@ namespace AGlossaryExtractor
             }
             //Console.WriteLine("Found terms: " + newCounter);
             //xlz.Save2();
-            var uniqueSortedTerms = extractedTerms.OrderBy(term => term.en_gb).ToList();
-            SaveSimpleGlossaryTermsToTsv(uniqueSortedTerms, inputFile + "_" + lang + ".txt", lang);
-            richTextBox2.Text += String.Format("Extracted Terms saved to glossary: <file://{0}> ", inputFile + "_" + lang + ".txt") + "\n";
+            richTextBox2.Text += "\n" + extractedTerms.Count + "\n";
+            var uniqueSortedTerms = extractedTerms.OrderBy(term => term.sLang).ToList();
+            richTextBox2.Text += "\n" + uniqueSortedTerms.Count + "\n";
+            SaveSimpleGlossaryTermsToTsv(uniqueSortedTerms, inputFile + "_" + slang + "_" + lang + ".txt", slang, lang);
+            richTextBox2.Text += "\n" + String.Format("Extracted Terms saved to glossary: <file://{0}> ", inputFile + "_" + slang + "_" + lang + ".txt") + "\n";
         }
         private void richTextBox2_OnLinkClicked(object sender, LinkClickedEventArgs e)
         {
@@ -429,57 +465,115 @@ namespace AGlossaryExtractor
             Process.Start("\"" + Path.Combine(psi.WorkingDirectory, psi.FileName).Replace("%20", " ") + "\"");
         }
 
-        static void SaveSimpleGlossaryTermsToTsv(List<GlossaryTermScript> glossaryTerms, string filePath, string tLang)
+        static void SaveSimpleGlossaryTermsToTsv(List<GlossaryTermScript> glossaryTerms, string filePath, string sLang, string tLang)
         {
             // Use StreamWriter with UTF-8 encoding and BOM
             using (StreamWriter writer = new StreamWriter(filePath, false, new UTF8Encoding(true)))
             {
                 // Write the header
                 //writer.WriteLine("Term\tDefinition");
-                int ind = 0;
+                writer.WriteLine("Comment\tMT_Ready\tMT_DoNotTranslate\tMT_CaseSensitive\t" + sLang + "\t" + tLang + "\tPOS");
 
                 // Write each glossary term
                 foreach (var term in glossaryTerms)
                 {
-                    if (ind == 0)
-                        writer.WriteLine("Level\ten-gb\t" + tLang);
-                    else
-                        writer.WriteLine(term.Level + "\t" + term.en_gb + "\t" + term.tLang);
-                    ind++;
+                        writer.WriteLine(term.Level + "\tTRUE\tFALSE\tFALSE\t" + term.sLang + "\t" + term.tLang + "\tnoun");
                 }
             }
         }
 
-        static void SaveLangGlossaryTermsToTsv(List<GlossaryTerm> glossaryTerms, string filePath, string tLang)
+        public void SaveLangGlossaryTermsToTsv(List<GlossaryTerm> glossaryTerms, string filePath, string sLang, string tLang)
         {
+            var properties = typeof(GlossaryTerm).GetProperties();
+            List<string> propertyNames = new List<string>();
+            // Add columns to the DataTable based on the class properties
+            foreach (var property in properties)
+            {
+                propertyNames.Add(property.Name);
+                //richTextBox2.Text += property.Name + "\n";
+            }
+            if (!propertyNames.Contains(sLang.Replace("-", "_")))
+            {
+                richTextBox2.Text += "No terms available for this source language " + sLang + "\n";
+                return;
+            }
+            if (!propertyNames.Contains(tLang.Replace("-", "_")))
+            {
+                richTextBox2.Text += "No terms available for this target language " + tLang + "\n";
+                return;
+            }
             // Use StreamWriter with UTF-8 encoding and BOM
             using (StreamWriter writer = new StreamWriter(filePath, false, new UTF8Encoding(true)))
             {
                 // Write the header
                 //writer.WriteLine("Term\tDefinition");
 
-                // Write each glossary term
                 foreach (var term in glossaryTerms)
                 {
-                    if (tLang == "ar-xm") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ar_xm}");
-                    if (tLang == "cs-cz") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.cs_cz}");
-                    if (tLang == "de-de") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.de_de}");
-                    if (tLang == "el-gr") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.el_gr}");
-                    if (tLang == "es-es") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.es_es}");
-                    if (tLang == "fr-fr") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.fr_fr}");
-                    if (tLang == "hu-hu") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.hu_hu}");
-                    if (tLang == "it-it") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.it_it}");
-                    if (tLang == "ja-jp") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ja_jp}");
-                    if (tLang == "ko-kr") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ko_kr}");
-                    if (tLang == "lv-lv") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.lv_lv}");
-                    if (tLang == "nl-nl") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.nl_nl}");
-                    if (tLang == "pl-pl") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.pl_pl}");
-                    if (tLang == "pt-br") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.pt_br}");
-                    if (tLang == "pt-pt") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.pt_pt}");
-                    if (tLang == "ru-ru") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ru_ru}");
-                    if (tLang == "sv-se") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.sv_se}");
-                    if (tLang == "zh-cn") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.zh_cn}");
+                    var glossaryTerm1 = new GlossaryTermScript();
+                    Type type = term.GetType();
+                    var sLanguage = "";
+                    var tLanguage = "";
+                    foreach (var propertyName in propertyNames)
+                    {
+                        PropertyInfo propertyInfo = type.GetProperty(propertyName);
+                        if (propertyInfo != null && propertyName == sLang.Replace("-", "_"))
+                        {
+                            var value = propertyInfo.GetValue(term, null);
+                            if(value!=null) sLanguage = value.ToString();
+                        }
+                        if (propertyInfo != null && propertyName == tLang.Replace("-", "_"))
+                        {
+                            var value = propertyInfo.GetValue(term, null);
+                            if (value != null) tLanguage = value.ToString();
+                        }
+                    }
+                    writer.WriteLine(term.Level + "\t" + sLanguage + "\t" + tLanguage);
                 }
+                // Write each glossary term
+                //foreach (var term in glossaryTerms)
+                //{
+                //    if (tLang == "ar-xm") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ar_xm}");
+                //    if (tLang == "cs-cz") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.cs_cz}");
+                //    if (tLang == "de-de") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.de_de}");
+                //    if (tLang == "el-gr") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.el_gr}");
+                //    if (tLang == "es-es") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.es_es}");
+                //    if (tLang == "et-ee") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.et_ee}");
+                //    if (tLang == "fi-fi") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.fi_fi}");
+                //    if (tLang == "fr-fr") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.fr_fr}");
+                //    if (tLang == "hu-hu") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.hu_hu}");
+                //    if (tLang == "it-it") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.it_it}");
+                //    if (tLang == "ja-jp") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ja_jp}");
+                //    if (tLang == "ko-kr") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ko_kr}");
+                //    if (tLang == "lv-lv") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.lv_lv}");
+                //    if (tLang == "nl-nl") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.nl_nl}");
+                //    if (tLang == "pl-pl") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.pl_pl}");
+                //    if (tLang == "pt-br") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.pt_br}");
+                //    if (tLang == "pt-pt") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.pt_pt}");
+                //    if (tLang == "ru-ru") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ru_ru}");
+                //    if (tLang == "sv-se") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.sv_se}");
+                //    if (tLang == "zh-cn") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.zh_cn}");
+
+                //    if (tLang == "en-us") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.en_us}");
+                //    if (tLang == "bg-bg") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.bg_bg}");
+                //    if (tLang == "da-dk") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.da_dk}");
+                //    if (tLang == "qa") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.qa}");
+                //    if (tLang == "hr-hr") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.hr_hr}");
+                //    if (tLang == "is-is") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.is_is}");
+                //    if (tLang == "kk-kz") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.kk_kz}");
+                //    if (tLang == "lt-lt") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.lt_lt}");
+                //    if (tLang == "mk-mk") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.mk_mk}");
+                //    if (tLang == "mt-mt") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.mt_mt}");
+                //    if (tLang == "nb-no") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.nb_no}");
+                //    if (tLang == "ro-ro") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ro_ro}");
+                //    if (tLang == "sk-sk") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.sk_sk}");
+                //    if (tLang == "sl-si") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.sl_si}");
+                //    if (tLang == "sq-al") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.sq_al}");
+                //    if (tLang == "sr-rs") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.sr_rs}");
+                //    if (tLang == "tr-tr") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.tr_tr}");
+                //    if (tLang == "uk-ua") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.uk_ua}");
+                //    if (tLang == "bs-ba") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.bs_ba}");
+                //}
             }
         }
         private void button4_Click(object sender, EventArgs e)
@@ -491,12 +585,13 @@ namespace AGlossaryExtractor
                 richTextBox2.Text += "Load glossary TXT first.\n";
                 return;
             }
+            var slang = comboBox2.Text;
             var lang = comboBox1.Text;
             //richTextBox2.Text = lang;
-            var terms = extractLangGlossaryTerms(lang);
+            var terms = extractLangGlossaryTerms(slang, lang);
             var fio = new FileInfo(inputFile);
             var extension = fio.Extension;
-            var fname = fio.Name.Substring(0, fio.Name.LastIndexOf(".") - 1); 
+            var fname = fio.Name.Substring(0, fio.Name.LastIndexOf(".")); 
             var dir = fio.DirectoryName;
             var outputFile = Path.Combine(dir, fname + "_withNotes" + extension);
             if(File.Exists(outputFile)) File.Delete(outputFile);
@@ -520,7 +615,7 @@ namespace AGlossaryExtractor
                     {
                         note += term.Key + " = " + term.Value[0] + "\n";
                         //Console.WriteLine("Term: " + term.Key);
-                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], en_gb = term.Key, tLang = term.Value[0] };
+                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
                         if (!checks.Contains(term.Key))
                         {
                             checks.Add(term.Key);
@@ -540,21 +635,23 @@ namespace AGlossaryExtractor
 
         private void button5_Click(object sender, EventArgs e)
         {
+            var slang = comboBox2.Text;
             var lang = comboBox1.Text;
             var inputFile = textBox1.Text;
             if (!File.Exists(inputFile))
             { return; }
-            var sourceFilePath = inputFile + "_en-gb_" + lang + ".txt";
-            SaveLangGlossaryTermsToTsv(glossaryTerms, sourceFilePath, lang);
+            var sourceFilePath = inputFile + "_" + slang + "_" + lang + ".txt";
+            SaveLangGlossaryTermsToTsv(glossaryTerms, sourceFilePath, slang, lang);
             var fio = new FileInfo(sourceFilePath);
             var fname = fio.Name;
             var fpath = fio.DirectoryName;
-            var zipFilePath = inputFile + "_en-gb_" + lang + ".txt.zip";
+            var zipFilePath = inputFile + "_" + slang + "_" + lang + ".txt.zip";
             var zipEntryName = fname;
             CreateZipFromTextFile(sourceFilePath, zipFilePath, zipEntryName);
             Byte[] bytes = File.ReadAllBytes(zipFilePath);
             string base64StringNew = Convert.ToBase64String(bytes, 0, bytes.Length);
-            File.WriteAllText(zipFilePath + ".txt", base64StringNew);
+            File.WriteAllText(zipFilePath + "_base64.txt", base64StringNew);
+            richTextBox2.Text += String.Format("Bse64 string file for scripts created: <file://{0}> ", zipFilePath + "_base64.txt") + "\n";
             //File.Delete(sourceFilePath);
             //File.Delete(zipFilePath);
         }
@@ -587,6 +684,11 @@ namespace AGlossaryExtractor
                     }
                 }
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     public class GlossaryTerm
@@ -637,7 +739,7 @@ namespace AGlossaryExtractor
     public class GlossaryTermScript
     {
         public string Level { get; set; }
-        public string en_gb { get; set; }
+        public string sLang { get; set; }
         public string tLang { get; set; }
     }
     public class TrieNode
@@ -705,26 +807,47 @@ namespace AGlossaryExtractor
             trie = new Trie();
             foreach (var term in terms)
             {
-                trie.Insert(term.en_gb.ToLower(), term.en_gb, term.tLang, term.Level);
+                trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
             }
             //Console.WriteLine(content);
         }
-        public Dictionary<string, List<string>> ExtractTermsFromText(string paragraph)
+        public Dictionary<string, List<string>> ExtractTermsFromText(string text)
         {
             Dictionary<string, List<string>> foundTerms = new Dictionary<string, List<string>>();
-            //string[] paragraphs = text.Split(new[] { "\r\n\r\n", "\n\n" }, StringSplitOptions.None);
+            string[] paragraphs = text.Split(new[] { "\r\n\r\n", "\n\n", ".", ",", "?", "!" }, StringSplitOptions.None);
 
-            //foreach (string paragraph in paragraphs)
-            //{
-            SearchTermsInParagraph(paragraph, foundTerms);
-            //}
+            foreach (string paragraph in paragraphs)
+            {
+                SearchTermsInParagraph(paragraph, foundTerms);
+            }
 
             return foundTerms;
         }
+        public static string[] AddPluralsAndEdForms(string[] words)
+        {
+            List<string> newwords = new List<string>();
+            foreach (var word in words)
+            {
+                newwords.Add(word);
+            }
+            foreach (var word in words)
+            {
+                if (word.EndsWith("s")) newwords.Add(word.Substring(0, word.Length - 1));
+                else newwords.Add(word);
+            }
+            foreach (var word in words)
+            {
+                if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 1));
+                else newwords.Add(word);
+            }
+            return newwords.ToArray();
+        }
+
         private void SearchTermsInParagraph(string paragraph, Dictionary<string, List<string>> foundTerms)
         {
             // Split the paragraph into words
             var words = paragraph.Split(new[] { ' ', '\t', '\n', '\r', '/' }, StringSplitOptions.RemoveEmptyEntries);
+            words = AddPluralsAndEdForms(words);
             TrieNode root = trie.GetRoot();
             for (int i = 0; i < words.Length; i++)
             {
@@ -733,9 +856,8 @@ namespace AGlossaryExtractor
                 while (j < words.Length)
                 {
                     string cleanedWord = words[j].ToLower();
-                    cleanedWord = cleanedWord.TrimEnd('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '”', 's');
+                    cleanedWord = cleanedWord.TrimEnd('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '”');
                     cleanedWord = cleanedWord.TrimStart('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '“');
-
                     if (!node.Children.ContainsKey(cleanedWord))
                     {
                         break;
