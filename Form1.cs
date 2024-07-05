@@ -819,8 +819,13 @@ namespace AGlossaryExtractor
             }
             var slang = comboBox2.Text;
             //var langs1 = new List<string>() { "de-de" };
+            progressBar2.Minimum = 0;
+            progressBar2.Maximum = langs.Count;
+            progressBar2.Value = 0;
+            int currentLang = 0;
             foreach (var lang in langs)
             {
+
                 var sourceFilePath = inputFile + "_" + slang + "_" + lang + ".txt";
                 if(!SaveLangGlossaryTermsToTsv(glossaryTermsMedDRA, sourceFilePath, slang, lang))
                     return;
@@ -858,6 +863,8 @@ namespace AGlossaryExtractor
 
                 DateTime currentDate = DateTime.Now;
                 File.WriteAllText(path + @"\xlz_reports_" + slang + "_" + lang + "_" + currentDate.ToString("yyyy-MM-dd") + ".xml", sContent);
+                //richTextBox2.Text += String.Format("Script file created: <file://{0}> ", path + @"\xlz_reports_" + slang + "_" + lang + "_" + currentDate.ToString("yyyy-MM-dd") + ".xml") + "\n";
+                richTextBox2.Text += ".";
 
                 pattern = new Regex(@"//xlz\.Save2\(\);");
                 sContent = pattern.Replace(sContent, "xlz.Save2();");
@@ -865,9 +872,12 @@ namespace AGlossaryExtractor
                 sContent = pattern.Replace(sContent, "$1" + @"//" + "$2");
                 File.WriteAllText(path + @"\xlz_notes_" + slang + "_" + lang + "_" + currentDate.ToString("yyyy-MM-dd") + ".xml", sContent);
                 //File.WriteAllText(zipFilePath + "_base64.txt", base64StringNew);
-                //richTextBox2.Text += String.Format("Bse64 string file for scripts created: <file://{0}> ", zipFilePath + "_base64.txt") + "\n";
+                //richTextBox2.Text += String.Format("Script file created: <file://{0}> ", path + @"\xlz_notes_" + slang + "_" + lang + "_" + currentDate.ToString("yyyy-MM-dd") + ".xml") + "\n";
+                richTextBox2.Text += ".";
+                currentLang++;
+                progressBar2.Value = currentLang;
             }
-            richTextBox2.Text += "All generated script save in " + path;
+            richTextBox2.Text += "\nAll generated scripts saved in" + String.Format(": <file://{0}> ", path) + "\n";
         }
         static void CreateZipFromTextFile(string sourceFilePath, string zipFilePath, string zipEntryName)
         {

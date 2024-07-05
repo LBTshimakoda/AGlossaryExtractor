@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -44,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -55,7 +57,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -95,6 +96,13 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(318, 13);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(295, 13);
+            this.progressBar1.TabIndex = 13;
             // 
             // label8
             // 
@@ -209,6 +217,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.progressBar2);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.comboBox2);
             this.tabPage2.Controls.Add(this.button5);
@@ -228,10 +237,17 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(63, 86);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(618, 10);
+            this.progressBar2.TabIndex = 11;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(422, 52);
+            this.label5.Location = new System.Drawing.Point(146, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(137, 13);
             this.label5.TabIndex = 10;
@@ -240,7 +256,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(560, 48);
+            this.comboBox2.Location = new System.Drawing.Point(284, 50);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 9;
@@ -258,7 +274,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(422, 77);
+            this.label4.Location = new System.Drawing.Point(422, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 13);
             this.label4.TabIndex = 7;
@@ -287,7 +303,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(560, 74);
+            this.comboBox1.Location = new System.Drawing.Point(560, 50);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 4;
@@ -328,13 +344,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(318, 13);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(295, 13);
-            this.progressBar1.TabIndex = 13;
             // 
             // Form1
             // 
@@ -384,6 +393,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar2;
     }
 }
 
