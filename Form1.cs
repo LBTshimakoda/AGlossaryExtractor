@@ -47,6 +47,10 @@ namespace AGlossaryExtractor
             this.textBox2.DragOver += new DragEventHandler(textBox2_DragOver);
             this.textBox2.DragDrop += new DragEventHandler(textBox2_DragDrop);
             this.textBox2.DragEnter += new DragEventHandler(textBox2_DragEnter);
+            this.textBox3.AllowDrop = true;
+            this.textBox3.DragOver += new DragEventHandler(textBox3_DragOver);
+            this.textBox3.DragDrop += new DragEventHandler(textBox3_DragDrop);
+            this.textBox3.DragEnter += new DragEventHandler(textBox3_DragEnter);
             tabPage1.Text = @"TXT";
             tabPage2.Text = @"XLZ";
             this.bindingSource = new BindingSource();
@@ -117,19 +121,78 @@ namespace AGlossaryExtractor
             else
                 e.Effect = DragDropEffects.None;
         }
+        void textBox3_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                if (Directory.Exists(files[0]))
+                {
+                    this.textBox3.Text = files[0];
+                }
+
+                if (files[0].EndsWith(".txt"))
+                {
+                    this.textBox3.Text = files[0];
+                }
+            }
+        }
+        void textBox3_DragOver(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+        void textBox3_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
+        }
         public static List<GlossaryTerm> glossaryTerms = new List<GlossaryTerm>();
+        public static List<GlossaryTerm> glossaryTermsMedDRA = new List<GlossaryTerm>();
+        public static List<GlossaryTerm> glossaryTermsEDQM = new List<GlossaryTerm>();
         private void button1_Click(object sender, EventArgs e)
         {
             var inputFile = textBox1.Text;
-            if (!File.Exists(inputFile))
-            { return; }
-            var text = File.ReadAllText(inputFile);
-            glossaryTerms = getTermsFromTSV(text);
-            if (glossaryTerms != null)
+            var inputFile1 = textBox3.Text;
+            if (File.Exists(inputFile))
             {
-                richTextBox1.Text += "Terms reloaded: " + glossaryTerms.Count + "\n";
+                var text = File.ReadAllText(inputFile);
+                glossaryTermsMedDRA = getTermsFromTSV(text);
+                if (glossaryTermsMedDRA != null)
+                {
+                    richTextBox1.Text += "MedDRA terms loaded: " + glossaryTermsMedDRA.Count + "\n";
+                    var fname = (new FileInfo(inputFile)).Name;
+                    var termsNote = "Glossary 1";
+                    if (Regex.IsMatch(fname, "_"))
+                        termsNote = fname.Substring(0, fname.IndexOf("_"));
+                    textBox4.Text = termsNote;
+                }
             }
-
+            if (File.Exists(inputFile1))
+            {
+                var text1 = File.ReadAllText(inputFile1);
+                glossaryTermsEDQM = getTermsFromTSV(text1);
+                if (glossaryTermsEDQM != null)
+                {
+                    richTextBox1.Text += "EDQM terms loaded: " + glossaryTermsEDQM.Count + "\n";
+                    var fname1 = (new FileInfo(inputFile1)).Name;
+                    var termsNote1 = "Glossary 1";
+                    if (Regex.IsMatch(fname1, "_"))
+                        termsNote1 = fname1.Substring(0, fname1.IndexOf("_"));
+                    textBox5.Text = termsNote1;
+                }
+            }
+            glossaryTerms = glossaryTermsMedDRA.Union(glossaryTermsEDQM).ToList();
+            if(glossaryTerms==null || glossaryTerms.Count==0)
+            {
+                richTextBox1.Text += "No terms loaded. Check text files.\n";
+            }
+            richTextBox1.Text += "Combined terms count: " + glossaryTerms.Count + "\n";
             // Convert the list to a DataTable
             DataTable dataTable = new DataTable();
 
@@ -173,13 +236,21 @@ namespace AGlossaryExtractor
                 var properties = typeof(GlossaryTerm).GetProperties();
 
                 // Create a filter expression dynamically based on the properties
-                var filterExpression = string.Format($"en_gb LIKE '%{filterText}%'");//Join(" OR ", properties.Select(p => $"{p.Name} LIKE '%{filterText}%'"));
+                var filterExpression = string.Format($"en_gb LIKE '%{filterText}%' OR en_us LIKE '%{filterText}%'");//Join(" OR ", properties.Select(p => $"{p.Name} LIKE '%{filterText}%'"));
 
                 bindingSource.Filter = filterExpression;
             }
         }
-        public static List<GlossaryTerm> getTermsFromTSV(string tsvContent)
+        public List<GlossaryTerm> getTermsFromTSV(string tsvContent)
         {
+            string[] lines = tsvContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            int lineCount = lines.Length;
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = lineCount;
+            progressBar1.Value = 0;
+
+            int currentLine = 0;
+
             Dictionary<int, string> langIndex = new Dictionary<int, string>();
             var terms = new List<GlossaryTerm>();
             int j = 0;
@@ -193,6 +264,8 @@ namespace AGlossaryExtractor
                     {
                         //Process row
                         j++;
+                        currentLine++;
+                        progressBar1.Value = currentLine;
                         int i = 1; // column number
                                    //string s2 = "";
                         string[] fields = parser.ReadFields();
@@ -297,7 +370,7 @@ namespace AGlossaryExtractor
 
                                 i++;
                             }
-                        //if (term.Level == null || term.Level == "") term.Level = "";
+                        if (term.Level == null || term.Level == "") term.Level = "";
                         //if (term.en_gb == null || term.en_gb == "") term.en_gb = term.en_us;
                         terms.Add(term);
                     }
@@ -306,54 +379,98 @@ namespace AGlossaryExtractor
             return terms;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public static List<GlossaryTermScript> getTermsFromTSV2Langs(string tsvContent, string sLang, string tLang)
         {
-            var inputFile = textBox2.Text; 
-            if (inputFile == null || !File.Exists(inputFile)) return;
-            if (glossaryTerms == null || glossaryTerms.Count == 0)
+            Dictionary<int, string> langIndex = new Dictionary<int, string>();
+            var terms = new List<GlossaryTermScript>();
+            int j = 0;
+            using (StringReader stringReader = new StringReader(tsvContent))
             {
-                richTextBox2.Text += "Load glossary TXT first.\n";
-                return;
-            }
-            int newCounter = 0;
-            var slang = comboBox2.Text;
-            var lang = comboBox1.Text;
-            //richTextBox2.Text += lang + "\n";
-            var terms = extractLangGlossaryTerms(slang, lang);
-            richTextBox2.Text = ""; //terms.Count + "\n";
-
-            var xlz = new Xlz(inputFile);
-            var tus = xlz.TranslatableTransUnits;
-            GlossaryExtractor extractor = new GlossaryExtractor(terms);
-            foreach (var tu in tus)
-            {
-                var source = tu.GetSource(false);
-                Dictionary<string, List<string>> foundTerms = extractor.ExtractTermsFromText(source);
-                if (foundTerms.Count > 0)
+                using (TextFieldParser parser = new TextFieldParser(stringReader))
                 {
-                    richTextBox2.Text += "\nSource id: " + tu.TransUnitID() + " ";
-                    richTextBox2.Text += "(" + foundTerms.Count + "): ";
-                    foreach (var term in foundTerms)
+                    parser.TextFieldType = FieldType.Delimited;
+                    parser.SetDelimiters("\t");
+                    while (!parser.EndOfData)
                     {
-                        richTextBox2.Text += "| " + term.Key + " |";
+                        //Process row
+                        j++;
+                        int i = 1; // column number
+                                   //string s2 = "";
+                        string[] fields = parser.ReadFields();
+                        var term = new GlossaryTermScript();
+                        if (j == 1)
+                        {
+                            foreach (string s in fields)
+                            {
+                                langIndex.Add(i, s);
+                                i++;
+                            }
+                        }
+                        if (j > 1)
+                            foreach (string s in fields)
+                            {
+                                if (langIndex[i] == "Level") term.Level = s;
+                                if (langIndex[i] == sLang) term.sLang = s;
+                                if (sLang == "en-us" && langIndex[i] == "en-gb") term.sLang = s;
+                                if (sLang == "en-gb" && langIndex[i] == "en-us") term.sLang = s;
+                                if (langIndex[i] == tLang) term.tLang = s;
+                                i++;
+                            }
+                        if (term.Level == null || term.Level == "") term.Level = "";
+                        //if (term.en_gb == null || term.en_gb == "") term.en_gb = term.en_us;
+                        terms.Add(term);
                     }
-                    newCounter += foundTerms.Count;
                 }
             }
-            richTextBox2.Text += "\nFound terms in file: " + newCounter + "\n";
-            richTextBox2.Text += "End " + DateTime.Now + "\n";
+            return terms;
         }
-        public List<GlossaryTermScript> extractLangGlossaryTerms(string sLang, string tLang)
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //var inputFile = textBox2.Text; 
+            //if (inputFile == null || !File.Exists(inputFile)) return;
+            //if (glossaryTerms == null || glossaryTerms.Count == 0)
+            //{
+            //    richTextBox2.Text += "Load glossary TXT first.\n";
+            //    return;
+            //}
+            //int newCounter = 0;
+            //var slang = comboBox2.Text;
+            //var lang = comboBox1.Text;
+            ////richTextBox2.Text += lang + "\n";
+            //var terms = extractLangGlossaryTerms(glossaryTermsMedDRA,slang, lang);
+            //richTextBox2.Text = ""; //terms.Count + "\n";
+
+            //var xlz = new Xlz(inputFile);
+            //var tus = xlz.TranslatableTransUnits;
+            //GlossaryExtractor extractor = new GlossaryExtractor(terms);
+            //foreach (var tu in tus)
+            //{
+            //    var source = tu.GetSource(false);
+            //    Dictionary<string, List<string>> foundTerms = extractor.ExtractTermsFromText(source);
+            //    if (foundTerms.Count > 0)
+            //    {
+            //        richTextBox2.Text += "\nSource id: " + tu.TransUnitID() + " ";
+            //        richTextBox2.Text += "(" + foundTerms.Count + "): ";
+            //        foreach (var term in foundTerms)
+            //        {
+            //            richTextBox2.Text += "| " + term.Key + " |";
+            //        }
+            //        newCounter += foundTerms.Count;
+            //    }
+            //}
+            //richTextBox2.Text += "\nFound terms in file: " + newCounter + "\n";
+            //richTextBox2.Text += "End " + DateTime.Now + "\n";
+        }
+        public List<GlossaryTermScript> extractLangGlossaryTerms(List<GlossaryTerm> terms, string sLang, string tLang)
         {
             List<GlossaryTermScript> glossaryTerms1 = new List<GlossaryTermScript>();
 
             var properties = typeof(GlossaryTerm).GetProperties();
             List<string> propertyNames = new List<string>();
-            // Add columns to the DataTable based on the class properties
+
             foreach (var property in properties)
             {
                 propertyNames.Add(property.Name);
-                //richTextBox2.Text += property.Name + "\n";
             }
             if (!propertyNames.Contains(sLang.Replace("-", "_")))
             {
@@ -365,8 +482,9 @@ namespace AGlossaryExtractor
                 richTextBox2.Text += "No terms available for this target language " + tLang + "\n";
                 return null;
             }
+
             // Get the properties of the class using reflection
-            foreach (var term in glossaryTerms)
+            foreach (var term in terms)
             {
                 var glossaryTerm1 = new GlossaryTermScript();
                 Type type = term.GetType();
@@ -375,8 +493,6 @@ namespace AGlossaryExtractor
                     PropertyInfo propertyInfo = type.GetProperty(propertyName);
                     if (propertyInfo != null && propertyName == "Level")
                         glossaryTerm1.Level = term.Level;
-                    //if (propertyInfo != null && propertyName == sLang)
-                        //glossaryTerm1.sLang = term.sLang;
                     if (propertyInfo != null && propertyName == sLang.Replace("-", "_"))
                     {
                         var value = propertyInfo.GetValue(term, null);
@@ -384,7 +500,6 @@ namespace AGlossaryExtractor
                             glossaryTerm1.sLang = value.ToString();
                         else
                             glossaryTerm1.sLang = null;
-                        //richTextBox2.Text += value.ToString() + "\n";
                     }
                     if (propertyInfo != null && propertyName == tLang.Replace("-", "_"))
                     {
@@ -393,10 +508,9 @@ namespace AGlossaryExtractor
                             glossaryTerm1.tLang = value.ToString();
                         else
                             glossaryTerm1.tLang = null;
-                        //richTextBox2.Text += value.ToString() + "\n";
                     }
                 }
-                if(glossaryTerm1.tLang!=null)
+                if(glossaryTerm1.tLang!=null && glossaryTerm1.tLang != "-")
                     glossaryTerms1.Add(glossaryTerm1);
             }
             return glossaryTerms1;
@@ -412,48 +526,76 @@ namespace AGlossaryExtractor
             }
             var slang = comboBox2.Text;
             var lang = comboBox1.Text;
-            //richTextBox2.Text = lang;
-            var terms = extractLangGlossaryTerms(slang, lang);
-            var xlz = new Xlz(inputFile);
-            var tus = xlz.TranslatableTransUnits;
-            GlossaryExtractor extractor = new GlossaryExtractor(terms);
+            var uniqueSortedTerms = getExtractedTermsForXlz(inputFile, slang, lang);
+            if (uniqueSortedTerms != null)
+            {
+                //richTextBox2.Text += "\n" + uniqueSortedTerms.Count + "\n";
+                SaveSimpleGlossaryTermsToTsv(uniqueSortedTerms, inputFile + "_" + slang + "_" + lang + ".txt", slang, lang);
+                richTextBox2.Text += "\n" + String.Format("Extracted Terms saved to glossary: <file://{0}> ", inputFile + "_" + slang + "_" + lang + ".txt") + "\n";
+            }
+        }
+        public List<GlossaryTermScript> getExtractedTermsForXlz(string inputFile, string slang, string tlang)
+        {
+            if (glossaryTerms == null || glossaryTerms.Count == 0)
+            {
+                //richTextBox2.Text += "Load glossary TXT first.\n";
+                return null;
+            }
+            var sLang1 = slang;
+            if (slang == "en-us") sLang1 = "en-gb"; // only en-gb in MedDRA for English
+            var termsMedDRA = extractLangGlossaryTerms(glossaryTermsMedDRA, sLang1, tlang);
+            GlossaryExtractor extractorMedDRA = new GlossaryExtractor(termsMedDRA);
+            var sLang2 = slang;
+            if (slang == "en-gb") sLang2 = "en-us"; // only en-us in EDQM for English
+            var termsEDQM = extractLangGlossaryTerms(glossaryTermsEDQM, sLang2, tlang);
+            GlossaryExtractor extractorEDQM = new GlossaryExtractor(termsEDQM);
+            if (termsMedDRA == null && termsEDQM == null)
+                return null;
             int newCounter = 0;
             var extractedTerms = new List<GlossaryTermScript>();
             var checks = new List<string>();
+            var xlz = new Xlz(inputFile);
+            var tus = xlz.TranslatableTransUnits;
             foreach (var tu in tus)
             {
                 var source = tu.GetSource(false);
-                Dictionary<string, List<string>> foundTerms = extractor.ExtractTermsFromText(source);
-                if (foundTerms.Count > 0)
+                Dictionary<string, List<string>> foundTermsMedDRA = extractorMedDRA.ExtractTermsFromText(source);
+                Dictionary<string, List<string>> foundTermsEDQM = extractorEDQM.ExtractTermsFromText(source);
+                if (foundTermsMedDRA.Count > 0)
                 {
-                    //Console.WriteLine("Source id: " + tu.TransUnitID() + " ---------------");
-                    //Console.WriteLine("Found terms: " + foundTerms.Count);
-                    richTextBox2.Text += "\nSource id: " + tu.TransUnitID() + " ";
-                    richTextBox2.Text += "(" + foundTerms.Count + "): ";
                     var note = "";
-                    foreach (var term in foundTerms)
+                    foreach (var term in foundTermsMedDRA)
                     {
                         note += term.Key + " = " + term.Value[0] + "\n";
-                        //Console.WriteLine("Term: " + term.Key);
                         var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
                         if (!checks.Contains(term.Key))
                         {
                             checks.Add(term.Key);
                             extractedTerms.Add(extractedTerm);
-                            richTextBox2.Text += "| " + term.Key + " |";
                         }
                     }
-                    tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", "MedDRA"), note));
-                    newCounter += foundTerms.Count;
+                    //tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", "MedDRA"), note));
+                    //newCounter += foundTermsMedDRA.Count;
+                }
+                if (foundTermsEDQM.Count > 0)
+                {
+                    var note = "";
+                    foreach (var term in foundTermsEDQM)
+                    {
+                        note += term.Key + " = " + term.Value[0] + "\n";
+                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
+                        if (!checks.Contains(term.Key))
+                        {
+                            checks.Add(term.Key);
+                            extractedTerms.Add(extractedTerm);
+                        }
+                    }
+                    //tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", "EDQM"), note));
+                    //newCounter += foundTermsMedDRA.Count;
                 }
             }
-            //Console.WriteLine("Found terms: " + newCounter);
-            //xlz.Save2();
-            richTextBox2.Text += "\n" + extractedTerms.Count + "\n";
             var uniqueSortedTerms = extractedTerms.OrderBy(term => term.sLang).ToList();
-            richTextBox2.Text += "\n" + uniqueSortedTerms.Count + "\n";
-            SaveSimpleGlossaryTermsToTsv(uniqueSortedTerms, inputFile + "_" + slang + "_" + lang + ".txt", slang, lang);
-            richTextBox2.Text += "\n" + String.Format("Extracted Terms saved to glossary: <file://{0}> ", inputFile + "_" + slang + "_" + lang + ".txt") + "\n";
+            return uniqueSortedTerms;
         }
         private void richTextBox2_OnLinkClicked(object sender, LinkClickedEventArgs e)
         {
@@ -482,7 +624,7 @@ namespace AGlossaryExtractor
             }
         }
 
-        public void SaveLangGlossaryTermsToTsv(List<GlossaryTerm> glossaryTerms, string filePath, string sLang, string tLang)
+        public bool SaveLangGlossaryTermsToTsv(List<GlossaryTerm> glossaryTerms, string filePath, string sLang, string tLang)
         {
             var properties = typeof(GlossaryTerm).GetProperties();
             List<string> propertyNames = new List<string>();
@@ -495,12 +637,12 @@ namespace AGlossaryExtractor
             if (!propertyNames.Contains(sLang.Replace("-", "_")))
             {
                 richTextBox2.Text += "No terms available for this source language " + sLang + "\n";
-                return;
+                return false;
             }
             if (!propertyNames.Contains(tLang.Replace("-", "_")))
             {
                 richTextBox2.Text += "No terms available for this target language " + tLang + "\n";
-                return;
+                return false;
             }
             // Use StreamWriter with UTF-8 encoding and BOM
             using (StreamWriter writer = new StreamWriter(filePath, false, new UTF8Encoding(true)))
@@ -575,6 +717,7 @@ namespace AGlossaryExtractor
                 //    if (tLang == "bs-ba") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.bs_ba}");
                 //}
             }
+            return true;
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -587,8 +730,19 @@ namespace AGlossaryExtractor
             }
             var slang = comboBox2.Text;
             var lang = comboBox1.Text;
+            var MedDRAnote = "MedDRA";
+            var EDQMnote = "EDQM";
+            if (textBox4.Text != "") MedDRAnote = textBox4.Text;
+            if (textBox5.Text != "") EDQMnote = textBox5.Text;
             //richTextBox2.Text = lang;
-            var terms = extractLangGlossaryTerms(slang, lang);
+            var sLang1 = slang;
+            if (slang == "en-us") sLang1 = "en-gb"; // only en-gb in MedDRA for English
+            var termsMedDRA = extractLangGlossaryTerms(glossaryTermsMedDRA, sLang1, lang);
+            GlossaryExtractor extractorMedDRA = new GlossaryExtractor(termsMedDRA);
+            var sLang2 = slang;
+            if (slang == "en-gb") sLang2 = "en-us"; // only en-us in EDQM for English
+            var termsEDQM = extractLangGlossaryTerms(glossaryTermsEDQM, sLang2, lang);
+            GlossaryExtractor extractorEDQM = new GlossaryExtractor(termsEDQM);
             var fio = new FileInfo(inputFile);
             var extension = fio.Extension;
             var fname = fio.Name.Substring(0, fio.Name.LastIndexOf(".")); 
@@ -596,25 +750,22 @@ namespace AGlossaryExtractor
             var outputFile = Path.Combine(dir, fname + "_withNotes" + extension);
             if(File.Exists(outputFile)) File.Delete(outputFile);
             File.Copy(inputFile, outputFile);
-            var xlz = new Xlz(outputFile);
-            var tus = xlz.TranslatableTransUnits;
-            GlossaryExtractor extractor = new GlossaryExtractor(terms);
             int newCounter = 0;
             var extractedTerms = new List<GlossaryTermScript>();
             var checks = new List<string>();
+            var xlz = new Xlz(outputFile);
+            var tus = xlz.TranslatableTransUnits;
             foreach (var tu in tus)
             {
                 var source = tu.GetSource(false);
-                Dictionary<string, List<string>> foundTerms = extractor.ExtractTermsFromText(source);
-                if (foundTerms.Count > 0)
+                Dictionary<string, List<string>> foundTermsMedDRA = extractorMedDRA.ExtractTermsFromText(source);
+                Dictionary<string, List<string>> foundTermsEDQM = extractorEDQM.ExtractTermsFromText(source);
+                if (foundTermsMedDRA.Count > 0)
                 {
-                    //Console.WriteLine("Source id: " + tu.TransUnitID() + " ---------------");
-                    //Console.WriteLine("Found terms: " + foundTerms.Count);
                     var note = "";
-                    foreach (var term in foundTerms)
+                    foreach (var term in foundTermsMedDRA)
                     {
                         note += term.Key + " = " + term.Value[0] + "\n";
-                        //Console.WriteLine("Term: " + term.Key);
                         var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
                         if (!checks.Contains(term.Key))
                         {
@@ -622,38 +773,101 @@ namespace AGlossaryExtractor
                             extractedTerms.Add(extractedTerm);
                         }
                     }
-                    tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", "MedDRA"), note));
-                    newCounter += foundTerms.Count;
+                    tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", MedDRAnote), note));
+                    newCounter += foundTermsMedDRA.Count;
+                }
+                if (foundTermsEDQM.Count > 0)
+                {
+                    var note = "";
+                    foreach (var term in foundTermsEDQM)
+                    {
+                        note += term.Key + " = " + term.Value[0] + "\n";
+                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
+                        if (!checks.Contains(term.Key))
+                        {
+                            checks.Add(term.Key);
+                            extractedTerms.Add(extractedTerm);
+                        }
+                    }
+                    tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", EDQMnote), note));
+                    newCounter += foundTermsEDQM.Count;
                 }
             }
-            //Console.WriteLine("Found terms: " + newCounter);
             xlz.Save2();
-            //var uniqueSortedTerms = extractedTerms.OrderBy(term => term.en_gb).ToList();
-            //SaveSimpleGlossaryTermsToTsv(uniqueSortedTerms, inputFile + "_" + lang + ".txt", lang);
             richTextBox2.Text += String.Format("Extracted Terms added to xlz file: <file://{0}> ", outputFile) + "\n";
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            var slang = comboBox2.Text;
-            var lang = comboBox1.Text;
+            string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            var scriptBaseFile = Path.Combine(path, @"script_base.xml");
+            if(!File.Exists(scriptBaseFile))
+            {
+                richTextBox2.Text += scriptBaseFile + "\n";
+                richTextBox2.Text += @"Script base file (script_base.xml) should be available in the root of the tool." + "\n";
+                return;
+            }
+            path += @"\scripts";
+            //var lang = comboBox1.Text;
             var inputFile = textBox1.Text;
-            if (!File.Exists(inputFile))
-            { return; }
-            var sourceFilePath = inputFile + "_" + slang + "_" + lang + ".txt";
-            SaveLangGlossaryTermsToTsv(glossaryTerms, sourceFilePath, slang, lang);
-            var fio = new FileInfo(sourceFilePath);
-            var fname = fio.Name;
-            var fpath = fio.DirectoryName;
-            var zipFilePath = inputFile + "_" + slang + "_" + lang + ".txt.zip";
-            var zipEntryName = fname;
-            CreateZipFromTextFile(sourceFilePath, zipFilePath, zipEntryName);
-            Byte[] bytes = File.ReadAllBytes(zipFilePath);
-            string base64StringNew = Convert.ToBase64String(bytes, 0, bytes.Length);
-            File.WriteAllText(zipFilePath + "_base64.txt", base64StringNew);
-            richTextBox2.Text += String.Format("Bse64 string file for scripts created: <file://{0}> ", zipFilePath + "_base64.txt") + "\n";
-            //File.Delete(sourceFilePath);
-            //File.Delete(zipFilePath);
+            var inputFile1 = textBox3.Text;
+
+            if (!File.Exists(inputFile) || !File.Exists(inputFile1))
+            {
+                richTextBox2.Text += "Load the latest MedDRA and EDQM glossaries on TXT tab of the tool first.\n";
+                return; 
+            }
+            var slang = comboBox2.Text;
+            //var langs1 = new List<string>() { "de-de" };
+            foreach (var lang in langs)
+            {
+                var sourceFilePath = inputFile + "_" + slang + "_" + lang + ".txt";
+                if(!SaveLangGlossaryTermsToTsv(glossaryTermsMedDRA, sourceFilePath, slang, lang))
+                    return;
+                var fio = new FileInfo(sourceFilePath);
+                var fname = fio.Name;
+                var zipFilePath = sourceFilePath + ".zip";
+                var zipEntryName = fname;
+                CreateZipFromTextFile(sourceFilePath, zipFilePath, zipEntryName);
+                var bytes = File.ReadAllBytes(zipFilePath);
+                string base64StringNewMedDRA = Convert.ToBase64String(bytes, 0, bytes.Length);
+
+                var sourceFilePath1 = inputFile1 + "_copy.txt";
+                File.Copy(inputFile1, sourceFilePath1);
+                var fio1 = new FileInfo(sourceFilePath1);
+                var fname1 = fio1.Name;
+                var zipFilePath1 = sourceFilePath + ".zip";
+                var zipEntryName1 = fname;
+                CreateZipFromTextFile(sourceFilePath1, zipFilePath1, zipEntryName1);
+                var bytes1 = File.ReadAllBytes(zipFilePath1);
+                string base64StringNewEDQM = Convert.ToBase64String(bytes1, 0, bytes1.Length);
+
+                File.Delete(sourceFilePath);
+                File.Delete(zipFilePath);
+                File.Delete(sourceFilePath1);
+                File.Delete(zipFilePath1);
+
+                var sContent = File.ReadAllText(scriptBaseFile);
+
+                var pattern = new Regex(@"(if\(lang \!= "").*?(""\))");
+                sContent = pattern.Replace(sContent, "$1" + lang + "$2");
+                pattern = new Regex(@"(base64StringEncodedMedDRA = @"").*?("";)");
+                sContent = pattern.Replace(sContent, "$1" + base64StringNewMedDRA + "$2");
+                pattern = new Regex(@"(base64StringEncodedEDQM = @"").*?("";)");
+                sContent = pattern.Replace(sContent, "$1" + base64StringNewEDQM + "$2");
+
+                DateTime currentDate = DateTime.Now;
+                File.WriteAllText(path + @"\xlz_reports_" + slang + "_" + lang + "_" + currentDate.ToString("yyyy-MM-dd") + ".xml", sContent);
+
+                pattern = new Regex(@"//xlz\.Save2\(\);");
+                sContent = pattern.Replace(sContent, "xlz.Save2();");
+                pattern = new Regex(@"(\n\s*?)(SaveSimpleGlossaryTermsToTsv)");
+                sContent = pattern.Replace(sContent, "$1" + @"//" + "$2");
+                File.WriteAllText(path + @"\xlz_notes_" + slang + "_" + lang + "_" + currentDate.ToString("yyyy-MM-dd") + ".xml", sContent);
+                //File.WriteAllText(zipFilePath + "_base64.txt", base64StringNew);
+                //richTextBox2.Text += String.Format("Bse64 string file for scripts created: <file://{0}> ", zipFilePath + "_base64.txt") + "\n";
+            }
+            richTextBox2.Text += "All generated script save in " + path;
         }
         static void CreateZipFromTextFile(string sourceFilePath, string zipFilePath, string zipEntryName)
         {
@@ -686,10 +900,6 @@ namespace AGlossaryExtractor
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
     public class GlossaryTerm
     {
@@ -790,6 +1000,21 @@ namespace AGlossaryExtractor
             node.Level = level;
         }
 
+        // Search for a term in the Trie
+        public bool Search(List<string> words)
+        {
+            TrieNode node = root;
+            foreach (var word in words)
+            {
+                if (!node.Children.ContainsKey(word))
+                {
+                    return false;
+                }
+                node = node.Children[word];
+            }
+            return node.IsEndOfTerm;
+        }
+    
         public TrieNode GetRoot()
         {
             return root;
@@ -807,34 +1032,114 @@ namespace AGlossaryExtractor
             trie = new Trie();
             foreach (var term in terms)
             {
-                trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
+                if(term.sLang!=null)
+                    trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
             }
             //Console.WriteLine(content);
         }
         public Dictionary<string, List<string>> ExtractTermsFromText(string text)
         {
             Dictionary<string, List<string>> foundTerms = new Dictionary<string, List<string>>();
+            text = AddPluralsAndEdForms(text);
             string[] paragraphs = text.Split(new[] { "\r\n\r\n", "\n\n", ".", ",", "?", "!" }, StringSplitOptions.None);
 
             foreach (string paragraph in paragraphs)
             {
                 SearchTermsInParagraph(paragraph, foundTerms);
             }
-
-            return foundTerms;
+            return RemoveSingleTermsIfLongerVersionsExist(foundTerms);
         }
-        public static string[] AddPluralsAndEdForms(string[] words)
+        public static Dictionary<string, List<string>> RemoveSingleTermsIfLongerVersionsExist(Dictionary<string, List<string>> terms)
+        {
+            // Sort terms by length descending so we handle longer terms first
+            var sortedTerms = terms.Keys.OrderByDescending(k => k.Length).ToList();
+
+            var filteredTerms = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase);
+
+            foreach (var term in sortedTerms)
+            {
+                // Check if term should be added (i.e., it's not contained within an already added longer term)
+                bool isSubTerm = false;
+                foreach (var filteredTerm in filteredTerms.Keys)
+                {
+                    if (filteredTerm.IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        isSubTerm = true;
+                        break;
+                    }
+                }
+
+                if (!isSubTerm)
+                {
+                    filteredTerms[term] = terms[term];
+                }
+            }
+
+            return filteredTerms;
+        }
+        public static Dictionary<string, List<string>> RemoveTermsContainingOtherTerms(Dictionary<string, List<string>> terms)
+        {
+            // Make a copy of the dictionary to avoid modifying the dictionary while iterating
+            var filteredTerms = new Dictionary<string, List<string>>(terms);
+
+            foreach (var term in terms.Keys)
+            {
+                foreach (var otherTerm in terms.Keys)
+                {
+                    // If the term contains another term and they are not the same term
+                    if (!term.Equals(otherTerm, StringComparison.OrdinalIgnoreCase) && term.IndexOf(otherTerm, StringComparison.OrdinalIgnoreCase) >= 0)
+                    //if (term != otherTerm && term.Contains(otherTerm))
+                    {
+                        filteredTerms.Remove(term);
+                        break; // No need to check further once the term is removed
+                    }
+                }
+            }
+
+            return filteredTerms;
+        }
+        public static string AddPluralsAndEdForms(string text)
+        {
+            var words = text.Split(new[] { ' ', '\t', '\n', '\r', '/' }, StringSplitOptions.RemoveEmptyEntries);
+            List<string> newwords = new List<string>();
+            foreach (var word in words)
+            {
+                newwords.Add(word);
+            }
+            newwords.Add(".");
+            foreach (var word in words)
+            {
+                if (word.EndsWith("s")) newwords.Add(word.Substring(0, word.Length - 1));
+                else newwords.Add(word);
+            }
+            newwords.Add(".");
+            foreach (var word in words)
+            {
+                if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 1));
+                else newwords.Add(word);
+            }
+            newwords.Add(".");
+            foreach (var word in words)
+            {
+                if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 2));
+                else newwords.Add(word);
+            }
+            return string.Join(" ", newwords.ToList());
+        }
+        public static string[] AddPluralsAndEdForms1(string[] words)
         {
             List<string> newwords = new List<string>();
             foreach (var word in words)
             {
                 newwords.Add(word);
             }
+            newwords.Add(".");
             foreach (var word in words)
             {
                 if (word.EndsWith("s")) newwords.Add(word.Substring(0, word.Length - 1));
                 else newwords.Add(word);
             }
+            newwords.Add(".");
             foreach (var word in words)
             {
                 if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 1));
@@ -843,11 +1148,11 @@ namespace AGlossaryExtractor
             return newwords.ToArray();
         }
 
-        private void SearchTermsInParagraph(string paragraph, Dictionary<string, List<string>> foundTerms)
+        private void SearchTermsInParagraph1(string paragraph, Dictionary<string, List<string>> foundTerms)
         {
             // Split the paragraph into words
             var words = paragraph.Split(new[] { ' ', '\t', '\n', '\r', '/' }, StringSplitOptions.RemoveEmptyEntries);
-            words = AddPluralsAndEdForms(words);
+            //words = AddPluralsAndEdForms1(words);
             TrieNode root = trie.GetRoot();
             for (int i = 0; i < words.Length; i++)
             {
@@ -856,8 +1161,9 @@ namespace AGlossaryExtractor
                 while (j < words.Length)
                 {
                     string cleanedWord = words[j].ToLower();
-                    cleanedWord = cleanedWord.TrimEnd('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '”');
+                    cleanedWord = cleanedWord.TrimEnd('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '”', 's');
                     cleanedWord = cleanedWord.TrimStart('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '“');
+
                     if (!node.Children.ContainsKey(cleanedWord))
                     {
                         break;
@@ -872,6 +1178,47 @@ namespace AGlossaryExtractor
                         }
                         foundTerms[node.OrigTerm].Add(node.Translation);
                         foundTerms[node.OrigTerm].Add(node.Level);
+                    }
+                    j++;
+                }
+            }
+        }
+        private void SearchTermsInParagraph(string paragraph, Dictionary<string, List<string>> foundTerms)
+        {
+            // Split the paragraph into words
+            var words = paragraph.Split(new[] { ' ', '\t', '\n', '\r', '/' }, StringSplitOptions.RemoveEmptyEntries);
+            //words = AddPluralsAndEdForms1(words);
+            TrieNode root = trie.GetRoot();
+            for (int i = 0; i < words.Length; i++)
+            {
+                var potentialTerm = new List<string>();
+                TrieNode node = root;
+                int j = i;
+                while (j < words.Length)
+                {
+                    string cleanedWord = words[j].ToLower();
+                    cleanedWord = cleanedWord.TrimEnd('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '”');
+                    cleanedWord = cleanedWord.TrimStart('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '“');
+                    if (node.Children.ContainsKey(cleanedWord))
+                    {
+                        node = node.Children[cleanedWord];
+                        potentialTerm.Add(cleanedWord);
+                        if (node.IsEndOfTerm)
+                        {
+                            if (trie.Search(potentialTerm))
+                            {
+                                if (!foundTerms.ContainsKey(node.OrigTerm))
+                                {
+                                    foundTerms[node.OrigTerm] = new List<string>();
+                                }
+                                foundTerms[node.OrigTerm].Add(node.Translation);
+                                foundTerms[node.OrigTerm].Add(node.Level);
+                            }
+                        }
+                    }
+                    else 
+                    {
+                        break;
                     }
                     j++;
                 }

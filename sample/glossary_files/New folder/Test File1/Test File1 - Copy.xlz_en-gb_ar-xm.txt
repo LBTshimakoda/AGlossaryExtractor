@@ -1,0 +1,1 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	ar-xm	POS

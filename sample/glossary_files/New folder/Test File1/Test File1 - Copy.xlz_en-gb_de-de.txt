@@ -1,0 +1,10 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	de-de	POS
+	TRUE	FALSE	FALSE	block	Stein	noun
+	TRUE	FALSE	FALSE	drop	Tropfen	noun
+	TRUE	FALSE	FALSE	Implant	Implantat	noun
+	TRUE	FALSE	FALSE	Implantation	zur Implantation	noun
+	TRUE	FALSE	FALSE	Injection	Injektion	noun
+	TRUE	FALSE	FALSE	System	System	noun
+	TRUE	FALSE	FALSE	tube	Tube	noun
+	TRUE	FALSE	FALSE	valve	Ventil	noun
+	TRUE	FALSE	FALSE	Vessel	Behältnis	noun

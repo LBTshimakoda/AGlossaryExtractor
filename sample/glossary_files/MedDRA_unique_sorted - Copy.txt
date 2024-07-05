@@ -1,2 +1,0 @@
-Level	en-gb	ar-xm	cs-cz	de-de	el-gr	es-es	et-ee	fi-fi	fr-fr	hu-hu	it-it	ja-jp	ko-kr	lv-lv	nl-nl	pl-pl	pt-br	pt-pt	ru-ru	sv-se	zh-cn
-Level: LLT	Pins and needles	الشعور بنغزات وتنميل	Pocit píchání špendlíky a jehlami	Nadelstiche	Αίσθημα νυγμών	Agujetas	Torkimistunne	Kihelmöinti	Sensation de picotements cutanés	Bizsergés	Formicolamento	チクチクする感じ	따끔거리고 저린 느낌	Tirpšana	spelden- en naaldenprikgevoel	Uczucie cierpnięcia	Formigamento e agulhadas	Formigueiro	Ощущение покалывания	Stickningar	麻痛感

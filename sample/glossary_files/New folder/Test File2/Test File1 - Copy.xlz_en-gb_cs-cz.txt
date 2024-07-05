@@ -1,0 +1,92 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	cs-cz	POS
+Level: LLT/PT	TRUE	FALSE	FALSE	Accident	Úraz	noun
+Level: LLT	TRUE	FALSE	FALSE	Ache	Bolest	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Adverse event	Nežádoucí příhoda	noun
+Level: LLT	TRUE	FALSE	FALSE	Allergic reaction	Alergická reakce	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia	Anestezie	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bacterial infection	Bakteriální infekce	noun
+Level: LLT	TRUE	FALSE	FALSE	Bed rest	Klid na lůžku	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding	Krvácení	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bleeding time	Doba krvácivosti	noun
+Level: LLT	TRUE	FALSE	FALSE	Blind	Nevidomý	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood pressure	Krevní tlak	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood test	Krevní test	noun
+Level: LLT	TRUE	FALSE	FALSE	Brain damage	Poškození mozku	noun
+Level: LLT	TRUE	FALSE	FALSE	Bruise	Zhmožděnina	noun
+Level: LLT	TRUE	FALSE	FALSE	Bruising	Zhmoždění	noun
+Level: LLT	TRUE	FALSE	FALSE	Cardiac catheterization	Srdeční katetrizace	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest pain	Bolest na hrudi	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest X-ray	Rentgenové vyšetření hrudníku	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chills	Třesavka	noun
+Level: LLT	TRUE	FALSE	FALSE	Confusion	Zmatenost	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	COVID-19	COVID-19	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Death	Smrt	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Delivery	Porod	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dental cleaning	Čištění zubů	noun
+Level: LLT	TRUE	FALSE	FALSE	Device embolization	Embolizace zařízení	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device malfunction	Porucha funkce zdravotnického prostředku	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Discharge	Výtok	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Discomfort	Pocit nepohody	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dizziness	Závrať	noun
+Level: LLT	TRUE	FALSE	FALSE	Drowsiness	Ospalost	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dry mouth	Sucho v ústech	noun
+Level: LLT	TRUE	FALSE	FALSE	ECG	EKG	noun
+Level: LLT	TRUE	FALSE	FALSE	Echocardiography	Echokardiografie	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Ejection fraction	Ejekční frakce	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Electrocardiogram	Elektrokardiogram	noun
+Level: LLT	TRUE	FALSE	FALSE	Embolus	Embolus	noun
+Level: LLT	TRUE	FALSE	FALSE	Fainting	Upadnout do bezvědomí	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Fatigue	Únava	noun
+Level: LLT	TRUE	FALSE	FALSE	General anesthesia	Celková anestezie	noun
+Level: LLT	TRUE	FALSE	FALSE	Head pain	Bolest hlavy	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Headache	Bolest hlavy	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart attack	Srdeční záchvat	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart failure	Selhání srdce	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with preserved ejection fraction	Srdeční selhání se zachovanou ejekční frakcí	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with reduced ejection fraction	Srdeční selhání se sníženou ejekční frakcí	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemoglobin	Hemoglobin	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage	Krvácení	noun
+Level: LLT	TRUE	FALSE	FALSE	Hoarseness	Chrapot	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Hypertension	Hypertenze	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Illness	Onemocnění	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infant	Dítě	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infection	Infekce	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Injection	Injekce	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Injury	Poranění	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Interventional procedure	Intervenční zákrok	noun
+Level: LLT	TRUE	FALSE	FALSE	Invasive procedure	Invazivní postup	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Investigation	Neupřesněné vyšetření	noun
+Level: LLT	TRUE	FALSE	FALSE	Itching	Svědění	noun
+Level: LLT	TRUE	FALSE	FALSE	Lead	Olovo	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Medical procedure	Léčebný výkon	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Migraine	Migréna	noun
+Level: LLT	TRUE	FALSE	FALSE	Muscle ache	Bolesti svalu	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Nausea	Nevolnost	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Obstruction	Obstrukce	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Office visit	Návštěva ordinace	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Oxygen saturation	Saturace kyslíkem	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pain	Bolest	noun
+Level: LLT	TRUE	FALSE	FALSE	Paresthesia	Parestezie	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Perforation	Perforace	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Physical examination	Fyzikální vyšetření	noun
+Level: LLT	TRUE	FALSE	FALSE	Pins and needles	Pocit píchání špendlíky a jehlami	noun
+Level: LLT	TRUE	FALSE	FALSE	Pregnant	Těhotná	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pulmonary hypertension	Plicní hypertenze	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash	Vyrážka	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Regurgitation	Regurgitace	noun
+Level: LLT	TRUE	FALSE	FALSE	Scarring	Zjizvení	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Sedation	Sedace	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Seizure	Záchvat	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Sepsis	Sepse	noun
+Level: LLT	TRUE	FALSE	FALSE	Shortness of breath	Dýchavičnost	noun
+Level: LLT	TRUE	FALSE	FALSE	Sore throat	Bolest v krku	noun
+Level: LLT	TRUE	FALSE	FALSE	Stroke	Mozková příhoda	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Surgery	Operace	noun
+Level: LLT	TRUE	FALSE	FALSE	Surgical intervention	Chirurgická intervence	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Swelling	Zduření	noun
+Level: LLT	TRUE	FALSE	FALSE	Thrombus	Trombus	noun
+Level: LLT	TRUE	FALSE	FALSE	TIA	TIA	noun
+Level: LLT	TRUE	FALSE	FALSE	Tingling	Brnění	noun
+Level: LLT	TRUE	FALSE	FALSE	Transesophageal echocardiography	Transezofageální echokardiografie	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vomiting	Zvracení	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	X-ray	RTG	noun
