@@ -3,21 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using Microsoft.VisualBasic.Devices;
 using Microsoft.VisualBasic.FileIO;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AGlossaryExtractor
 {
@@ -58,6 +53,7 @@ namespace AGlossaryExtractor
             comboBox1.DataSource = langs;
             comboBox2.SelectedIndex = 0;
             comboBox1.SelectedIndex = 2;
+            this.Text = "TSV Glossary Extractor (July 7th, 2024)";
         }
         void textBox1_DragDrop(object sender, DragEventArgs e)
         {
@@ -65,14 +61,19 @@ namespace AGlossaryExtractor
             {
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-                if (Directory.Exists(files[0]))
-                {
-                    this.textBox1.Text = files[0];
-                }
+                //if (Directory.Exists(files[0]))
+                //{
+                  //  this.textBox1.Text = files[0];
+                //}
 
                 if (files[0].EndsWith(".txt"))
                 {
                     this.textBox1.Text = files[0];
+                    var fname = (new FileInfo(files[0])).Name;
+                    var termsNote = fname.Substring(0, 6);
+                    if (Regex.IsMatch(fname, "_"))
+                        termsNote = fname.Substring(0, fname.IndexOf("_"));
+                    this.textBox4.Text = termsNote;
                 }
             }
         }
@@ -96,10 +97,10 @@ namespace AGlossaryExtractor
             {
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-                if (Directory.Exists(files[0]))
-                {
-                    this.textBox2.Text = files[0];
-                }
+                //if (Directory.Exists(files[0]))
+                //{
+                  //  this.textBox2.Text = files[0];
+                //}
 
                 if (files[0].EndsWith(".xlz"))
                 {
@@ -127,14 +128,19 @@ namespace AGlossaryExtractor
             {
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-                if (Directory.Exists(files[0]))
-                {
-                    this.textBox3.Text = files[0];
-                }
+                //if (Directory.Exists(files[0]))
+                //{
+                  //  this.textBox3.Text = files[0];
+                //}
 
                 if (files[0].EndsWith(".txt"))
                 {
                     this.textBox3.Text = files[0];
+                    var fname = (new FileInfo(files[0])).Name;
+                    var termsNote = fname.Substring(0, 6);
+                    if (Regex.IsMatch(fname, "_"))
+                        termsNote = fname.Substring(0, fname.IndexOf("_"));
+                    this.textBox5.Text = termsNote;
                 }
             }
         }
@@ -155,19 +161,19 @@ namespace AGlossaryExtractor
         public static List<GlossaryTerm> glossaryTerms = new List<GlossaryTerm>();
         public static List<GlossaryTerm> glossaryTermsMedDRA = new List<GlossaryTerm>();
         public static List<GlossaryTerm> glossaryTermsEDQM = new List<GlossaryTerm>();
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             var inputFile = textBox1.Text;
             var inputFile1 = textBox3.Text;
             if (File.Exists(inputFile))
             {
                 var text = File.ReadAllText(inputFile);
-                glossaryTermsMedDRA = getTermsFromTSV(text);
+                glossaryTermsMedDRA = await getTermsFromTSV(text);
                 if (glossaryTermsMedDRA != null)
                 {
                     richTextBox1.Text += "MedDRA terms loaded: " + glossaryTermsMedDRA.Count + "\n";
                     var fname = (new FileInfo(inputFile)).Name;
-                    var termsNote = "Glossary 1";
+                    var termsNote = fname.Substring(0,6);
                     if (Regex.IsMatch(fname, "_"))
                         termsNote = fname.Substring(0, fname.IndexOf("_"));
                     textBox4.Text = termsNote;
@@ -176,12 +182,12 @@ namespace AGlossaryExtractor
             if (File.Exists(inputFile1))
             {
                 var text1 = File.ReadAllText(inputFile1);
-                glossaryTermsEDQM = getTermsFromTSV(text1);
+                glossaryTermsEDQM = await getTermsFromTSV(text1);
                 if (glossaryTermsEDQM != null)
                 {
                     richTextBox1.Text += "EDQM terms loaded: " + glossaryTermsEDQM.Count + "\n";
                     var fname1 = (new FileInfo(inputFile1)).Name;
-                    var termsNote1 = "Glossary 1";
+                    var termsNote1 = fname1.Substring(0, 6);
                     if (Regex.IsMatch(fname1, "_"))
                         termsNote1 = fname1.Substring(0, fname1.IndexOf("_"));
                     textBox5.Text = termsNote1;
@@ -241,7 +247,7 @@ namespace AGlossaryExtractor
                 bindingSource.Filter = filterExpression;
             }
         }
-        public List<GlossaryTerm> getTermsFromTSV(string tsvContent)
+        public async Task<List<GlossaryTerm>> getTermsFromTSV(string tsvContent)
         {
             string[] lines = tsvContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             int lineCount = lines.Length;
@@ -266,6 +272,8 @@ namespace AGlossaryExtractor
                         j++;
                         currentLine++;
                         progressBar1.Value = currentLine;
+                        label9.Text = $"{(currentLine * 100) / lineCount}%";
+                        Application.DoEvents();
                         int i = 1; // column number
                                    //string s2 = "";
                         string[] fields = parser.ReadFields();
@@ -376,6 +384,7 @@ namespace AGlossaryExtractor
                     }
                 }
             }
+            //label9.Text = "Glossary loaded";
             return terms;
         }
 
@@ -797,7 +806,7 @@ namespace AGlossaryExtractor
             richTextBox2.Text += String.Format("Extracted Terms added to xlz file: <file://{0}> ", outputFile) + "\n";
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private async void button5_Click(object sender, EventArgs e)
         {
             string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             var scriptBaseFile = Path.Combine(path, @"script_base.xml");
@@ -808,6 +817,7 @@ namespace AGlossaryExtractor
                 return;
             }
             path += @"\scripts";
+            if(!Directory.Exists(path)) Directory.CreateDirectory(path); 
             //var lang = comboBox1.Text;
             var inputFile = textBox1.Text;
             var inputFile1 = textBox3.Text;
@@ -862,7 +872,7 @@ namespace AGlossaryExtractor
                 sContent = pattern.Replace(sContent, "$1" + base64StringNewEDQM + "$2");
 
                 DateTime currentDate = DateTime.Now;
-                File.WriteAllText(path + @"\xlz_reports_" + slang + "_" + lang + "_" + currentDate.ToString("yyyy-MM-dd") + ".xml", sContent);
+                File.WriteAllText(path + @"\xlz_exports_" + slang + "_" + lang + "_" + currentDate.ToString("yyyy-MM-dd") + ".xml", sContent);
                 //richTextBox2.Text += String.Format("Script file created: <file://{0}> ", path + @"\xlz_reports_" + slang + "_" + lang + "_" + currentDate.ToString("yyyy-MM-dd") + ".xml") + "\n";
                 richTextBox2.Text += ".";
 
@@ -876,6 +886,8 @@ namespace AGlossaryExtractor
                 richTextBox2.Text += ".";
                 currentLang++;
                 progressBar2.Value = currentLang;
+                label10.Text = $"{(currentLang * 100) / langs.Count}%";
+                Application.DoEvents();
             }
             richTextBox2.Text += "\nAll generated scripts saved in" + String.Format(": <file://{0}> ", path) + "\n";
         }

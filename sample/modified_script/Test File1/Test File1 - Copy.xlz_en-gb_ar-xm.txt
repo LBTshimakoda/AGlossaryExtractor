@@ -3,8 +3,10 @@ Level: LLT/PT	TRUE	FALSE	FALSE	Accident	حادث	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Adverse event	حَدَث غَيْر مَرْغُوب	noun
 Level: LLT	TRUE	FALSE	FALSE	Allergic reaction	رد فعل تحسسي	noun
 Level: LLT	TRUE	FALSE	FALSE	Anesthesia	تَخْدير	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bacterial infection	عدوى جرثومية	noun
 Level: LLT	TRUE	FALSE	FALSE	Bed rest	الراحة في الفراش	noun
 Level: LLT	TRUE	FALSE	FALSE	Bleeding	نزيف	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bleeding time	وقت النزف	noun
 Level: LLT	TRUE	FALSE	FALSE	Blind	العمى	noun
 Level: LLT	TRUE	FALSE	FALSE	Blood pressure	ضغط الدم	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Blood test	اختبار الدم	noun
@@ -12,6 +14,8 @@ Level: LLT	TRUE	FALSE	FALSE	Brain damage	تلف الدماغ	noun
 Level: LLT	TRUE	FALSE	FALSE	Bruise	كدمة	noun
 Level: LLT	TRUE	FALSE	FALSE	Bruising	كدمة	noun
 Level: LLT	TRUE	FALSE	FALSE	Cardiac catheterization	قسطرة القلب	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest pain	ألم الصَدْر	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest X-ray	الأشعة السينية على الصَدْر	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Chills	القشعريرة	noun
 Level: LLT	TRUE	FALSE	FALSE	Confusion	ارتباك	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	COVID-19	مرض كوفيد 2019 (كورونا)	noun
@@ -26,18 +30,20 @@ Level: LLT	TRUE	FALSE	FALSE	Drowsiness	الخمول	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Dry mouth	جفاف الفَم	noun
 Level: LLT	TRUE	FALSE	FALSE	ECG	تخطيط كهربية القلب ECG	noun
 Level: LLT	TRUE	FALSE	FALSE	Echocardiography	تخطيط صدى القلب	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Ejection fraction	الكسر القذفي	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Electrocardiogram	تخطيط كهربية القلب	noun
 Level: LLT	TRUE	FALSE	FALSE	Embolus	صمة	noun
 Level: LLT	TRUE	FALSE	FALSE	Fainting	الإغماء	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Fatigue	التَّعَب	noun
+Level: LLT	TRUE	FALSE	FALSE	General anesthesia	التخدير العام	noun
+Level: LLT	TRUE	FALSE	FALSE	Head pain	ألم في الرأس	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Headache	صداع	noun
 Level: LLT	TRUE	FALSE	FALSE	Heart attack	نوبة قلبية	noun
 Level: LLT	TRUE	FALSE	FALSE	Heart failure	فشل قلبي	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with preserved ejection fraction	فشل قلبي مع حفظ الكسر القذفيّ	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with reduced ejection fraction	فشل قلبي مع تقليل الكسر القذفيّ	noun
 Level: LLT	TRUE	FALSE	FALSE	Hemoglobin	الهيموغلوبين	noun
 Level: LLT	TRUE	FALSE	FALSE	Hemorrhage	نزيف	noun
 Level: LLT	TRUE	FALSE	FALSE	Hoarseness	بُحَّة	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Hypertension	فرط ضغط الدم	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Illness	المرض	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Infant	رضيع	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Infection	عدوى	noun
@@ -59,6 +65,7 @@ Level: LLT/PT	TRUE	FALSE	FALSE	Perforation	الانثقاب	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Physical examination	الفحص البدني	noun
 Level: LLT	TRUE	FALSE	FALSE	Pins and needles	الشعور بنغزات وتنميل	noun
 Level: LLT	TRUE	FALSE	FALSE	Pregnant	حامل	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pulmonary hypertension	ارتفاع ضَغْطِ الدَّم الرِئَوِيّ	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Rash	طَفْح	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Regurgitation	القَلَس	noun
 Level: LLT	TRUE	FALSE	FALSE	Scarring	تندب	noun
@@ -74,5 +81,5 @@ Level: LLT/PT	TRUE	FALSE	FALSE	Swelling	التَوَرُّم	noun
 Level: LLT	TRUE	FALSE	FALSE	Thrombus	خثرة	noun
 Level: LLT	TRUE	FALSE	FALSE	TIA	نوبة إقفارية عابرة (TIA)	noun
 Level: LLT	TRUE	FALSE	FALSE	Tingling	تنميل	noun
+Level: LLT	TRUE	FALSE	FALSE	Transesophageal echocardiography	تخطيط صدى القلب عبر المريء	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Vomiting	تَقَيُّء	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	X-ray	تصوير بالأشعة السينية	noun
