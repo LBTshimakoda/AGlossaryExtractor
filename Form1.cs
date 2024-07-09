@@ -21,13 +21,13 @@ namespace AGlossaryExtractor
         public static List<string> langs = new List<string>()
         { "en-gb", "en-us", "ar-xm", "cs-cz", "de-de", "el-gr", "es-es", "et-ee", "fi-fi", "fr-fr", "hu-hu", "it-it",
                 "ja-jp", "ko-kr", "lv-lv", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ru-ru", "sv-se", "zh-cn",
-                "bg-bg", "da-dk", "qa", "hr-hr", "is-is", "kk-kz", "lt-lt", "mk-mk", "mt-mt", "nb-no", 
+                "bg-bg", "da-dk", "ga", "hr-hr", "is-is", "kk-kz", "lt-lt", "mk-mk", "mt-mt", "nb-no", 
                 "ro-ro", "sk-sk", "sl-si", "sq-al", "sr-rs", "tr-tr", "uk-ua", "bs-ba"
         };
         public static List<string> slangs = new List<string>()
         { "en-gb", "en-us", "ar-xm", "cs-cz", "de-de", "el-gr", "es-es", "et-ee", "fi-fi", "fr-fr", "hu-hu", "it-it",
                 "ja-jp", "ko-kr", "lv-lv", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ru-ru", "sv-se", "zh-cn",
-                "bg-bg", "da-dk", "qa", "hr-hr", "is-is", "kk-kz", "lt-lt", "mk-mk", "mt-mt", "nb-no",
+                "bg-bg", "da-dk", "ga", "hr-hr", "is-is", "kk-kz", "lt-lt", "mk-mk", "mt-mt", "nb-no",
                 "ro-ro", "sk-sk", "sl-si", "sq-al", "sr-rs", "tr-tr", "uk-ua", "bs-ba"
         };
         private BindingSource bindingSource;
@@ -53,7 +53,7 @@ namespace AGlossaryExtractor
             comboBox1.DataSource = langs;
             comboBox2.SelectedIndex = 0;
             comboBox1.SelectedIndex = 2;
-            this.Text = "TSV Glossary Extractor (July 7th, 2024)";
+            this.Text = "TSV Glossary Extractor (July 9th, 2024)";
         }
         void textBox1_DragDrop(object sender, DragEventArgs e)
         {
@@ -309,7 +309,7 @@ namespace AGlossaryExtractor
                                 if (s == "en-us") term.en_us = s;
                                 if (s == "bg-bg") term.bg_bg = s;
                                 if (s == "da-dk") term.da_dk = s;
-                                if (s == "qa") term.qa = s;
+                                if (s == "qa") term.ga = s;
                                 if (s == "hr-hr") term.hr_hr = s;
                                 if (s == "is-is") term.is_is = s;
                                 if (s == "kk-kz") term.kk_kz = s;
@@ -359,7 +359,7 @@ namespace AGlossaryExtractor
                                 if (langIndex[i] == "en-us") term.en_us = s;
                                 if (langIndex[i] == "bg-bg") term.bg_bg = s;
                                 if (langIndex[i] == "da-dk") term.da_dk = s;
-                                if (langIndex[i] == "qa") term.qa = s;
+                                if (langIndex[i] == "qa") term.ga = s;
                                 if (langIndex[i] == "hr-hr") term.hr_hr = s;
                                 if (langIndex[i] == "is-is") term.is_is = s;
                                 if (langIndex[i] == "kk-kz") term.kk_kz = s;
@@ -922,6 +922,47 @@ namespace AGlossaryExtractor
             }
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var source = textBox2.Text;
+            if (source == "")
+                return;
+            if (glossaryTerms == null || glossaryTerms.Count == 0)
+            {
+                richTextBox2.Text += "Load glossary TXT first.\n";
+                return;
+            }
+            var slang = comboBox2.Text;
+            var lang = comboBox1.Text;
+            var sLang1 = slang;
+            if (slang == "en-us") sLang1 = "en-gb"; // only en-gb in MedDRA for English
+            var termsMedDRA = extractLangGlossaryTerms(glossaryTermsMedDRA, sLang1, lang);
+            GlossaryExtractor extractorMedDRA = new GlossaryExtractor(termsMedDRA);
+            var sLang2 = slang;
+            if (slang == "en-gb") sLang2 = "en-us"; // only en-us in EDQM for English
+            var termsEDQM = extractLangGlossaryTerms(glossaryTermsEDQM, sLang2, lang);
+            GlossaryExtractor extractorEDQM = new GlossaryExtractor(termsEDQM);
+            Dictionary<string, List<string>> foundTermsMedDRA = extractorMedDRA.ExtractTermsFromText(source);
+            Dictionary<string, List<string>> foundTermsEDQM = extractorEDQM.ExtractTermsFromText(source);
+            if (foundTermsMedDRA.Count > 0)
+            {
+                foreach (var term in foundTermsMedDRA)
+                {
+                    richTextBox2.Text += "MedDRA " + term.Key + " = " + term.Value[0] + "\n";
+                }
+            }
+            if (foundTermsEDQM.Count > 0)
+            {
+                foreach (var term in foundTermsEDQM)
+                {
+                    richTextBox2.Text += "EDQM " + term.Key + " = " + term.Value[0] + "\n";
+                }
+            }
+        }
     }
     public class GlossaryTerm
     {
@@ -951,7 +992,7 @@ namespace AGlossaryExtractor
         public string en_us { get; set; }
         public string bg_bg { get; set; }
         public string da_dk { get; set; }
-        public string qa { get; set; }
+        public string ga { get; set; }
         public string hr_hr { get; set; }
         public string is_is { get; set; }
         public string kk_kz { get; set; }
@@ -1062,14 +1103,14 @@ namespace AGlossaryExtractor
         public Dictionary<string, List<string>> ExtractTermsFromText(string text)
         {
             Dictionary<string, List<string>> foundTerms = new Dictionary<string, List<string>>();
-            text = AddPluralsAndEdForms(text);
             string[] paragraphs = text.Split(new[] { "\r\n\r\n", "\n\n", ".", ",", "?", "!" }, StringSplitOptions.None);
 
             foreach (string paragraph in paragraphs)
             {
-                SearchTermsInParagraph(paragraph, foundTerms);
+                var paragraph1 = AddPluralsAndEdForms(paragraph);
+                SearchTermsInParagraph(paragraph1, foundTerms);
             }
-            return RemoveSingleTermsIfLongerVersionsExist(foundTerms);
+            return foundTerms;//RemoveSingleTermsIfLongerVersionsExist(foundTerms)
         }
         public static Dictionary<string, List<string>> RemoveSingleTermsIfLongerVersionsExist(Dictionary<string, List<string>> terms)
         {
@@ -1141,11 +1182,11 @@ namespace AGlossaryExtractor
                 else newwords.Add(word);
             }
             newwords.Add(".");
-            foreach (var word in words)
-            {
-                if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 2));
-                else newwords.Add(word);
-            }
+            //foreach (var word in words)
+            //{
+            //    if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 2));
+            //    else newwords.Add(word);
+            //}
             return string.Join(" ", newwords.ToList());
         }
         public static string[] AddPluralsAndEdForms1(string[] words)
