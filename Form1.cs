@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -53,7 +54,7 @@ namespace AGlossaryExtractor
             comboBox1.DataSource = langs;
             comboBox2.SelectedIndex = 0;
             comboBox1.SelectedIndex = 2;
-            this.Text = "TSV Glossary Extractor (July 9th, 2024)";
+            this.Text = "TSV Glossary Extractor (July 10th, 2024)";
         }
         void textBox1_DragDrop(object sender, DragEventArgs e)
         {
@@ -309,7 +310,7 @@ namespace AGlossaryExtractor
                                 if (s == "en-us") term.en_us = s;
                                 if (s == "bg-bg") term.bg_bg = s;
                                 if (s == "da-dk") term.da_dk = s;
-                                if (s == "qa") term.ga = s;
+                                if (s == "ga") term.ga = s;
                                 if (s == "hr-hr") term.hr_hr = s;
                                 if (s == "is-is") term.is_is = s;
                                 if (s == "kk-kz") term.kk_kz = s;
@@ -359,7 +360,7 @@ namespace AGlossaryExtractor
                                 if (langIndex[i] == "en-us") term.en_us = s;
                                 if (langIndex[i] == "bg-bg") term.bg_bg = s;
                                 if (langIndex[i] == "da-dk") term.da_dk = s;
-                                if (langIndex[i] == "qa") term.ga = s;
+                                if (langIndex[i] == "ga") term.ga = s;
                                 if (langIndex[i] == "hr-hr") term.hr_hr = s;
                                 if (langIndex[i] == "is-is") term.is_is = s;
                                 if (langIndex[i] == "kk-kz") term.kk_kz = s;
@@ -1083,7 +1084,6 @@ namespace AGlossaryExtractor
             return root;
         }
     }
-
     public class GlossaryExtractor
     {
         private Trie trie;
@@ -1098,7 +1098,6 @@ namespace AGlossaryExtractor
                 if(term.sLang!=null)
                     trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
             }
-            //Console.WriteLine(content);
         }
         public Dictionary<string, List<string>> ExtractTermsFromText(string text)
         {
@@ -1110,9 +1109,17 @@ namespace AGlossaryExtractor
                 var paragraph1 = AddPluralsAndEdForms(paragraph);
                 SearchTermsInParagraph(paragraph1, foundTerms);
             }
-            return foundTerms;//RemoveSingleTermsIfLongerVersionsExist(foundTerms)
+            return RemoveSingleTermsIfLongerVersionsExist(foundTerms, text);
         }
-        public static Dictionary<string, List<string>> RemoveSingleTermsIfLongerVersionsExist(Dictionary<string, List<string>> terms)
+        private static bool IsTermSeparatelyInText(string term, string text)
+        {
+            // Use regex to match whole words to avoid partial matches.
+            // This regex pattern ensures that the term is matched as a whole word.
+            //string pattern = $@"\b{Regex.Escape(term)}\b";
+            //var regex = new Regex(pattern, RegexOptions.IgnoreCase);
+            return text.ToLower().Contains(term.ToLower()); //regex.IsMatch(text)
+        }
+        public static Dictionary<string, List<string>> RemoveSingleTermsIfLongerVersionsExist(Dictionary<string, List<string>> terms, string text)
         {
             // Sort terms by length descending so we handle longer terms first
             var sortedTerms = terms.Keys.OrderByDescending(k => k.Length).ToList();
@@ -1125,12 +1132,13 @@ namespace AGlossaryExtractor
                 bool isSubTerm = false;
                 foreach (var filteredTerm in filteredTerms.Keys)
                 {
-                    if (filteredTerm.IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0)
+                    if (filteredTerm.IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0 && !IsTermSeparatelyInText(term, text))
                     {
-                        isSubTerm = true;
-                        break;
+                            isSubTerm = true;
+                            break;
                     }
                 }
+                text = Regex.Replace(text, term, " ", RegexOptions.IgnoreCase);
 
                 if (!isSubTerm)
                 {
@@ -1176,75 +1184,18 @@ namespace AGlossaryExtractor
                 else newwords.Add(word);
             }
             newwords.Add(".");
-            foreach (var word in words)
-            {
-                if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 1));
-                else newwords.Add(word);
-            }
-            newwords.Add(".");
+            //foreach (var word in words)
+            //{
+            //    if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 1));
+            //    else newwords.Add(word);
+            //}
+            //newwords.Add(".");
             //foreach (var word in words)
             //{
             //    if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 2));
             //    else newwords.Add(word);
             //}
             return string.Join(" ", newwords.ToList());
-        }
-        public static string[] AddPluralsAndEdForms1(string[] words)
-        {
-            List<string> newwords = new List<string>();
-            foreach (var word in words)
-            {
-                newwords.Add(word);
-            }
-            newwords.Add(".");
-            foreach (var word in words)
-            {
-                if (word.EndsWith("s")) newwords.Add(word.Substring(0, word.Length - 1));
-                else newwords.Add(word);
-            }
-            newwords.Add(".");
-            foreach (var word in words)
-            {
-                if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 1));
-                else newwords.Add(word);
-            }
-            return newwords.ToArray();
-        }
-
-        private void SearchTermsInParagraph1(string paragraph, Dictionary<string, List<string>> foundTerms)
-        {
-            // Split the paragraph into words
-            var words = paragraph.Split(new[] { ' ', '\t', '\n', '\r', '/' }, StringSplitOptions.RemoveEmptyEntries);
-            //words = AddPluralsAndEdForms1(words);
-            TrieNode root = trie.GetRoot();
-            for (int i = 0; i < words.Length; i++)
-            {
-                TrieNode node = root;
-                int j = i;
-                while (j < words.Length)
-                {
-                    string cleanedWord = words[j].ToLower();
-                    cleanedWord = cleanedWord.TrimEnd('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '”', 's');
-                    cleanedWord = cleanedWord.TrimStart('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '“');
-
-                    if (!node.Children.ContainsKey(cleanedWord))
-                    {
-                        break;
-                    }
-
-                    node = node.Children[cleanedWord];
-                    if (node.IsEndOfTerm)
-                    {
-                        if (!foundTerms.ContainsKey(node.OrigTerm))
-                        {
-                            foundTerms[node.OrigTerm] = new List<string>();
-                        }
-                        foundTerms[node.OrigTerm].Add(node.Translation);
-                        foundTerms[node.OrigTerm].Add(node.Level);
-                    }
-                    j++;
-                }
-            }
         }
         private void SearchTermsInParagraph(string paragraph, Dictionary<string, List<string>> foundTerms)
         {

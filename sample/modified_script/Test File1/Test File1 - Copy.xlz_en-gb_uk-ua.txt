@@ -1,0 +1,4 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	uk-ua	POS
+	TRUE	FALSE	FALSE	Implantation	Імплантація	noun
+	TRUE	FALSE	FALSE	Injection	Ін'єкція	noun
+	TRUE	FALSE	FALSE	tube	Туба	noun

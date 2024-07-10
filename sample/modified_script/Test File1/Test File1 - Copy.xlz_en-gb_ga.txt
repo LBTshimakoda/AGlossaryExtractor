@@ -1,0 +1,10 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	ga	POS
+	TRUE	FALSE	FALSE	block	Bloc	noun
+	TRUE	FALSE	FALSE	drop	Braon	noun
+	TRUE	FALSE	FALSE	Implant	Ionphlandú	noun
+	TRUE	FALSE	FALSE	Implantation	Ionphlandú	noun
+	TRUE	FALSE	FALSE	Injection	Instealladh	noun
+	TRUE	FALSE	FALSE	System	Córas	noun
+	TRUE	FALSE	FALSE	tube	Tiúb	noun
+	TRUE	FALSE	FALSE	valve	Comhla	noun
+	TRUE	FALSE	FALSE	Vessel	Soitheach	noun
