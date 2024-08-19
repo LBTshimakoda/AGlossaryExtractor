@@ -1,0 +1,1219 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	ru-ru	POS
+Level: LLT/PT	TRUE	FALSE	FALSE	Accident	Происшествие или несчастный случай	noun
+Level: LLT	TRUE	FALSE	FALSE	Ache breast	Болезненная молочная железа	noun
+Level: LLT	TRUE	FALSE	FALSE	Ache gum	Боль десен	noun
+Level: LLT	TRUE	FALSE	FALSE	Ache NOS	Болевые ощущения, БДУ	noun
+Level: LLT	TRUE	FALSE	FALSE	Ache stomach	Боль в области желудка	noun
+Level: LLT	TRUE	FALSE	FALSE	Ache wrists	Ноющая боль в запястьях	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Action tremor	Акционный тремор	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Adverse event	Нежелательное явление	noun
+Level: LLT	TRUE	FALSE	FALSE	Allergic reaction	Аллергическая реакция	noun
+Level: LLT	TRUE	FALSE	FALSE	Allergic reaction NOS	Аллергическая реакция, БДУ	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia	Отсутствие чувствительности	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia dolorosa	Анестезия болезненная	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia eye	Анестезия глаза	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia general	Наркоз общий	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia insufficient	Недостаточная анестезия	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia lip	Отсутствие чувствительности губ	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia local	Местное обезболивание	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia mouth	Отсутствие чувствительности рта	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia mumps	Паротит после общей анестезии	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia oral	Пероральная анестезия	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia procedure	Проведение анестезии	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia reversal	Выход из анестезии	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia tongue	Отсутствие чувствительности языка	noun
+Level: LLT	TRUE	FALSE	FALSE	Anti-platelet antibodies	Антитела к тромбоцитам	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Anti-platelet antibody	Антитромбоцитарные антитела	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Arm amputation	Ампутация руки	noun
+Level: LLT	TRUE	FALSE	FALSE	Arm crushing	Травма руки с размозжением тканей	noun
+Level: LLT	TRUE	FALSE	FALSE	Arm deformity	Деформация руки	noun
+Level: LLT	TRUE	FALSE	FALSE	Arm discomfort	Дискомфорт в руке	noun
+Level: LLT	TRUE	FALSE	FALSE	Arm fracture	Перелом кости руки	noun
+Level: LLT	TRUE	FALSE	FALSE	Arm infection	Инфекция в области руки	noun
+Level: LLT	TRUE	FALSE	FALSE	Arm injury	Травма руки	noun
+Level: LLT	TRUE	FALSE	FALSE	Arm operation	Операция на руке	noun
+Level: LLT	TRUE	FALSE	FALSE	Arm paralysis	Паралич руки	noun
+Level: LLT	TRUE	FALSE	FALSE	Arm spasticity	Спастичность руки	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Artery dissection	Расслоение артерии	noun
+Level: LLT	TRUE	FALSE	FALSE	Artery malformation	Мальформация артерии	noun
+Level: LLT	TRUE	FALSE	FALSE	Artery rupture	Разрыв артерий	noun
+Level: LLT	TRUE	FALSE	FALSE	Aspirin asthma	Аспирин-индуцированная астма	noun
+Level: LLT	TRUE	FALSE	FALSE	Attack coronary	Приступ ангинозных болей	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bacterial infection	Бактериальная инфекция	noun
+Level: LLT	TRUE	FALSE	FALSE	Bacterial infection NOS	Бактериальная инфекция, БДУ	noun
+Level: HLT	TRUE	FALSE	FALSE	Bacterial infections congenital	Врожденные бактериальные инфекции	noun
+Level: HLT	TRUE	FALSE	FALSE	Bacterial infections NEC	Бактериальные инфекции, НКДР	noun
+Level: LLT	TRUE	FALSE	FALSE	Bed rest	Постельный режим	noun
+Level: LLT	TRUE	FALSE	FALSE	Birth asphyxia	Асфиксия во время родов	noun
+Level: LLT	TRUE	FALSE	FALSE	Birth control	Контроль рождаемости	noun
+Level: LLT	TRUE	FALSE	FALSE	Birth defects	Врожденные пороки развития	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Birth mark	Родимое пятно	noun
+Level: LLT	TRUE	FALSE	FALSE	Birth multiple	Многоплодные роды	noun
+Level: LLT	TRUE	FALSE	FALSE	Birth postmature	Роды запоздалые	noun
+Level: LLT	TRUE	FALSE	FALSE	Birth premature	Ребенок, родившийся недоношенным	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Birth trauma	Родовая травма	noun
+Level: LLT	TRUE	FALSE	FALSE	Birth twin	Роды двойней	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding	Кровотечение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bleeding anovulatory	Ановуляторное кровотечение	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding breakthrough	Прорывное кровотечение	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding breast	Кровянистые выделения из молочной железы	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding gastrointestinal	Кровотечение гастроинтестинальное	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding genital	Кровотечение, генитальное	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding gingival	Кровотечение из десен	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding intermenstrual	Кровотечение между менструациями	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding intracranial	Кровотечение внутричерепное	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding intraretinal	Кровотечение интраретинальное	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding lips	Губы кровоточат	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding mouth	Кровотечение во рту	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding nose	Кровотечение из носа	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding peripartum	Кровотечение при родах	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding piles	Кровотечение из геморроидальных узлов	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding postoperative	Кровотечение послеоперационное	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding postpartum	Кровотечение после родов	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding prophylaxis	Профилактика кровотечения	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding PU	Кровотечение ПЯ	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding rectal	Кровотечение прямокишечное	noun
+Level: HLT	TRUE	FALSE	FALSE	Bleeding tendencies	Склонности к кровотечениям	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding tendency	Склонность к кровотечениям	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bleeding time	Время кровотечения	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bleeding time abnormal	Отклонение от нормы времени кровотечения	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding time decreased	Укорочение времени кровотечения	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding time increased	Увеличение продолжительности кровотечения	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bleeding time normal	Время кровотечения в норме	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bleeding time prolonged	Увеличение времени кровотечения	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bleeding time shortened	Сокращение времени кровотечения	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding urogenital	Кровотечение из урогенитального тракта	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding vaginal	Влагалищное кровотечение	noun
+Level: LLT	TRUE	FALSE	FALSE	Blind	Полное отсутствие зрения	noun
+	TRUE	FALSE	FALSE	block	Блок	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood 1,25-dihydroxycholecalciferol	Уровень 1,25-дигидроксихолекальциферола в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood 25-hydroxycholecalciferol	Уровень 25-гидроксихолекальциферола в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood ACTH	Уровень АКТГ в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood albumin	Уровень альбумина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood alcohol	Концентрация алкоголя в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood aldosterone	Уровень альдостерона в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood aluminium	Концентрация алюминия в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood aluminum	Концентрация алюминия в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood amphetamines	Концентрация амфетамина в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood amylase	Уровень амилазы в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood androstenedione	Уровень андростендиона в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood antimony	Концентрация сурьмы в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood barbiturates	Концентрация барбитуратов в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood basophils	Базофилы крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood beryllium	Концентрация бериллия в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood beta-D-glucan	Уровень бета-D-глюкана в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood bicarbonate	Бикарбонат крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood bilirubin	Уровень билирубина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood blister	Кровяной пузырь	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood bromide	Концентрация бромидов в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood cadmium	Концентрация кадмия в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood caffeine	Концентрация кофеина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood calcitonin	Уровень кальцитонина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood calcium	Кальций крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood cannabinoids	Концентрация каннабиноидов в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood catecholamines	Уровень катехоламинов в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood chloride	Хлориды крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood cholesterol	Уровень холестерина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood cholinesterase	Уровень холинэстеразы в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood chromium	Концентрация хрома в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood copper	Медь крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood corticosterone	Уровень кортикостерона в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood corticotrophin	Уровень кортикотропина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood cortisol	Уровень кортизола в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood count	Форменные элементы крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood creatine	Креатин крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood creatinine	Креатинин крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood culture	Посев крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood cyanide	Цианиды крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood disorder	Нарушение со стороны крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood donation	Донорство крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood donor	Донор крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood draw	Взятие крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood dyscrasia	Дискразия крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood elastase	Эластаза в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood electrolytes	Электролиты крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood eosinophils	Эозинофилы крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood erythropoietin	Уровень эритропоэтина в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood estradiol	Уровень эстрадиола в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood estrogen	Определение уровня эстрогена в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood estrone	Эстрон крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood ethanol	Концентрация этанола в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood fibrinogen	Фибриноген крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood folate	Уровень фолатов в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood galactose	Уровень галактозы в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood gases	Газы крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood gastrin	Уровень гастрина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood glucagon	Уровень глюкагона в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood glucose	Уровень глюкозы в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood glycoalbumin	Уровень гликоальбумина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood gonadotrophin	Уровень гонадотропина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood grouping	Определение группы крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood homocysteine	Уровень гомоцистеина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood hyposmosis	Гипоосмолярность крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood insulin	Уровень инсулина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood iron	Железо крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood isopropanol	Концентрация изопропанола в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood LDH	Уровень ЛДГ в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood lead	Концентрация свинца в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood magnesium	Магний крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood manganese	Концентрация марганца в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood mercury	Концентрация ртути в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood methaemoglobin	Метгемоглобин крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood methanol	Концентрация метанола в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood methemoglobin	Метгемоглобин крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood monocytes	Уровень моноцитов в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood neutrophils	Нейтрофилы крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood nicotine	Анализ крови на никотин	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood oestradiol	Определение уровня эстрадиола в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood oestrogen	Уровень эстрогена в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood oestrone	Эстрон крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood opiates	Концентрация опиатов в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood osmolarity	Осмолярность крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood phosphate	Фосфаты крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood phosphorus	Фосфор крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood potassium	Калий крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood pressure	Артериальное давление	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood pressure abnormal	Отклонения от нормы артериального давления	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood pressure ambulatory	Артериальное давление в амбулаторных условиях	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood pressure decreased	Снижение артериального давления	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood pressure diastolic low	Низкое диастолическое артериальное давление	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood pressure dropped	Резкое снижение артериального давления	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood pressure fluctuation	Колебания артериального давления	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood pressure high	Высокое кровяное давление	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood pressure immeasurable	Невозможность измерения артериального давления	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood pressure increased	Повышение артериального давления	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood pressure labile	Лабильность артериального давления	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood pressure low	Низкое артериальное давление	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood pressure management	Контроль артериального давления	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood pressure measurement	Измерение артериального давления	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood pressure normal	Нормальное артериальное давление	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood pressure orthostatic	Артериальное давление при переходе в вертикальное положение (ортостаз)	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood pressure raised	Повышенное артериальное давление	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood pressure reading low	Низкие показатели/значения артериального давления	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood pressure systolic low	Пониженное систолическое артериальное давление	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood progesterone	Прогестерон крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood proinsulin	Уровень проинсулина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood prolactin	Пролактин в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood selenium	Селен крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood sodium	Натрий крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood stool	Наличие крови в кале	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood test	Анализ крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood test abnormal	Отклонение от нормы результатов анализа крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood test normal	Результаты анализа крови в норме	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood test NOS	Анализ крови БДУ	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood testosterone	Уровень тестостерона в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood thrombin	Уровень тромбина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood thromboplastin	Уровень тромбопластина в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood transfusion	Переливание крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood triglycerides	Триглицериды в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood trypsin	Трипсин в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood tryptase	Триптаза в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood typing	Определение группы крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood tyrosine	Уровень тирозина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood urea	Мочевина в крови	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood urine	Кровавая моча	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood zinc	Цинк крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Brain damage	Повреждение головного мозга	noun
+Level: LLT	TRUE	FALSE	FALSE	Breath alcohol	Запах алкоголя изо рта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Breath holding	Задержка дыхания	noun
+Level: LLT	TRUE	FALSE	FALSE	Breath odor	Галитоз	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Breath odour	Запах изо рта	noun
+Level: LLT	TRUE	FALSE	FALSE	Breath shortness	Одышка	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Breath sounds	Аускультативная картина в легких	noun
+Level: LLT	TRUE	FALSE	FALSE	Breath stacking	Асинхрония пациент-вентилятор	noun
+Level: HLT	TRUE	FALSE	FALSE	Breathing abnormalities	Нарушения дыхания	noun
+Level: LLT	TRUE	FALSE	FALSE	Breathing arrested	Дыхание остановилось	noun
+Level: LLT	TRUE	FALSE	FALSE	Breathing difficult	Ощущение затруднения дыхания	noun
+Level: LLT	TRUE	FALSE	FALSE	Breathing shallow	Дыхание поверхностное	noun
+Level: LLT	TRUE	FALSE	FALSE	Breathing slowed	Редкое дыхание	noun
+Level: LLT	TRUE	FALSE	FALSE	Bruise	Кровоподтек	noun
+Level: LLT	TRUE	FALSE	FALSE	Bruising	Кровоподтёк	noun
+Level: LLT	TRUE	FALSE	FALSE	Cardiac catheterization	Катетеризация сердца	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chance fracture	Перелом Ченса	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest ache	Боль в груди	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest aching	Боль в грудной клетке	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest burning	Жжение в груди	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest cold	Инфекция органов грудной клетки	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest crushing	Сдавливание грудной клетки	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest CT	КТ грудной клетки	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest discomfort	Чувство дискомфорта в груди	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest fullness	Чувство распирания грудной клетки	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest heaviness	Тяжесть в груди	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest HRCT	КТВР грудной клетки	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest infection	Инфекция органов грудной клетки	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest injury	Травма грудной клетки	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest pain	Боль в грудной клетке	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest pain (non-cardiac)	Боль в груди (некардиального происхождения)	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest pain aggravated	Ухудшение боли в груди	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest pain exertional	Боль в груди, обусловленная физической нагрузкой	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest pain precordial	Прекордиальная боль в груди	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest pain substernal	Подгрудинная боль в грудной клетке	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest pressure	Давление в грудной клетке	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest scan	Сцинтиграфия грудой клетки	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest tenderness	Болезненность в груди	noun
+Level: LLT	TRUE	FALSE	FALSE	Chest tightness	Чувство сдавленности в груди	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest X-ray	Рентгенография органов грудной клетки	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chills	Озноб	noun
+Level: LLT	TRUE	FALSE	FALSE	Chills worsened	Ухудшение озноба	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Clinical trial participant	Участник клинического исследования	noun
+Level: LLT	TRUE	FALSE	FALSE	Compensated cirrhosis	Компенсированный цирроз	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Completed suicide	Завершенный суицид	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Condition aggravated	Ухудшение состояния	noun
+Level: LLT	TRUE	FALSE	FALSE	Condition worsened	Ухудшение состояния	noun
+Level: LLT	TRUE	FALSE	FALSE	Confusion	Спутанность сознания	noun
+Level: LLT	TRUE	FALSE	FALSE	Confusion aggravated	Спутанность сознания, ухудшение	noun
+Level: LLT	TRUE	FALSE	FALSE	Confusion nocturnal	Спутанность сознания ночная	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Confusion postoperative	Спутанность сознания после операции	noun
+Level: LLT	TRUE	FALSE	FALSE	Confusion reversible	Повторяющаяся спутанность сознания	noun
+Level: LLT	TRUE	FALSE	FALSE	Confusion state	Помрачение сознания	noun
+Level: LLT	TRUE	FALSE	FALSE	Contact blepharoconjunctivitis	Контактный блефароконъюнктивит	noun
+Level: LLT	TRUE	FALSE	FALSE	Contact dermatitis	Контактный дерматит	noun
+Level: LLT	TRUE	FALSE	FALSE	Contact eczema	Контактная экзема	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Contact stomatitis	Контактный стоматит	noun
+Level: LLT	TRUE	FALSE	FALSE	Contact urticaria	Контактная крапивница	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	COVID-19	Коронавирусная инфекция COVID-19	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Death	Смерть	noun
+Level: LLT	TRUE	FALSE	FALSE	Death fetal	Внутриутробная гибель плода	noun
+Level: LLT	TRUE	FALSE	FALSE	Death foetal	Антенатальная гибель плода	noun
+Level: LLT	TRUE	FALSE	FALSE	Death imminent	Неизбежная смерть	noun
+Level: LLT	TRUE	FALSE	FALSE	Death intrauterine	Внутриматочная смерть	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Death neonatal	Смерть новорожденного	noun
+Level: LLT	TRUE	FALSE	FALSE	Death NOS	Смерть, БДУ	noun
+Level: LLT	TRUE	FALSE	FALSE	Death sudden	Внезапная смерть	noun
+Level: LLT	TRUE	FALSE	FALSE	Death unascertained	Неизвестная причина смерти	noun
+Level: LLT	TRUE	FALSE	FALSE	Death unattended	Смерть без свидетелей	noun
+Level: LLT	TRUE	FALSE	FALSE	Death unexplained	Неизвестная причина смерти	noun
+Level: LLT	TRUE	FALSE	FALSE	Death wishes	Желание смерти	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Delivery	Родоразрешение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dental cleaning	Чистка зубов	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device allergy	Аллергия на устройство	noun
+Level: LLT	TRUE	FALSE	FALSE	Device blockage	Блокада устройства	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device breakage	Поломка изделия	noun
+Level: LLT	TRUE	FALSE	FALSE	Device burst	Трещина на изделии	noun
+Level: LLT	TRUE	FALSE	FALSE	Device colonisation	Микробное обсеменение изделия	noun
+Level: LLT	TRUE	FALSE	FALSE	Device colonization	Микробное обсеменение устройства	noun
+Level: LLT	TRUE	FALSE	FALSE	Device complication	Осложнение, обусловленное медицинским изделием	noun
+Level: LLT	TRUE	FALSE	FALSE	Device cracked	Растрескивание изделия	noun
+Level: LLT	TRUE	FALSE	FALSE	Device damage	Повреждение изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device defective	Дефект изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device dependence	Зависимость от устройства	noun
+Level: LLT	TRUE	FALSE	FALSE	Device discoloration	Изменение цвета изделия	noun
+Level: LLT	TRUE	FALSE	FALSE	Device discolouration	Изменение окраски изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device dislocation	Смещение изделия	noun
+Level: LLT	TRUE	FALSE	FALSE	Device dislodgement	Перемещение изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device embolisation	Эмболизация устройством	noun
+Level: LLT	TRUE	FALSE	FALSE	Device embolization	Эмболизация изделием	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device expulsion	Вытеснение изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device extrusion	Выступание изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device failure	Отказ изделия	noun
+Level: LLT	TRUE	FALSE	FALSE	Device fracture	Перелом изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device ineffective	Устройство неэффективно	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device interaction	Взаимодействие с изделием	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device intolerance	Непереносимость медицинского изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device inversion	Инверсия изделия	noun
+Level: HLGT	TRUE	FALSE	FALSE	Device issues	Проблемы с изделием	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device kink	Перегиб изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device leakage	Протекание изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device loosening	Недостаточная фиксация изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device malfunction	Неисправность устройства	noun
+Level: LLT	TRUE	FALSE	FALSE	Device melted	Плавление устройства	noun
+Level: LLT	TRUE	FALSE	FALSE	Device migration	Миграция изделия	noun
+Level: LLT	TRUE	FALSE	FALSE	Device misfire	Сбой устройства	noun
+Level: LLT	TRUE	FALSE	FALSE	Device moved	Смещенное изделие	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device occlusion	Окклюзия устройства	noun
+Level: LLT	TRUE	FALSE	FALSE	Device overheating	Перегревание устройства	noun
+Level: LLT	TRUE	FALSE	FALSE	Device overinfusion	Избыточное инфузионное введение с помощью устройства	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device placement issue	Проблема с установкой медицинского изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device priming	Предустановочная подготовка медицинского изделия	noun
+Level: LLT	TRUE	FALSE	FALSE	Device protrusion	Протрузия устройства	noun
+Level: LLT	TRUE	FALSE	FALSE	Device rejection	Отторжение изделия	noun
+Level: LLT	TRUE	FALSE	FALSE	Device rupture	Разрыв изделия	noun
+Level: LLT	TRUE	FALSE	FALSE	Device self-activation	Самоактивация устройства	noun
+Level: LLT	TRUE	FALSE	FALSE	Device shrinkage	Уменьшение размеров устройства	noun
+Level: LLT	TRUE	FALSE	FALSE	Device slipped	Соскальзывание устройства	noun
+Level: LLT	TRUE	FALSE	FALSE	Device subluxation	Подвывих изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device therapy	Метод лечения с применением медицинского изделия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device toxicity	Токсичность изделия	noun
+Level: LLT	TRUE	FALSE	FALSE	Device underinfusion	Недостаточное инфузионное введение с помощью устройства	noun
+Level: LLT	TRUE	FALSE	FALSE	Device vibration	Вибрация устройства	noun
+Level: LLT	TRUE	FALSE	FALSE	Difficult digestion	Затрудненное пищеварение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Discharge	Выделения	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Discomfort	Дискомфорт	noun
+Level: LLT	TRUE	FALSE	FALSE	Discomfort abdominal	Дискомфорт в животе	noun
+Level: LLT	TRUE	FALSE	FALSE	Discomfort bodily	Физический дискомфорт	noun
+Level: LLT	TRUE	FALSE	FALSE	Discomfort epigastric	Дискомфорт в эпигастрии	noun
+Level: LLT	TRUE	FALSE	FALSE	Discomfort intraocular	Дискомфорт внутриглазной зоны	noun
+Level: LLT	TRUE	FALSE	FALSE	Discomfort NOS	Дискомфорт, БДУ	noun
+Level: LLT	TRUE	FALSE	FALSE	Discomfort rectal	Дискомфорт в прямой кишке	noun
+Level: LLT	TRUE	FALSE	FALSE	Disease Addison's	Болезнь Аддисона	noun
+Level: LLT	TRUE	FALSE	FALSE	Disease aggravation	Ухудшение заболевания	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Disease complication	Осложнение заболевания	noun
+Level: LLT	TRUE	FALSE	FALSE	Disease Crohns	Гранулематозный энтерит	noun
+Level: LLT	TRUE	FALSE	FALSE	Disease gallbladder	Заболевание желчного пузыря	noun
+Level: LLT	TRUE	FALSE	FALSE	Disease hepatocellular	Гепатоцеллюлярное заболевание	noun
+Level: LLT	TRUE	FALSE	FALSE	Disease Parkinson's	Симптомы болезни Паркинсона	noun
+Level: LLT	TRUE	FALSE	FALSE	Disease pink	Розовая болезнь	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Disease progression	Прогрессирование заболевания	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Disease propensity	Склонность к заболеванию	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Disease recurrence	Рецидив заболевания	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Disease susceptibility	Предрасположенность к заболеванию	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dizziness	Головокружение	noun
+Level: LLT	TRUE	FALSE	FALSE	Dizziness aggravated	Головокружение, ухудшение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dizziness exertional	Головокружение при физической нагрузке	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dizziness postural	Головокружение постуральное	noun
+	TRUE	FALSE	FALSE	drop	Капля	noun
+Level: LLT	TRUE	FALSE	FALSE	Drowsiness	Состояние сонливости	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dry mouth	Сухость во рту	noun
+Level: LLT	TRUE	FALSE	FALSE	ECG	ЭКГ	noun
+Level: LLT	TRUE	FALSE	FALSE	ECG abnormal	Патологические находки на ЭКГ	noun
+Level: HLT	TRUE	FALSE	FALSE	ECG investigations	ЭКГ-исследования	noun
+Level: LLT	TRUE	FALSE	FALSE	ECG normal	ЭКГ в норме	noun
+Level: LLT	TRUE	FALSE	FALSE	Echocardiography	Эхокардиография	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Electrocardiogram	Электрокардиограмма	noun
+Level: LLT	TRUE	FALSE	FALSE	Embolus	Эмбол	noun
+Level: LLT	TRUE	FALSE	FALSE	End colostomy	Одноствольная колостома	noun
+Level: LLT	TRUE	FALSE	FALSE	End ileostomy	Одноствольная илеостома	noun
+Level: LLT	TRUE	FALSE	FALSE	Entrapment neuropathy	Компрессионная нейропатия	noun
+Level: LLT	TRUE	FALSE	FALSE	Esophagus burn	Ожоговое поражение пищевода	noun
+Level: LLT	TRUE	FALSE	FALSE	Esophagus imperforate	Закрытый пищевод	noun
+Level: LLT	TRUE	FALSE	FALSE	Esophagus ulceration	Изъязвление слизистой оболочки пищевода	noun
+Level: LLT	TRUE	FALSE	FALSE	Factor rheumatoid	Ревматоидный фактор	noun
+Level: LLT	TRUE	FALSE	FALSE	Failure circulatory	Циркуляторная недостаточность	noun
+Level: LLT	TRUE	FALSE	FALSE	Failure heart	Сердечная недостаточность	noun
+Level: LLT	TRUE	FALSE	FALSE	Failure hepatorenal	Печеночно-почечная недостаточность	noun
+Level: LLT	TRUE	FALSE	FALSE	Failure kidney	Недостаточное функционирование почек	noun
+Level: LLT	TRUE	FALSE	FALSE	Failure liver	Недостаточность функции печени	noun
+Level: LLT	TRUE	FALSE	FALSE	Failure respiratory	Недостаточность дыхательная	noun
+Level: LLT	TRUE	FALSE	FALSE	Fainting	Состояние обморока	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Fatigue	Усталость	noun
+Level: LLT	TRUE	FALSE	FALSE	Fatigue aggravated	Ухудшение утомляемости	noun
+Level: LLT	TRUE	FALSE	FALSE	Fatigue extreme	Усталость чрезмерная	noun
+Level: LLT	TRUE	FALSE	FALSE	Fatigue fracture	Усталостный перелом	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Fatigue management	Предотвращение усталости	noun
+Level: LLT	TRUE	FALSE	FALSE	Fetus macerated	Мацерация плода	noun
+Level: LLT	TRUE	FALSE	FALSE	Flexible sigmoidoscopy	Сигмоидоскопия гибким эндоскопом	noun
+Level: LLT	TRUE	FALSE	FALSE	General anesthesia	Общая анестезия	noun
+Level: LLT	TRUE	FALSE	FALSE	Group psychotherapy	Групповая психотерапия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Hand amputation	Ампутация кисти	noun
+Level: LLT	TRUE	FALSE	FALSE	Hand arthritis	Артрит суставов кисти	noun
+Level: LLT	TRUE	FALSE	FALSE	Hand crushing	Травма с размозжением тканей кисти	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Hand deformity	Деформация кисти	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Hand dermatitis	Дерматит кистей рук	noun
+Level: LLT	TRUE	FALSE	FALSE	Hand desquamation	Десквамация кожи кистей	noun
+Level: LLT	TRUE	FALSE	FALSE	Hand eczema	Экзема рук	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Hand fracture	Перелом костей кисти	noun
+Level: LLT	TRUE	FALSE	FALSE	Hand infection	Инфекция рук	noun
+Level: LLT	TRUE	FALSE	FALSE	Hand injury	Травма кисти	noun
+Level: LLT	TRUE	FALSE	FALSE	Hand operation	Операция на кисти руки	noun
+Level: LLT	TRUE	FALSE	FALSE	Hand osteoarthritis	Остеоартроз кисти	noun
+Level: LLT	TRUE	FALSE	FALSE	Hand pain	Боль в кистях	noun
+Level: LLT	TRUE	FALSE	FALSE	Hand rash	Сыпь на коже кистей	noun
+Level: LLT	TRUE	FALSE	FALSE	Hand sprain	Растяжение кисти руки	noun
+Level: LLT	TRUE	FALSE	FALSE	Hand swelling	Отечность кисти	noun
+Level: LLT	TRUE	FALSE	FALSE	Head pain	Головная боль	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Headache	Головная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache aggravated	Головная боль, обострение	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache dull	Тупая головная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache fullness	Распирающая головная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache histamine	«Гистаминовая» головная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache NOS	Головная боль БДУ	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache occurring	Эпизодическая головная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache postoperative	Головная боль после операции	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache post-traumatic	Головная боль посттравматическая	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache recurrent	Головная боль рецидивирующая	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache sinus	Синусовая головная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache temporal	Головная боль в височной области	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache tension	Головная боль напряженного типа	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache transient	Головная боль транзиторная	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache unilateral	Головная боль односторонняя	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache vascular	Сосудистая головная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Headache vasomotor	Вазомоторная головная боль	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart alternation	Альтернация сердца	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart arrest	Остановка сердца	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart attack	Сердечный приступ	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart block	Сердечная блокада	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart disorder	Болезнь сердца	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart enlarged	Увеличенное сердце	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart failure	Сердечная недостаточность	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart failure (NOS)	Сердечная недостаточность (БДУ)	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with preserved ejection fraction	Сердечная недостаточность с сохраненной фракцией выброса	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with reduced ejection fraction	Сердечная недостаточность со сниженной фракцией выброса	noun
+Level: HLGT	TRUE	FALSE	FALSE	Heart failures	Виды сердечной недостаточности	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart fluttering	Трепетание	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart injury	Травма сердца	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart insufficiency	Сердечная недостаточность	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart malformation	Врожденная аномалия (порок развития) сердца	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart murmur	Шум в сердце	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart pounding	Учащенное сердцебиение	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart racing	Ускорение сердцебиения	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart rate	Частота сердечных сокращений	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart sounds	Тоны сердца	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart throbbing	Ускоренное сердцебиение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart transplant	Трансплантат сердца	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart valve calcification	Кальцификация клапана сердца	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart valve disorders	Поражение клапанов сердца	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart valve explantation	Эксплантация сердечного клапана	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart valve incompetence	Недостаточность клапана сердца	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart valve insufficiency	Недостаточность сердечного клапана	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart valve operation	Операция на сердечном клапане	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart valve regurgitation	Регургитация на клапане сердца	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart valve replacement	Замена сердечного клапана	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart valve stenosis	Стеноз клапана сердца	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemoglobin	Гемоглобин	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage	Геморрагия	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage (NOS)	Кровоизлияние (БДУ)	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage abnormal	Патологическое кровотечение	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage adrenal	Кровоизлияние в надпочечники	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage aggravated	Кровоизлияние, в стадии обострения	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage brain	Внутримозговое кровоизлияние	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage breast	Кровоизлияние в области молочной железы	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage cerebellar	Внутримозговое кровоизлияние в мозжечок	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage cerebral	Внутримозговое кровоизлияние	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage colon	Кровоизлияние в толстую кишку	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage control	Контроль кровотечения	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage duodenum	Кровоизлияние в двенадцатиперстную кишку	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage esophageal	Эзофагеальное кровоизлияние	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage eye	Глазное кровоизлияние	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage gastric	Кровоизлияние в желудок	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage gastrointestinal	Кровотечение в просвет пищеварительного тракта	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage gingival	Кровозлияние в десны	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage gum	Геморрагия в деснах	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage ileum	Кровоизлияние в подвздошную кишку	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage intraabdominal	Внутреннее кровотечение в брюшной полости	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage intracerebral	Внутримозговое кровоизлияние	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage intracranial	Кровоизлияние интракраниальное	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage intraocular	Внутриглазное кровотечение	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage intrapericardial	Внутриперикардиальное кровотечение	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage intraperitoneal	Интраперитонеальное кровотечение	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage jejunum	Кровоизлияние в тощую кишку	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage kidney	Кровоизлияние в ткань почки	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage lips	Кровоточивость губ	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage lung	Кровоизлияние легочное	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage mouth	Кровотечение из ротовой полости	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage muscle	Кровоизлияние в мышцу	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage nasal	Носовое кровотечение	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage neonatal	Кровоизлияние у новорожденного	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage oral	Кровоизлияние оральное	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage pericardial	Перикардиальное кровоизлияние	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage peritoneal	Кровотечение внутрибрюшное	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage pharyngeal	Глоточное кровотечение	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage placental	Кровотечение плацентарное	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage pleural	Кровотечение в плевральную полость	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage postmenopausal	Кровотечение, постменопаузальное	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage postpartum	Маточное кровотечение после родов	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage pregnancy	Кровотечение во время беременности	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage prophylaxis	Профилактика кровоизлияний	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage pulmonary	Кровоизлияние лёгочное	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage purpuric	Кровоизлияние при пурпуре	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage rectal	Кровоизлияние в прямую кишку	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage rectum	Ректальное кровоизлияние	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage retinal	Ретинальное кровоизлияние	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage retroperitoneal	Кровотечение забрюшинное	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage stomach	Кровоизлияние в желудок	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage subarachnoid	Кровоизлияние субарахноидальное	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage subcutaneous	Геморрагия, подкожная	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage subdural	Кровотечение в субдуральное пространство	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage subepidermal	Кровоизлияние, субэпидермальное	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage symptom	Симптом геморрагии	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage uterine	Кровоизлияние маточное	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage vaginal	Кровотечение, вагинальное	noun
+Level: LLT	TRUE	FALSE	FALSE	High cholesterol	Повышенный холестерин в крови	noun
+Level: LLT	TRUE	FALSE	FALSE	High feeling	Ощущение приподнятости	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	High income	Высокий доход	noun
+Level: LLT	TRUE	FALSE	FALSE	High JVP	Высокое давление в яремной вене	noun
+Level: LLT	TRUE	FALSE	FALSE	High temperature	Высокая температура тела	noun
+Level: LLT	TRUE	FALSE	FALSE	High weight	Высокие значения массы тела	noun
+Level: LLT	TRUE	FALSE	FALSE	Hoarseness	Охриплость	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Home care	Уход на дому	noun
+Level: LLT	TRUE	FALSE	FALSE	Home isolation	Домашняя изоляция	noun
+Level: LLT	TRUE	FALSE	FALSE	Home quarantine	Домашний карантин	noun
+Level: LLT	TRUE	FALSE	FALSE	Hospital death	Госпитальная смерть	noun
+Level: LLT	TRUE	FALSE	FALSE	Hypertension arterial	Артериальная гипертония	noun
+Level: HLT	TRUE	FALSE	FALSE	Hypertension complications	Осложнения гипертензии	noun
+Level: LLT	TRUE	FALSE	FALSE	Hypertension diastolic	Гипертензия диастолическая	noun
+Level: LLT	TRUE	FALSE	FALSE	Hypertension exacerbated	Обострение гипертензии	noun
+Level: LLT	TRUE	FALSE	FALSE	Hypertension intracranial	Гипертензия внутричерепная	noun
+Level: LLT	TRUE	FALSE	FALSE	Hypertension malignant	Гипертензия злокачественная	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Hypertension neonatal	Гипертензия новорожденных	noun
+Level: LLT	TRUE	FALSE	FALSE	Hypertension ocular	Глазная гипертензия	noun
+Level: LLT	TRUE	FALSE	FALSE	Hypertension paroxysmal	Гипертензия пароксизмальная	noun
+Level: LLT	TRUE	FALSE	FALSE	Hypertension portal	Гипертензия портальная	noun
+Level: LLT	TRUE	FALSE	FALSE	Hypertension pulmonary	Гипертензия, легочная	noun
+Level: LLT	TRUE	FALSE	FALSE	Hypertension rebound	Гипертензия при синдроме рикошета	noun
+Level: LLT	TRUE	FALSE	FALSE	Hypertension renal	Гипертензия, почечная	noun
+Level: LLT	TRUE	FALSE	FALSE	Hypertension worsened	Ухудшение гипертензии	noun
+Level: LLT	TRUE	FALSE	FALSE	ICE score	Оценка ICE	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Illness	Заболевание	noun
+	TRUE	FALSE	FALSE	Implant	Имплантат	noun
+Level: LLT	TRUE	FALSE	FALSE	Implant breakage	Поломка имплантата	noun
+Level: LLT	TRUE	FALSE	FALSE	Implant expulsion	Выдавливание импланта	noun
+Level: LLT	TRUE	FALSE	FALSE	Implant failure	Поломка импланта	noun
+Level: LLT	TRUE	FALSE	FALSE	Implant infection	Инфекция имплантата	noun
+Level: LLT	TRUE	FALSE	FALSE	Implant malposition	Неправильное положение имплантата	noun
+Level: LLT	TRUE	FALSE	FALSE	Implant obstruction	Обструкция имплантата	noun
+Level: LLT	TRUE	FALSE	FALSE	Implant removal	Удаление имплантата	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Implant subsidence	Оседание имплантата	noun
+	TRUE	FALSE	FALSE	Implantation	Имплантация	noun
+	TRUE	FALSE	FALSE	Implantation chain	Цепочка для имплантации	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Implantation complication	Осложнения после имплантации	noun
+	TRUE	FALSE	FALSE	Implantation matrix	Матрица для имплантации	noun
+	TRUE	FALSE	FALSE	Implantation paste	Паста для имплантации	noun
+	TRUE	FALSE	FALSE	Implantation suspension	Суспензия для имплантации	noun
+	TRUE	FALSE	FALSE	Implantation tablet	Таблетка для имплантации	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infant	Младенческий возраст	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infection	Инфекция	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection aggravated	Обострение инфекции	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection bacterial	Инфекция бактериальная	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection bladder	Инфекция мочевого пузыря	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection breast	Инфекционное поражение молочной железы	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection fungal	Инфицирование грибком	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection histoplasmosis	Гистоплазмозная инфекция	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection induced	Индуцированная инфекция	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection localised	Очаговая инфекция	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infection masked	Замаскированная инфекция	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection mixed	Смешанная инфекция	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection MRSA	Инфекция, вызванная МРЗС	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection mycotic	Инфекция микотическая	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection NOS	Инфекция, БДУ	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infection parasitic	Паразитарная инфекция	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection precipitated	Молниеносная инфекция	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infection prophylaxis	Профилактика инфекции	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infection protozoal	Инфекция протозойная	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection pyogenic	Пиогенная инфекция	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infection reactivation	Реактивация инфекции	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection respiratory	Респираторная инфекция	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection staphylococcal	Инфекция, вызванная стафилококками	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection superimposed	Суперинфекция	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection systemic	Системная инфекция	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection TBC	Заражение туберкулезом	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection tuberculosis	Туберкулезная инфекция	noun
+Level: LLT	TRUE	FALSE	FALSE	Infection viral	Инфекция вирусная	noun
+Level: HLT	TRUE	FALSE	FALSE	Infections NEC	Инфекции, НКДР	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Injection	Инъекция	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Injury	Повреждение	noun
+Level: LLT	TRUE	FALSE	FALSE	Injury asphyxiation	Асфиксия при травме	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Injury corneal	Повреждение роговицы	noun
+Level: LLT	TRUE	FALSE	FALSE	Injury criminal	Повреждение, полученное в результате преступления	noun
+Level: LLT	TRUE	FALSE	FALSE	Injury NOS	Повреждение, БДУ	noun
+Level: LLT	TRUE	FALSE	FALSE	Injury radiation	Травма лучевая	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Insurance issue	Аспекты страхования	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Interventional procedure	Интервенционная процедура	noun
+Level: LLT	TRUE	FALSE	FALSE	Invasive procedure	Инвазивная процедура	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Investigation	Исследование	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Investigation abnormal	Отклонения от нормы результатов исследования	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Investigation noncompliance	Несоблюдение правил проведения процедур	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Investigation normal	Результаты исследования в норме	noun
+Level: LLT	TRUE	FALSE	FALSE	Investigation NOS	Исследование БДУ	noun
+Level: LLT	TRUE	FALSE	FALSE	Itching	Зуд	noun
+Level: LLT	TRUE	FALSE	FALSE	Lab test	Лабораторное исследование	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Laboratory test	Лабораторный анализ	noun
+Level: LLT	TRUE	FALSE	FALSE	Lead	Свинец	noun
+Level: LLT	TRUE	FALSE	FALSE	Left cataract	Левосторонняя катаракта	noun
+Level: LLT	TRUE	FALSE	FALSE	Left hemicolectomy	Левосторонняя гемиколэктомия	noun
+Level: LLT	TRUE	FALSE	FALSE	Left hemiplegia	Левосторонняя гемиплегия	noun
+Level: LLT	TRUE	FALSE	FALSE	Left oophorectomy	Левосторонняя оофорэктомия	noun
+Level: LLT	TRUE	FALSE	FALSE	Left salpingo-oophorectomy	Левосторонняя сальпинго-оофорэктомия	noun
+Level: LLT	TRUE	FALSE	FALSE	Left ventriculogram	Вентрикулограмма левого желудочка	noun
+Level: LLT	TRUE	FALSE	FALSE	Left ventriculography	Вентрикулография левого желудочка	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Leg amputation	Ампутация ноги	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg cramps	Спазмы ног	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg crushing	Травма с размозжением тканей ноги	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg discomfort	Дискомфорт в ногах	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg dragging	Волочение ног	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg edema	Отёк ноги	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg fracture	Перелом ноги	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg infection	Инфекция в области ноги	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg injury	Травма ноги	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg ischaemia	Ишемия ноги	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg ischemia	Ишемия ноги	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg oedema	Отек ноги	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg operation	Операция на ноге	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg pain	Боль в области ног	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg paralysis	Паралич ноги	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg paresis	Парез ноги	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg scissoring	Перекрещивание ног	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg spasm	Спазм ноги	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg spasticity	Спастичность ног	noun
+Level: LLT	TRUE	FALSE	FALSE	Leg ulcer	Язва ноги	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Life support	Поддержание основных жизненных функций	noun
+Level: LLT	TRUE	FALSE	FALSE	Life weariness	Усталость от жизни	noun
+Level: LLT	TRUE	FALSE	FALSE	Low BP	Низкое АД	noun
+Level: LLT	TRUE	FALSE	FALSE	Low HDL	Низкая концентрация ЛПВП	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Low income	Низкий доход	noun
+Level: LLT	TRUE	FALSE	FALSE	Low LDL	Низкая концентрация ЛПНП	noun
+Level: LLT	TRUE	FALSE	FALSE	Low mood	Сниженное настроение	noun
+Level: LLT	TRUE	FALSE	FALSE	Low pH	Низкий pH	noun
+Level: LLT	TRUE	FALSE	FALSE	Low platelets	Низкое число тромбоцитов	noun
+Level: LLT	TRUE	FALSE	FALSE	Low VLDL	Низкий уровень ЛПОНП	noun
+Level: LLT	TRUE	FALSE	FALSE	Low weight	Низкая масса тела	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung abscess	Абсцесс легкого	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung adenocarcinoma	Аденокарцинома легкого	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung bilobectomy	Легочная билобэктомия	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung biopsy	Легочная биопсия	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung cancer	Рак легкого	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung carcinoma	Злокачественная опухоль легкого	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung congestion	Застой в легких	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung consolidation	Консолидация легкого	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung crepitation	Легочная крепитация	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung cyst	Киста легкого	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung disease	Легочное заболевание	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung disorder	Нарушение со стороны легких	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung edema	Легочный отек	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung embolism	Легочная эмболия	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung fibrosis	Фиброз легких	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung function	Функция легких	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung haemorrhage	Лёгочная геморрагия	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung hemorrhage	Легочная геморрагия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung hernia	Грыжа легких	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung hyperinflation	Гиперинфляция легких	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung hypoinflation	Гипоинфляция легких	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung induration	Индурация легких	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung infection	Легочная инфекция	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung infiltration	Инфильтрация легких	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung inflammation	Воспаление легких	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung injury	Травма легкого	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung irritation	Раздражение легких	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung lobectomy	Легочная лобэктомия	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung mass	Объемное образование легкого	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung metastases	Метастазы в легком	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung neoplasm	Новообразование легкого	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung nodule	Очаговое образование в легком	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung oedema	Отек легких	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung opacity	Затемнение легкого	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung operation	Оперативное лечение легкого	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung pain	Боль в легких	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung perforation	Перфорация легкого	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung sarcoid	Саркоидоз легких	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung scan	Сцинтиграфия легких	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung scarring	Легочное рубцевание	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung secondaries	Метастатическое поражение легких	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung segmentectomy	Сегментэктомия легкого	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Lung transplant	Трансплантат легкого	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung ultrasound	Ультразвуковое исследование легких	noun
+Level: LLT	TRUE	FALSE	FALSE	Lung X-ray	Рентгенография легких	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Medical procedure	Медицинская процедура	noun
+Level: LLT	TRUE	FALSE	FALSE	Medication aspiration	Аспирация лекарственного препарата	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Medication dilution	Разведение лекарственного препарата	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Medication error	Ошибка применения	noun
+Level: LLT	TRUE	FALSE	FALSE	Medication residue	Остатки лекарственного препарата	noun
+Level: LLT	TRUE	FALSE	FALSE	Medication tampering	Преднамеренное ухудшение качества лекарственного препарата	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Migraine	Мигрень	noun
+Level: LLT	TRUE	FALSE	FALSE	Migraine aggravated	Мигрень на стадии обострения	noun
+Level: LLT	TRUE	FALSE	FALSE	Migraine aura	Мигренозная аура	noun
+Level: HLT	TRUE	FALSE	FALSE	Migraine headaches	Мигренальные головные боли	noun
+Level: LLT	TRUE	FALSE	FALSE	Migraine hemiplegic	Мигрень гемиплегическая	noun
+Level: LLT	TRUE	FALSE	FALSE	Migraine NOS	Мигрень БДУ	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Migraine postdrome	Постдром при мигрени	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Migraine prodrome	Предвестник мигрени	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Migraine prophylaxis	Профилактика мигрени	noun
+Level: LLT	TRUE	FALSE	FALSE	Modified ECT	Модифицированная ЭСТ	noun
+Level: LLT	TRUE	FALSE	FALSE	Modified measles	Модифицированная корь	noun
+Level: LLT	TRUE	FALSE	FALSE	Modified smallpox	Модифицированная оспа	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth abrasion	Ссадины во рту	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth abscess	Абсцесс в ротовой полости	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth became dry	Сухая ротовая полость	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth bleeding	Кровотечение изо рта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Mouth breathing	Ротовое дыхание	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth bruising	Кровоподтек в полости рта	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth bump	Волдырь в ротовой полости	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth cancer	Рак ротовой полости	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth carcinoma	Рак полости рта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Mouth cyst	Киста ротовой полости	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth dry	Ощущение сухости в ротовой полости	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth edema	Отечность ротовой полости	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth feeling dry	Ощущение сухости во рту	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Mouth haemorrhage	Кровотечение в полость рта	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth hemorrhage	Кровоизлияние в полости рта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Mouth injury	Травма рта	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth irritation	Раздражение рта	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth necrosis	Некроз полости рта	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth neoplasia	Новообразование в полости рта	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth oedema	Отек ротовой полости	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth pain	Боль в полости рта	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth paresthesia	Парестезия слизистой оболочки полости рта	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth plaque	Налет в полости рта	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth puckered	Периоральные (кисетные) морщины	noun
+Level: LLT	TRUE	FALSE	FALSE	Mouth pustule	Пустула полости рта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Mouth swelling	Припухлость рта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Mouth ulceration	Изъязвление в полости рта	noun
+Level: LLT	TRUE	FALSE	FALSE	Muscle ache	Ноющая мышечная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	NAME syndrome	Синдром NAME	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Nausea	Тошнота	noun
+Level: HLT	TRUE	FALSE	FALSE	Nausea and vomiting symptoms	Симптомы в виде тошноты и рвоты	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck cervicoplasty	Цервикопластика шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck cramps	Спазмы в области шеи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Neck crushing	Травма с размозжением тканей в области шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck cyst	Киста шеи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Neck deformity	Деформация шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck discomfort	Дискомфорт в области шеи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Neck dissection	Иссечение на шее	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck edema	Отёк шеи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Neck exploration	Эксплоративная операция шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck haematoma	Гематома шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck hematoma	Гематома в области шеи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Neck injury	Травма шеи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Neck lift	Подтяжка шеи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Neck mass	Объемное образование в области шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck numbness	Онемение в области шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck oedema	Отек шеи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Neck pain	Боль в шее	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck rash	Сыпь на коже шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck rigidity	Ригидность шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck sprain	Растяжение связок шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck stiffness	Скованность шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck strain	Растяжение мышц шеи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Neck surgery	Хирургия шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck swelling	Отечность шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	Neck tightness	Напряженность шеи	noun
+Level: LLT	TRUE	FALSE	FALSE	No hearing	Отсутствие слуха	noun
+Level: LLT	TRUE	FALSE	FALSE	Non-surgical treatment	Консервативное лечение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Obstruction	Непроходимость	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Office visit	Визит в клинику	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Oxygen consumption	Потребление кислорода	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Oxygen saturation	Насыщение кислородом	noun
+Level: LLT	TRUE	FALSE	FALSE	Oxygen supplementation	Кислородотерапия	noun
+Level: LLT	TRUE	FALSE	FALSE	Oxygen tension	Давление кислорода	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Oxygen therapy	Оксигенотерапия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pain	Боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain abdominal	Боль абдоминальная	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain aggravated	Ухудшение боли	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain anal	Боль анальная	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain ankle	Боль в области голеностопного сустава	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pain assessment	Оценка боли	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain back	Боль в спине	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain biliary	Боль в области желчевыводящих путей	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain bladder	Боль в области мочевого пузыря	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain bone	Костная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain breast	Боль в молочной железе	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain burning	Боль жгучая	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain chest	Боли в области грудной клетки	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain crisis	Болевой криз	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain dorsal	Боль, дорсальная	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain dull	Боль тупая	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain ear	Боль уха	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain epigastric	Боль в эпигастрии	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain esophageal	Боль эзофагеальная	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain exacerbated	Обострение боли	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain eye	Ощущение боли в глазу	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain femoral	Боль в области бедер	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain flank	Боль в боку	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain foot	Боль в стопе	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain gastric	Боль желудочная	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain groin	Боль в паху	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain gum	Боль в десне	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain head	Головная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain hunger	Боль в состоянии голода	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain irritated	Боль раздражающая	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain jaw	Болезненная челюсть	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain joint	Боль в суставе	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain kidney	Боли в почках	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain knee	Боль в коленном суставе	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain legs	Боль в ногах	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain localised	Боль локализованная	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain localized	Боль, локализованная	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain loin	Боль в боковом отделе живота	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain lumbosacral	Боль в пояснично-крестцовом отделе	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pain management	Контроль интенсивности боли	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain menstrual	Боль менструальная	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain mouth	Боль в ротовой полости	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain mucosal	Болезненная слизистая оболочка	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain muscle	Ощущение боли в мышцах	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain neck	Боль в шее	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain nerve	Неврогенная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain NOS	Боль, БДУ	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain oesophageal	Пищеводная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain oral	Ощущение боли во рту	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain ovarian	Болезненный яичник	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain pelvic	Боль, тазовая	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain pharynx	Боль в глотке	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain pleural	Плевральная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain precordial	Боль прекордиальная	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pain prophylaxis	Профилактика боли	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain prostatic	Боль в предстательной железе	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain rectal	Боль ректальная	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain relief	Ослабление боли	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain retrosternal	Боль загрудинная	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain sacroiliac	Боль в крестцово-подвздошной области	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain scale	Шкала оценки боли	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain stomach	Больной желудок	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain substernal	Боль подгрудинная	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain throat	Болит горло	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain thyroid	Боль в области щитовидной железы	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain tongue	Боль в языке	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain ureteral	Боль в мочеточнике	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain urethral	Боль в области уретры	noun
+Level: LLT	TRUE	FALSE	FALSE	Pain worsened	Усиление боли	noun
+Level: LLT	TRUE	FALSE	FALSE	Paresthesia	Ощущение жжения, покалывания, ползания мурашек	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Patient elopement	Побег пациента	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Patient isolation	Изоляция пациента	noun
+Level: HLT	TRUE	FALSE	FALSE	Patient positioning	Положение пациента	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Patient restraint	Механическое удержание психически больного	noun
+Level: LLT	TRUE	FALSE	FALSE	Patient sectioned	Помещение в психиатрический стационар	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Patient uncooperative	Нежелание пациента сотрудничать	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Perforation	Перфорация	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Physical examination	Физикальное обследование	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Physical examination abnormal	Отклонение от нормы результатов физикального обследования	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Physical examination normal	Результаты физикального обследования в норме	noun
+Level: LLT	TRUE	FALSE	FALSE	Physical examination NOS	Физикальное обследование БДУ	noun
+Level: LLT	TRUE	FALSE	FALSE	Pins and needles	Ощущение покалывания	noun
+Level: LLT	TRUE	FALSE	FALSE	Pregnant	Беременная	noun
+Level: LLT	TRUE	FALSE	FALSE	Pressure chest	Давление в груди	noun
+Level: LLT	TRUE	FALSE	FALSE	Pressure feet	Давление в стопах	noun
+Level: LLT	TRUE	FALSE	FALSE	Pressure infusion	Инфузия под давлением	noun
+Level: LLT	TRUE	FALSE	FALSE	Pressure injury	Пролежень	noun
+Level: LLT	TRUE	FALSE	FALSE	Pressure sore	Язва вследствие давления	noun
+Level: LLT	TRUE	FALSE	FALSE	Pressure ulcer	Пролежневая язва	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Procedure aborted	Процедура прервана	noun
+Level: LLT	TRUE	FALSE	FALSE	Procedure repeated	Связанный с процедурой	noun
+Level: LLT	TRUE	FALSE	FALSE	Product burst	Продукт с механическими повреждениями	noun
+Level: LLT	TRUE	FALSE	FALSE	Product clumping	Комкование продукта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Product commingling	Смешивание продукта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Product complaint	Жалобы на характеристики продукта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Product confusion	Схожесть продукта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Product contamination	Загрязнение продукта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Product counterfeit	Контрафактный продукт	noun
+Level: LLT	TRUE	FALSE	FALSE	Product crumbling	Дробление продукта	noun
+Level: LLT	TRUE	FALSE	FALSE	Product damaged	Повреждение продукта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Product deposit	Осадок в продукте	noun
+Level: LLT	TRUE	FALSE	FALSE	Product discoloration	Изменение цвета продукта	noun
+Level: LLT	TRUE	FALSE	FALSE	Product discolouration	Обесцвечивание продукта	noun
+Level: LLT	TRUE	FALSE	FALSE	Product explosion	Взрыв продукта	noun
+Level: LLT	TRUE	FALSE	FALSE	Product foaming	Вспенивание продукта	noun
+Level: LLT	TRUE	FALSE	FALSE	Product friable	Ломкость продукта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Product impurity	Примеси в продукте	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Product intolerance	Непереносимость препарата	noun
+Level: SOC	TRUE	FALSE	FALSE	Product issues	Проблемы с продуктом	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Product leakage	Утечка продукта	noun
+Level: LLT	TRUE	FALSE	FALSE	Product overheating	Перегрев продукта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Product substitution	Замена препарата	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Product tampering	Преднамеренное ухудшение качества продукта	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pulmonary hypertension	Легочная гипертензия	noun
+Level: LLT	TRUE	FALSE	FALSE	Pulmonary hypertension aggravated	Легочная гипертензия, прогрессирование	noun
+Level: LLT	TRUE	FALSE	FALSE	Pulmonary hypertension NOS	Легочная гипертензия, БДУ	noun
+Level: LLT	TRUE	FALSE	FALSE	Pulmonary hypertension primary	Легочная гипертензия, первичная	noun
+Level: LLT	TRUE	FALSE	FALSE	Pulmonary hypertension secondary	Легочная гипертензия, вторичная	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Quality of life decreased	Снижение качества жизни	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Quality of life scale	Шкала оценки качества жизни	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash	Сыпь	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash (nonspecific)	Сыпь (неспецифическая)	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash acneiform	Сыпь, угреподобная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash aggravated	Сыпь, обострение	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash bullous	Сыпь, буллезная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash desquamating	Сыпь десквамирующая	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash ecchymotic	Экхимозная сыпь	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash erythematous	Сыпь, эритематозная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash face	Сыпь на коже лица	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash follicular	Сыпь, фолликулярная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash generalised	Сыпь, генерализованная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash gum	Сыпь на деснах	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash haemorrhagic	Сыпь геморрагическая	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash hemorrhagic	Сыпь геморрагическая	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash herpetiform	Сыпь, герпесоподобная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash impetiginous	Импетигиозная сыпь	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash lips	Сыпь на губах	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash lupus-like	Сыпь, подобная красной волчанке	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash macular	Сыпь, макулезная	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash maculo-papular	Сыпь макулопапулезная	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash maculovesicular	Сыпь пятнисто-везикулезная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash measly	Сыпь, коревая	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash morbilliform	Сыпь, кореподобная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash mouth	Сыпь в ротовой полости	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash neonatal	Сыпь новорожденного	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash NOS	Сыпь, БДУ	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash papular	Сыпь, папулезная	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash papulosquamous	Сыпь папулосквамозная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash papulo-squamous	Сыпь папуло-сквамозная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash papulovesicular	Сыпь, папуловезикулезная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash papulo-vesicular	Сыпь, папуловезикулезная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash pemphigoid	Сыпь пузырная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash peripheral	Сыпь, периферическая	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash petechial	Сыпь, петехиальная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash photosensitivity	Сыпь вследствие фоточувствительности	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash pruritic	Сыпь, зудящая	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash psoriaform	Сыпь, псориаформная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash psoriasiform	Сыпь, псориазиформная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash purpuric	Сыпь при пурпуре	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash pustular	Пустулезная сыпь	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash recurrent	Сыпь, рецидивирующая	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash rubelliform	Сыпь, краснухоподобная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash scaly	Сыпь шелушащаяся	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash scarlatiniform	Сыпь, скарлатиноподобная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash seborrheic	Сыпь себорейная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash seborrhoeic	Сыпь себорейная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash tongue	Сыпь на языке	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash trunk	Сыпь на коже туловища	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash urticarial	Сыпь, крапивная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash urticaria-like	Сыпь, подобная крапивнице	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash varicelliform	Сыпь, вариолиформная	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash vesicular	Сыпь, везикулезная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash vesiculobullous	Сыпь, везикулезно-буллезная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash vesiculo-bullous	Сыпь, везикулезно-буллезная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash vesiculopustular	Сыпь везикулопустулезная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash vesiculo-pustular	Сыпь везикуло-пустулезная	noun
+Level: LLT	TRUE	FALSE	FALSE	Rash zosteriform	Сыпь по типу опоясывающего лишая	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction aggravation	Усиление реакции	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction alarm	Реакция тревоги	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction antisocial	Реакция антисоциальная	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction anxiety	Реакция тревоги	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction asocial	Реакция асоциальная	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction belligerent	Воинственное поведение	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction catabolic	Реакция катаболическая	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction catatonic	Реакция кататоническая	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction combative	Реакция воинственная	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction conversion	Реакция конверсионная	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction dissociative	Реакция диссоциативная	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction eczematous	Реакция экзематозная	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction emotional	Реакция эмоциональная	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction febrile	Фебрильная реакция	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction gastrointestinal	Расстройство желудочно-кишечного тракта	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction hypoglycaemic	Реакция гипогликемическая	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction hypoglycemic	Гипогликемическая реакция	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction leukemoid	Реакция лейкемоидная	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction lymphoma-like	Реакция лимфомоподобного типа	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction manic-depressive	Реакция маниакально-депрессивная	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction mononucleoid	Мононуклеозоподобная реакция	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction neurotic	Реакция невротическая	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction nonspecific	Реакция неспецифическая	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction obsessive-compulsive	Реакция обсессивно-компульсивная	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction panic	Реакция паники	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction paranoid	Реакция параноидная	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction perinatal	Перинатальная реакция	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction phobic	Реакция фобическая	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction psychophysiologic	Реакция психофизиологическая	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction schizoid	Реакция шизоидная	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction scleroderma-like	Склеродермоподобная реакция	noun
+Level: LLT	TRUE	FALSE	FALSE	Reaction unevaluable	Реакция не подлежащая оценке	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Regurgitation	Регургитация	noun
+Level: LLT	TRUE	FALSE	FALSE	Repair hydrocele	Пластика при гидроцеле	noun
+Level: LLT	TRUE	FALSE	FALSE	Repair varicocele	Пластика при варикоцеле	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rest regimen	Режим отдыха	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rhythm idioventricular	Идиовентрикулярный ритм	noun
+Level: LLT	TRUE	FALSE	FALSE	Rhythm nodal	Предсердно-желудочковый ритм	noun
+Level: LLT	TRUE	FALSE	FALSE	Scarring	Рубцевание	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Sedation	Седативное состояние	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Seizure	Приступ	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Seizure anoxic	Припадок аноксический	noun
+Level: LLT	TRUE	FALSE	FALSE	Seizure cerebral	Припадок церебральный	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Seizure cluster	Припадок кластерный	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Seizure prophylaxis	Профилактика судорожных припадков	noun
+Level: LLT	TRUE	FALSE	FALSE	Sensation loss	Утрата чувствительности	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Sepsis	Сепсис	noun
+Level: LLT	TRUE	FALSE	FALSE	Shortness of breath	Затрудненное дыхание	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder arthritis	Артрит плечевого сустава	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Shoulder arthroplasty	Артропластика плечевого сустава	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder arthroscopy	Артроскопия плечевого сустава	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder bursitis	Бурсит плечевого сустава	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Shoulder deformity	Деформация плеча	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder discomfort	Дискомфорт в области плеча	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder dislocation	Вывих плечевого сустава	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Shoulder dystocia	Дистоция плечиков	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Shoulder fracture	Перелом плеча	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder haemarthrosis	Гемартроз плечевого сустава	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder hemarthrosis	Кровоизлияние в плечевой сустав	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder injury	Травма плечевого сустава	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder instability	Нестабильность плеча	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder microhaemorrhage	Микрокровоизлияние в плечевой сустав	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder microhemorrhage	Микрокровоизлияние в плечевой сустав	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Shoulder operation	Операция на плечевом суставе	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder osteoarthritis	Остеартрит плечевых суставов	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder pain	Боль в области плеча	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder replacement	Протезирование плечевого сустава	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder soreness	Болезненность плеча	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder sprain	Растяжение связок плечевого сустава	noun
+Level: LLT	TRUE	FALSE	FALSE	Shoulder tendinitis	Тендинит плеча	noun
+Level: LLT	TRUE	FALSE	FALSE	Side stitch	Боль в боку при физической нагрузке	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin abrasion	Ссадина кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin adhesion	Адгезия кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin angiosarcoma	Кожная ангиосаркома	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin atheroma	Атерома кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin atrophy	Атрофия кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin biopsy	Биопсия кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin bleeding	Кожное кровотечение	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin blotches	Пятна на коже	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin breakdown	Разрушение кожных покровов	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin breakout	Появление прыщей на коже лица	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin callus	Кожная омозолелость	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin cancer	Рак кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin candida	Кандидозная инфекция кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin carcinoma	Карцинома на коже	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin chapped	Кожа растрескавшаяся	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin coloring	Окрашивание кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin colouring	Окрашивание кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin cracked	Трещина кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin cryotherapy	Криотерапия кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin culture	Посев с кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin cysts	Кожные кисты	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin damage	Повреждение кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin depigmentation	Кожная депигментация	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin desquamation	Кожная десквамация	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin discharge	Выделения из кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin discoloration	Изменение цвета кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin discolouration	Изменение цвета кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin discomfort	Дискомфорт со стороны кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin disinfection	Дезинфекция кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin disorder	Заболевание кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin dry	Кожа, сухая	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin dysaesthesia	Дизестезия кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin dysesthesia	Кожная дизестезия	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin dysplasia	Дисплазия кожи	noun
+Level: HLT	TRUE	FALSE	FALSE	Skin dystrophies	Дистрофические поражения кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin dystrophy	Дистрофия кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin edema	Отёк кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin erosion	Кожная эрозия	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin eruption	Кожное высыпание	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin erythema	Кожная эритема	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin exfoliation	Эксфолиация кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin fibrosis	Фиброз кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin fissures	Кожные трещины	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin flushed	Прилив крови к коже	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin fragility	Хрупкость кожи	noun
+Level: HLT	TRUE	FALSE	FALSE	Skin grafts	Кожные трансплантаты	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin granuloma	Кожная гранулема	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin greasy	Кожа, сальная	noun
+Level: HLT	TRUE	FALSE	FALSE	Skin haemorrhages	Кожные кровоизлияния	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin hemorrhage	Кровоизлияние в кожу	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin hyperaemia	Кожная гиперемия	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin hyperemia	Гиперемия кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin hyperpigmentation	Кожная гиперпигментация	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin hyperplasia	Гиперплазия кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin hypertrophy	Кожная гипертрофия	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin hypoaesthesia	Гипестезия кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin hypoesthesia	Кожная гипестезия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin hypopigmentation	Кожная гипопигментация	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin hypoplasia	Гипоплазия кожи	noun
+Level: HLT	TRUE	FALSE	FALSE	Skin implants	Кожные имплантаты	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin indentation	Вмятины на коже	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin induration	Индурация кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin infection	Кожная инфекция	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin inflammation	Кожное воспаление	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin injury	Травма кожи	noun
+Level: HLGT	TRUE	FALSE	FALSE	Skin investigations	Исследования кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin irritation	Кожное раздражение	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin keratosis	Кожный кератоз	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin laceration	Глубокий порез кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin laxity	Дряблость кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin lesion	Кожное поражение	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin lightening	Осветление кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin loss	Утрата кожного покрова	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin maceration	Мацерация кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin malformation	Аномалия развития кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin mass	Объемное образование кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin melanoma	Кожная меланома	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin metastases	Метастазы в коже	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin necrosis	Кожный некроз	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin nodule	Кожный узелок	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin oedema	Отек кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin oozing	Просачивание через кожу	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin operation	Операция на коже	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin pain	Боль кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin papilloma	Папиллома кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin peeling	Кожа, отслаивающаяся	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin pigmentation	Кожная пигментация	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin plaque	Бляшка на коже	noun
+Level: HLT	TRUE	FALSE	FALSE	Skin radiotherapies	Лучевые терапии кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin rash	Кожная сыпь	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin reaction	Кожная реакция	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin red	Кожа красная	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin removal	Удаление кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin resurfacing	Ремоделирование/шлифовка кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin roughness	Кожа, огрубевшая	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin scaly	Кожа, шелушащаяся	noun
+	TRUE	FALSE	FALSE	Skin scarification	Кожная скарификация	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin scarring	Рубцевание кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin seborrheic	Кожа, себорейная	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin seborrhoeic	Кожа, себорейная	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin sensitisation	Сенсибилизация кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin sensitization	Сенсибилизация кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin staining	Окрашивание кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin striae	Кожные стрии	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin swelling	Набухание кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin symptom	Симптом со стороны кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin tags	Мягкие бородавки	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin tear	Рваная рана кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin temperature	Температура кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin tenderness	Болезненность кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin tenting	Обвисание кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin test	Кожная проба	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin thickening	Утолщение кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin thinness	Истончение кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin tightness	Тургор кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin toxicity	Кожная токсичность	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin tuberculosis	Кожный туберкулез	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin tumor	Кожная опухоль	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin tumour	Опухоль кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin ulceration	Изъязвление кожи	noun
+Level: HLT	TRUE	FALSE	FALSE	Skin vasculitides	Кожные васкулитиды	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin vasodilatation	Вазодилатация сосудов кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin vasodilating	Вазодилатация сосудов кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin warm	Кожа теплая	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin weeping	Мокнутие кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin wound	Рана кожи	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Skin wrinkling	Морщинистость кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin xerodermic	Кожа с признаками ксеродермы	noun
+Level: LLT	TRUE	FALSE	FALSE	Skin xerosis	Ксероз кожи	noun
+Level: LLT	TRUE	FALSE	FALSE	Sore throat	Боль в горле	noun
+	TRUE	FALSE	FALSE	Sterile concentrate	Концентрат стерильный	noun
+Level: LLT	TRUE	FALSE	FALSE	Sterile endophthalmitis	Стерильный эндофтальмит	noun
+Level: LLT	TRUE	FALSE	FALSE	Sterile peritonitis	Стерильный перитонит	noun
+Level: LLT	TRUE	FALSE	FALSE	Sterile phlebitis	Стерильный флебит	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Sterile pyuria	Стерильная/асептическая пиурия	noun
+Level: LLT	TRUE	FALSE	FALSE	Stroke	Инсульт	noun
+Level: LLT	TRUE	FALSE	FALSE	Stroke mimic	Имитация инсульта	noun
+Level: LLT	TRUE	FALSE	FALSE	Stroke recrudescence	Обострение после инсульта	noun
+Level: LLT	TRUE	FALSE	FALSE	Stroke syndrome	Инсульт	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Stroke volume	Ударный объем	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Surgery	Оперативное лечение	noun
+Level: LLT	TRUE	FALSE	FALSE	Surgery prolonged	Продление операции	noun
+Level: LLT	TRUE	FALSE	FALSE	Surgical intervention	Хирургическое вмешательство	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Swelling	Отечность	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Symptom masked	Скрытый/латентный симптом	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Symptom recurrence	Рецидив симптома	noun
+	TRUE	FALSE	FALSE	System	Система	noun
+Level: LLT	TRUE	FALSE	FALSE	Thrombus	Тромб	noun
+Level: LLT	TRUE	FALSE	FALSE	TIA	ТИА	noun
+Level: LLT	TRUE	FALSE	FALSE	Tingling	Чувство покалывания	noun
+Level: LLT	TRUE	FALSE	FALSE	Tissue adhesion	Адгезия тканей	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Tissue anoxia	Тканевая аноксия	noun
+Level: LLT	TRUE	FALSE	FALSE	Tissue damage	Поврежденная ткань	noun
+Level: LLT	TRUE	FALSE	FALSE	Tissue discoloration	Изменение цвета тканей	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Tissue discolouration	Изменение цвета тканей	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Tissue infiltration	Инфильтрация ткани	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Tissue injury	Повреждение ткани	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Tissue irritation	Раздражение тканей	noun
+Level: LLT	TRUE	FALSE	FALSE	Tissue puffing	Отечность тканей	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Tissue rupture	Разрыв ткани	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Tissue sealing	Лигирование тканей	noun
+Level: LLT	TRUE	FALSE	FALSE	Transesophageal echocardiography	Чреспищеводная эхокардиография	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Treatment delayed	Запоздалое лечение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Treatment failure	Неэффективность лечения	noun
+Level: LLT	TRUE	FALSE	FALSE	Treatment nonadherence	Несоблюдение схемы лечения	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Treatment noncompliance	Несоблюдение режима лечения	noun
+Level: LLT	TRUE	FALSE	FALSE	Treatment withdrawal	Отказ от дальнейшего лечения	noun
+	TRUE	FALSE	FALSE	tube	Туба	noun
+	TRUE	FALSE	FALSE	valve	Клапан	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vein collapse	Коллапс вены	noun
+Level: LLT	TRUE	FALSE	FALSE	Vein compression	Компрессия вены	noun
+Level: LLT	TRUE	FALSE	FALSE	Vein discoloration	Изменение цвета стенки вены	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vein discolouration	Изменение окраски стенки вены	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vein disorder	Нарушение со стороны вен	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vein dissection	Расслоение вены	noun
+Level: LLT	TRUE	FALSE	FALSE	Vein distended	Дилатация вен	noun
+Level: LLT	TRUE	FALSE	FALSE	Vein pain	Боль в области вены	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vein rupture	Разрыв вены	noun
+Level: LLT	TRUE	FALSE	FALSE	Vein varicose	Варикозное расширение вены	noun
+	TRUE	FALSE	FALSE	Vessel	Сосуд	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vessel harvesting	Выделение и забор трансплантата сосуда	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vessel perforation	Перфорация сосуда	noun
+Level: LLT	TRUE	FALSE	FALSE	Voluntary euthanasia	Добровольная эвтаназия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Voluntary redundancy	Увольнение по собственному желанию	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vomiting	Рвота	noun
+Level: LLT	TRUE	FALSE	FALSE	Vomiting aggravated	Рвота на стадии обострения	noun
+Level: LLT	TRUE	FALSE	FALSE	Vomiting blood	Кровь в рвотных массах	noun
+Level: LLT	TRUE	FALSE	FALSE	Vomiting neonatal	Рвота новорожденных	noun
+Level: LLT	TRUE	FALSE	FALSE	Vomiting NOS	Рвота, БДУ	noun
+Level: LLT	TRUE	FALSE	FALSE	Vomiting postoperative	Рвота постоперационная	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vomiting projectile	Обильная рвота	noun
+Level: LLT	TRUE	FALSE	FALSE	Vomiting prophylaxis	Профилактика рвоты	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vomiting psychogenic	Рвота психогенная	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Waist circumference	Окружность талии	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Well educated	Лицо с хорошим образованием	noun

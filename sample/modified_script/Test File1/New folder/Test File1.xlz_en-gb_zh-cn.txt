@@ -1,0 +1,90 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	zh-cn	POS
+Level: LLT/PT	TRUE	FALSE	FALSE	Accident	意外事故	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Adverse event	不良事件	noun
+Level: LLT	TRUE	FALSE	FALSE	Allergic reaction	过敏反应	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia	感觉缺失	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bacterial infection	细菌性感染	noun
+Level: LLT	TRUE	FALSE	FALSE	Bed rest	卧床休息	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding	流血	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bleeding time	出血时间	noun
+Level: LLT	TRUE	FALSE	FALSE	Blind	盲	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood pressure	血压	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood test	血液检查	noun
+Level: LLT	TRUE	FALSE	FALSE	Brain damage	脑损伤	noun
+Level: LLT	TRUE	FALSE	FALSE	Bruise	瘀青	noun
+Level: LLT	TRUE	FALSE	FALSE	Bruising	瘀伤	noun
+Level: LLT	TRUE	FALSE	FALSE	Cardiac catheterization	心导管插入	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest pain	胸痛	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest X-ray	胸部 X 线检查	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chills	寒战	noun
+Level: LLT	TRUE	FALSE	FALSE	Confusion	意识模糊	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	COVID-19	COVID-19	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Death	死亡	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Delivery	分娩	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dental cleaning	洗牙	noun
+Level: LLT	TRUE	FALSE	FALSE	Device embolization	装置血栓栓塞	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device malfunction	器械功能故障	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Discharge	分泌物	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Discomfort	不适	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dizziness	头晕	noun
+Level: LLT	TRUE	FALSE	FALSE	Drowsiness	昏昏欲睡	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dry mouth	口干	noun
+Level: LLT	TRUE	FALSE	FALSE	ECG	心电图	noun
+Level: LLT	TRUE	FALSE	FALSE	Echocardiography	超声心动图	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Electrocardiogram	心电图	noun
+Level: LLT	TRUE	FALSE	FALSE	Embolus	栓子	noun
+Level: LLT	TRUE	FALSE	FALSE	Fainting	昏晕	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Fatigue	疲劳	noun
+Level: LLT	TRUE	FALSE	FALSE	General anesthesia	全身麻醉	noun
+Level: LLT	TRUE	FALSE	FALSE	Head pain	头疼	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Headache	头痛	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart attack	心脏病发作	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart failure	心脏衰竭	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with preserved ejection fraction	射血分数保留性心力衰竭	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with reduced ejection fraction	心脏衰竭伴射血分数降低	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemoglobin	血红蛋白	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage	出血	noun
+Level: LLT	TRUE	FALSE	FALSE	Hoarseness	声嘶	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Illness	患病	noun
+	TRUE	FALSE	FALSE	Implant	植入剂	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infant	婴儿	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infection	感染	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Injection	注射	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Injury	损伤	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Interventional procedure	介入治疗	noun
+Level: LLT	TRUE	FALSE	FALSE	Invasive procedure	创伤性操作	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Investigation	检查	noun
+Level: LLT	TRUE	FALSE	FALSE	Itching	发痒的	noun
+Level: LLT	TRUE	FALSE	FALSE	Lead	铅	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Medical procedure	医疗操作	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Migraine	偏头痛	noun
+Level: LLT	TRUE	FALSE	FALSE	Muscle ache	肌肉疼	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Nausea	恶心	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Obstruction	阻塞	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Office visit	办公室访问	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Oxygen saturation	血氧饱和度	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pain	疼痛	noun
+Level: LLT	TRUE	FALSE	FALSE	Paresthesia	感觉异常	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Perforation	穿孔	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Physical examination	体格检查	noun
+Level: LLT	TRUE	FALSE	FALSE	Pins and needles	麻痛感	noun
+Level: LLT	TRUE	FALSE	FALSE	Pregnant	怀孕	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pulmonary hypertension	肺性高血压	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash	皮疹	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Regurgitation	反流	noun
+Level: LLT	TRUE	FALSE	FALSE	Scarring	瘢痕形成	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Sedation	镇静	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Seizure	痫性发作	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Sepsis	脓毒症	noun
+Level: LLT	TRUE	FALSE	FALSE	Shortness of breath	呼吸短促	noun
+Level: LLT	TRUE	FALSE	FALSE	Sore throat	嗓子疼	noun
+Level: LLT	TRUE	FALSE	FALSE	Stroke	卒中	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Surgery	手术	noun
+Level: LLT	TRUE	FALSE	FALSE	Surgical intervention	外科干涉	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Swelling	肿胀	noun
+Level: LLT	TRUE	FALSE	FALSE	Thrombus	血栓	noun
+Level: LLT	TRUE	FALSE	FALSE	TIA	TIA	noun
+Level: LLT	TRUE	FALSE	FALSE	Tingling	刺痛感	noun
+Level: LLT	TRUE	FALSE	FALSE	Transesophageal echocardiography	经食管超声心动图	noun
+	TRUE	FALSE	FALSE	tube	管	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vomiting	呕吐	noun

@@ -1,0 +1,98 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	ru-ru	POS
+Level: LLT/PT	TRUE	FALSE	FALSE	Accident	Происшествие или несчастный случай	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Adverse event	Нежелательное явление	noun
+Level: LLT	TRUE	FALSE	FALSE	Allergic reaction	Аллергическая реакция	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia	Отсутствие чувствительности	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bacterial infection	Бактериальная инфекция	noun
+Level: LLT	TRUE	FALSE	FALSE	Bed rest	Постельный режим	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding	Кровотечение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bleeding time	Время кровотечения	noun
+Level: LLT	TRUE	FALSE	FALSE	Blind	Полное отсутствие зрения	noun
+	TRUE	FALSE	FALSE	block	Блок	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood pressure	Артериальное давление	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood test	Анализ крови	noun
+Level: LLT	TRUE	FALSE	FALSE	Brain damage	Повреждение головного мозга	noun
+Level: LLT	TRUE	FALSE	FALSE	Bruise	Кровоподтек	noun
+Level: LLT	TRUE	FALSE	FALSE	Bruising	Кровоподтёк	noun
+Level: LLT	TRUE	FALSE	FALSE	Cardiac catheterization	Катетеризация сердца	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest pain	Боль в грудной клетке	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest X-ray	Рентгенография органов грудной клетки	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chills	Озноб	noun
+Level: LLT	TRUE	FALSE	FALSE	Confusion	Спутанность сознания	noun
+	TRUE	FALSE	FALSE	Container	Контейнер	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	COVID-19	Коронавирусная инфекция COVID-19	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Death	Смерть	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Delivery	Родоразрешение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dental cleaning	Чистка зубов	noun
+Level: LLT	TRUE	FALSE	FALSE	Device embolization	Эмболизация изделием	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device malfunction	Неисправность устройства	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Discharge	Выделения	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Discomfort	Дискомфорт	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dizziness	Головокружение	noun
+	TRUE	FALSE	FALSE	drop	Капля	noun
+Level: LLT	TRUE	FALSE	FALSE	Drowsiness	Состояние сонливости	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dry mouth	Сухость во рту	noun
+Level: LLT	TRUE	FALSE	FALSE	ECG	ЭКГ	noun
+Level: LLT	TRUE	FALSE	FALSE	Echocardiography	Эхокардиография	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Electrocardiogram	Электрокардиограмма	noun
+Level: LLT	TRUE	FALSE	FALSE	Embolus	Эмбол	noun
+Level: LLT	TRUE	FALSE	FALSE	Fainting	Состояние обморока	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Fatigue	Усталость	noun
+Level: LLT	TRUE	FALSE	FALSE	General anesthesia	Общая анестезия	noun
+Level: LLT	TRUE	FALSE	FALSE	Head pain	Головная боль	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Headache	Головная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart attack	Сердечный приступ	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart failure	Сердечная недостаточность	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with preserved ejection fraction	Сердечная недостаточность с сохраненной фракцией выброса	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with reduced ejection fraction	Сердечная недостаточность со сниженной фракцией выброса	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemoglobin	Гемоглобин	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage	Геморрагия	noun
+Level: LLT	TRUE	FALSE	FALSE	Hoarseness	Охриплость	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Illness	Заболевание	noun
+	TRUE	FALSE	FALSE	Implant	Имплантат	noun
+	TRUE	FALSE	FALSE	Implantation	Имплантация	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infant	Младенческий возраст	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infection	Инфекция	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Injection	Инъекция	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Injury	Повреждение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Interventional procedure	Интервенционная процедура	noun
+Level: LLT	TRUE	FALSE	FALSE	Invasive procedure	Инвазивная процедура	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Investigation	Исследование	noun
+Level: LLT	TRUE	FALSE	FALSE	Itching	Зуд	noun
+Level: LLT	TRUE	FALSE	FALSE	Lead	Свинец	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Medical procedure	Медицинская процедура	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Migraine	Мигрень	noun
+Level: LLT	TRUE	FALSE	FALSE	Muscle ache	Ноющая мышечная боль	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Nausea	Тошнота	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Obstruction	Непроходимость	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Office visit	Визит в клинику	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Oxygen saturation	Насыщение кислородом	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pain	Боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Paresthesia	Ощущение жжения, покалывания, ползания мурашек	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Perforation	Перфорация	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Physical examination	Физикальное обследование	noun
+Level: LLT	TRUE	FALSE	FALSE	Pins and needles	Ощущение покалывания	noun
+Level: LLT	TRUE	FALSE	FALSE	Pregnant	Беременная	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pulmonary hypertension	Легочная гипертензия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash	Сыпь	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Regurgitation	Регургитация	noun
+Level: LLT	TRUE	FALSE	FALSE	Scarring	Рубцевание	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Sedation	Седативное состояние	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Seizure	Приступ	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Sepsis	Сепсис	noun
+Level: LLT	TRUE	FALSE	FALSE	Shortness of breath	Затрудненное дыхание	noun
+Level: LLT	TRUE	FALSE	FALSE	Sore throat	Боль в горле	noun
+Level: LLT	TRUE	FALSE	FALSE	Stroke	Инсульт	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Surgery	Оперативное лечение	noun
+Level: LLT	TRUE	FALSE	FALSE	Surgical intervention	Хирургическое вмешательство	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Swelling	Отечность	noun
+	TRUE	FALSE	FALSE	System	Система	noun
+Level: LLT	TRUE	FALSE	FALSE	Thrombus	Тромб	noun
+Level: LLT	TRUE	FALSE	FALSE	TIA	ТИА	noun
+Level: LLT	TRUE	FALSE	FALSE	Tingling	Чувство покалывания	noun
+Level: LLT	TRUE	FALSE	FALSE	Transesophageal echocardiography	Чреспищеводная эхокардиография	noun
+	TRUE	FALSE	FALSE	tube	Туба	noun
+	TRUE	FALSE	FALSE	valve	Клапан	noun
+	TRUE	FALSE	FALSE	Vessel	Сосуд	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vomiting	Рвота	noun
+Level: LLT	TRUE	FALSE	FALSE	Withdrawn	Отгороженность	noun

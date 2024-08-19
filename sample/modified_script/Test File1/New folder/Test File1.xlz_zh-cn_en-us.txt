@@ -1,0 +1,1 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	zh-cn	en-us	POS

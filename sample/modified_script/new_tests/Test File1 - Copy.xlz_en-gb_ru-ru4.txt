@@ -1,0 +1,63 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	ru-ru	POS
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia	Отсутствие чувствительности	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding	Кровотечение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bleeding time	Время кровотечения	noun
+Level: LLT	TRUE	FALSE	FALSE	Blind	Полное отсутствие зрения	noun
+Level: LLT	TRUE	FALSE	FALSE	Bruise	Кровоподтек	noun
+Level: LLT	TRUE	FALSE	FALSE	Bruising	Кровоподтёк	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chills	Озноб	noun
+Level: LLT	TRUE	FALSE	FALSE	Confusion	Спутанность сознания	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	COVID-19	Коронавирусная инфекция COVID-19	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Death	Смерть	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Delivery	Родоразрешение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Discharge	Выделения	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Discomfort	Дискомфорт	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dizziness	Головокружение	noun
+	TRUE	FALSE	FALSE	drop	Капля	noun
+Level: LLT	TRUE	FALSE	FALSE	Drowsiness	Состояние сонливости	noun
+Level: LLT	TRUE	FALSE	FALSE	ECG	ЭКГ	noun
+Level: LLT	TRUE	FALSE	FALSE	Echocardiography	Эхокардиография	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Electrocardiogram	Электрокардиограмма	noun
+Level: LLT	TRUE	FALSE	FALSE	Embolus	Эмбол	noun
+Level: LLT	TRUE	FALSE	FALSE	Fainting	Состояние обморока	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Fatigue	Усталость	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Headache	Головная боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemoglobin	Гемоглобин	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage	Геморрагия	noun
+Level: LLT	TRUE	FALSE	FALSE	Hoarseness	Охриплость	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Hypertension	Гипертензия	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Illness	Заболевание	noun
+	TRUE	FALSE	FALSE	Implant	Имплантат	noun
+	TRUE	FALSE	FALSE	Implantation	Имплантация	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infant	Младенческий возраст	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infection	Инфекция	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Injection	Инъекция	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Injury	Повреждение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Investigation	Исследование	noun
+Level: LLT	TRUE	FALSE	FALSE	Itching	Зуд	noun
+Level: LLT	TRUE	FALSE	FALSE	Lead	Свинец	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Migraine	Мигрень	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Nausea	Тошнота	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Obstruction	Непроходимость	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pain	Боль	noun
+Level: LLT	TRUE	FALSE	FALSE	Paresthesia	Ощущение жжения, покалывания, ползания мурашек	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Perforation	Перфорация	noun
+Level: LLT	TRUE	FALSE	FALSE	Pregnant	Беременная	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash	Сыпь	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Regurgitation	Регургитация	noun
+Level: LLT	TRUE	FALSE	FALSE	Scarring	Рубцевание	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Sedation	Седативное состояние	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Seizure	Приступ	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Sepsis	Сепсис	noun
+Level: LLT	TRUE	FALSE	FALSE	Stroke	Инсульт	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Surgery	Оперативное лечение	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Swelling	Отечность	noun
+	TRUE	FALSE	FALSE	System	Система	noun
+Level: LLT	TRUE	FALSE	FALSE	Thrombus	Тромб	noun
+Level: LLT	TRUE	FALSE	FALSE	TIA	ТИА	noun
+Level: LLT	TRUE	FALSE	FALSE	Tingling	Чувство покалывания	noun
+	TRUE	FALSE	FALSE	tube	Туба	noun
+	TRUE	FALSE	FALSE	valve	Клапан	noun
+	TRUE	FALSE	FALSE	Vessel	Сосуд	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vomiting	Рвота	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	X-ray	Рентгенография	noun

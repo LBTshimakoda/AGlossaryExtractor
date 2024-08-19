@@ -1,0 +1,3 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	zh-cn	en-gb	POS
+Level: LLT/PT	TRUE	FALSE	FALSE	COVID-19	COVID-19	noun
+Level: LLT	TRUE	FALSE	FALSE	TIA	TIA	noun

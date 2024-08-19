@@ -47,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
@@ -243,6 +244,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.textBox6);
             this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.progressBar2);
@@ -265,9 +267,18 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(47, 48);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(52, 20);
+            this.textBox6.TabIndex = 14;
+            this.textBox6.Text = "0";
+            this.textBox6.Visible = false;
+            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(6, 42);
+            this.button7.Location = new System.Drawing.Point(6, 50);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(35, 23);
             this.button7.TabIndex = 13;
@@ -446,6 +457,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
 

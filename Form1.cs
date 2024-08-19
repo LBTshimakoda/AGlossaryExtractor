@@ -244,6 +244,7 @@ namespace AGlossaryExtractor
 
                 // Create a filter expression dynamically based on the properties
                 var filterExpression = string.Format($"en_gb LIKE '%{filterText}%' OR en_us LIKE '%{filterText}%'");//Join(" OR ", properties.Select(p => $"{p.Name} LIKE '%{filterText}%'"));
+                //var filterExpression = string.Format($"ru_ru LIKE '%{filterText}%'");//Join(" OR ", properties.Select(p => $"{p.Name} LIKE '%{filterText}%'"));
 
                 bindingSource.Filter = filterExpression;
             }
@@ -1065,17 +1066,19 @@ namespace AGlossaryExtractor
         }
 
         // Search for a term in the Trie
-        public bool Search(List<string> words)
+        public bool Search(List<string> words, out TrieNode endNode)
         {
             TrieNode node = root;
             foreach (var word in words)
             {
                 if (!node.Children.ContainsKey(word))
                 {
+                    endNode = null;
                     return false;
                 }
                 node = node.Children[word];
             }
+            endNode = node;
             return node.IsEndOfTerm;
         }
     
@@ -1106,7 +1109,8 @@ namespace AGlossaryExtractor
 
             foreach (string paragraph in paragraphs)
             {
-                var paragraph1 = AddPluralsAndEdForms(paragraph);
+                var paragraph1 = paragraph;
+                paragraph1 = AddPluralsAndEdForms(paragraph1);
                 SearchTermsInParagraph(paragraph1, foundTerms);
             }
             return RemoveSingleTermsIfLongerVersionsExist(foundTerms, text);
@@ -1178,12 +1182,15 @@ namespace AGlossaryExtractor
                 newwords.Add(word);
             }
             newwords.Add(".");
+            List<string> newwords1 = new List<string>();
             foreach (var word in words)
             {
-                if (word.EndsWith("s")) newwords.Add(word.Substring(0, word.Length - 1));
-                else newwords.Add(word);
+                if (word.EndsWith("s")) newwords1.Add(word.Substring(0, word.Length - 1));
+                else newwords1.Add(word);
             }
-            newwords.Add(".");
+            newwords1.Add(".");
+            if (string.Join("", newwords) != string.Join("", newwords1))
+                newwords.AddRange(newwords1);
             //foreach (var word in words)
             //{
             //    if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 1));
@@ -1219,7 +1226,8 @@ namespace AGlossaryExtractor
                         potentialTerm.Add(cleanedWord);
                         if (node.IsEndOfTerm)
                         {
-                            if (trie.Search(potentialTerm))
+                            TrieNode endNode;
+                            if (trie.Search(potentialTerm, out endNode))
                             {
                                 if (!foundTerms.ContainsKey(node.OrigTerm))
                                 {
@@ -1230,13 +1238,409 @@ namespace AGlossaryExtractor
                             }
                         }
                     }
-                    else 
+                    else
                     {
                         break;
                     }
                     j++;
                 }
             }
+        }
+        private void SearchTermsInParagraph1(string paragraph, Dictionary<string, List<string>> foundTerms, double similarityThreshold = 0.97)
+        {
+            var words = paragraph.Split(new[] { ' ', '\t', '\n', '\r', '/' }, StringSplitOptions.RemoveEmptyEntries);
+            TrieNode root = trie.GetRoot();
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                TrieNode node = root;
+                var potentialTerm = new List<string>();
+
+                for (int j = i; j < words.Length; j++)
+                {
+                    string cleanedWord = CleanWord(words[j]);
+                    potentialTerm.Add(cleanedWord);
+
+                    if (node.Children.ContainsKey(cleanedWord))
+                    {
+                        node = node.Children[cleanedWord];
+
+                        // Check if the current node is the end of a term in the Trie
+                        if (node.IsEndOfTerm)
+                        {
+                            AddToFoundTerms(foundTerms, node);
+                        }
+
+                        // Continue searching for exact matches in subsequent words
+                        SearchRemainingWords(node, words, j + 1, potentialTerm, foundTerms, similarityThreshold);
+                    }
+                    else
+                    {
+                        // Attempt fuzzy matching if no exact match is found
+                        FuzzyMatchRemainingWords(node, words, j, potentialTerm, foundTerms, similarityThreshold);
+                        break; // Break the loop if no exact match is found
+                    }
+                }
+            }
+        }
+        //private void SearchTermsInParagraph(string paragraph, Dictionary<string, List<string>> foundTerms, double similarityThreshold = 0.97, int suffixLength = 3)
+        //{
+        //    var words = paragraph.Split(new[] { ' ', '\t', '\n', '\r', '/' }, StringSplitOptions.RemoveEmptyEntries);
+        //    TrieNode root = trie.GetRoot();
+
+        //    for (int i = 0; i < words.Length; i++)
+        //    {
+        //        TrieNode node = root;
+        //        var potentialTerm = new List<string>();
+        //        int j = i;
+        //        bool foundExactMatch = true;
+
+        //        while (j < words.Length)
+        //        {
+        //            string cleanedWord = CleanWord(words[j]);
+
+        //            if (node.Children.ContainsKey(cleanedWord))
+        //            {
+        //                node = node.Children[cleanedWord];
+        //                potentialTerm.Add(cleanedWord);
+
+        //                if (node.IsEndOfTerm)
+        //                {
+        //                    AddToFoundTerms(foundTerms, node);
+        //                }
+        //                // Continue searching for exact matches in subsequent words
+        //                int maxDistance = CalculateMaxEditDistance(potentialTerm, similarityThreshold);
+        //                SearchRemainingWords(node, words, j + 1, potentialTerm, foundTerms, maxDistance, similarityThreshold, suffixLength);
+        //                //SearchRemainingWords(node, words, j + 1, potentialTerm, foundTerms, similarityThreshold);
+        //            }
+        //            else if (potentialTerm.Count >= 1) // Trigger fuzzy matching 
+        //            {
+        //                foundExactMatch = false;
+
+        //                // Calculate the max allowable edit distance based on the 90% similarity threshold
+        //                int maxDistance = CalculateMaxEditDistance(potentialTerm, similarityThreshold);
+
+        //                var fuzzyMatches = FuzzySearchForCombinedTerm(potentialTerm, cleanedWord, node, maxDistance, suffixLength);
+
+        //                foreach (var fuzzyMatch in fuzzyMatches)
+        //                {
+        //                    TrieNode fuzzyNode = fuzzyMatch.Value;
+
+        //                    if (fuzzyNode.IsEndOfTerm)
+        //                    {
+        //                        AddToFoundTerms(foundTerms, fuzzyNode);
+        //                    }
+
+        //                    SearchRemainingWords(fuzzyNode, words, j + 1, fuzzyMatch.Key, foundTerms, maxDistance, similarityThreshold, suffixLength);
+        //                }
+        //                break;
+        //            }
+        //            else
+        //            {
+        //                foundExactMatch = false;
+        //                break;
+        //            }
+        //            j++;
+        //        }
+
+        //        if (!foundExactMatch)
+        //        {
+        //            continue;
+        //        }
+        //    }
+        //}
+        private void FuzzyMatchRemainingWords(TrieNode currentNode, string[] words, int startIndex, List<string> potentialTerm, Dictionary<string, List<string>> foundTerms, double similarityThreshold)
+        {
+            string combinedTermString = string.Join(" ", potentialTerm);
+
+            foreach (var child in currentNode.Children)
+            {
+                var newPotentialTerm = new List<string>(potentialTerm) { child.Key };
+                string currentPrefix = string.Join(" ", newPotentialTerm);
+
+                int editDistance = CalculateEditDistance(combinedTermString, currentPrefix);
+                double similarity = 1.0 - (double)editDistance / Math.Max(combinedTermString.Length, currentPrefix.Length);
+
+                if (similarity >= similarityThreshold)
+                {
+                    TrieNode childNode = child.Value;
+
+                    if (childNode.IsEndOfTerm)
+                    {
+                        AddToFoundTerms(foundTerms, childNode);
+                    }
+
+                    // Continue searching recursively down the Trie
+                    FuzzyMatchRemainingWords(childNode, words, startIndex, newPotentialTerm, foundTerms, similarityThreshold);
+
+                    // Continue searching in subsequent words if needed
+                    if (startIndex + 1 < words.Length)
+                    {
+                        SearchRemainingWords(childNode, words, startIndex + 1, newPotentialTerm, foundTerms, 1, similarityThreshold, 3);
+                    }
+                }
+            }
+        }
+        private void SearchRemainingWords(TrieNode currentNode, string[] words, int startIndex, List<string> potentialTerm, Dictionary<string, List<string>> foundTerms, double similarityThreshold)
+        {
+            if (startIndex >= words.Length)
+            {
+                return;
+            }
+
+            for (int i = startIndex; i < words.Length; i++)
+            {
+                string cleanedWord = CleanWord(words[i]);
+
+                // Attempt to traverse the Trie node based on the current word
+                if (currentNode.Children.ContainsKey(cleanedWord))
+                {
+                    TrieNode nextNode = currentNode.Children[cleanedWord];
+                    potentialTerm.Add(cleanedWord);
+
+                    // If this node marks the end of a term, add it to the found terms
+                    if (nextNode.IsEndOfTerm)
+                    {
+                        AddToFoundTerms(foundTerms, nextNode);
+                    }
+
+                    // Continue searching the remaining words in the paragraph
+                    SearchRemainingWords(nextNode, words, i + 1, potentialTerm, foundTerms, similarityThreshold);
+
+                    // After recursion, remove the last word to backtrack and explore other paths
+                    potentialTerm.RemoveAt(potentialTerm.Count - 1);
+                }
+                else
+                {
+                    // If exact match is not found, attempt fuzzy matching
+                    FuzzyMatchRemainingWords(currentNode, words, i, potentialTerm, foundTerms, similarityThreshold);
+                    break; // Stop further traversal if no match is found
+                }
+            }
+        }
+        private void SearchRemainingWords(TrieNode node, string[] words, int startIndex, List<string> currentPrefix, Dictionary<string, List<string>> foundTerms, int maxDistance, double similarityThreshold, int suffixLength)
+        {
+            for (int i = startIndex; i < words.Length; i++)
+            {
+                string cleanedWord = CleanWord(words[i]);
+
+                if (node.Children.ContainsKey(cleanedWord))
+                {
+                    node = node.Children[cleanedWord];
+                    currentPrefix.Add(cleanedWord);
+
+                    if (node.IsEndOfTerm)
+                    {
+                        AddToFoundTerms(foundTerms, node);
+                    }
+                }
+                else if (maxDistance > 0 && currentPrefix.Count >= 1)
+                {
+                    var fuzzyMatches = FuzzySearchForCombinedTerm(currentPrefix, cleanedWord, node, maxDistance, suffixLength);
+
+                    foreach (var fuzzyMatch in fuzzyMatches)
+                    {
+                        TrieNode fuzzyNode = fuzzyMatch.Value;
+
+                        if (fuzzyNode.IsEndOfTerm)
+                        {
+                            AddToFoundTerms(foundTerms, fuzzyNode);
+                        }
+
+                        SearchRemainingWords(fuzzyNode, words, i + 1, fuzzyMatch.Key, foundTerms, maxDistance, similarityThreshold, suffixLength);
+                    }
+                    break;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+
+        // Fuzzy search for a combined term with suffix-based edit distance check
+        private Dictionary<List<string>, TrieNode> FuzzySearchForCombinedTerm(List<string> potentialTerm, string nextWord, TrieNode node, int maxDistance, int suffixLength)
+        {
+            var results = new Dictionary<List<string>, TrieNode>();
+
+            foreach (var child in node.Children)
+            {
+                var combinedTerm = new List<string>(potentialTerm) { child.Key };
+                string combinedTermString = string.Join(" ", combinedTerm);
+                string searchString = string.Join(" ", combinedTerm) + " " + nextWord;
+
+                //int editDistance = CalculateEditDistanceWithSuffixCheck(combinedTermString, searchString, suffixLength);
+                int editDistance = CalculateEditDistance(combinedTermString, searchString);
+                if (editDistance <= maxDistance)
+                {
+                    results[combinedTerm] = child.Value;
+                }
+            }
+
+            return results;
+        }
+        // Helper function to continue searching for the remaining words
+        //private void SearchRemainingWords(TrieNode node, string[] words, int startIndex, List<string> currentPrefix, Dictionary<string, List<string>> foundTerms, int maxDistance)
+        //{
+        //    for (int i = startIndex; i < words.Length; i++)
+        //    {
+        //        string cleanedWord = CleanWord(words[i]);
+
+        //        if (node.Children.ContainsKey(cleanedWord))
+        //        {
+        //            node = node.Children[cleanedWord];
+        //            currentPrefix.Add(cleanedWord);
+
+        //            if (node.IsEndOfTerm)
+        //            {
+        //                AddToFoundTerms(foundTerms, node);
+        //            }
+        //        }
+        //        else if (maxDistance > 0)
+        //        {
+        //            var fuzzyMatches = FuzzySearchForWord(node, cleanedWord, maxDistance);
+
+        //            foreach (var fuzzyMatch in fuzzyMatches)
+        //            {
+        //                var extendedTerm = new List<string>(currentPrefix) { fuzzyMatch.Key };
+        //                TrieNode fuzzyNode = fuzzyMatch.Value;
+
+        //                if (fuzzyNode.IsEndOfTerm)
+        //                {
+        //                    AddToFoundTerms(foundTerms, fuzzyNode);
+        //                }
+
+        //                SearchRemainingWords(fuzzyNode, words, i + 1, extendedTerm, foundTerms, maxDistance);
+        //            }
+        //            break;
+        //        }
+        //        else
+        //        {
+        //            break;
+        //        }
+        //    }
+        //}
+
+        // Fuzzy search for a single word
+        private Dictionary<string, TrieNode> FuzzySearchForWord(TrieNode node, string searchWord, int maxDistance)
+        {
+            var results = new Dictionary<string, TrieNode>();
+
+            foreach (var child in node.Children)
+            {
+                int editDistance = CalculateEditDistanceWithSuffixCheck(child.Key, searchWord, 2);
+                if (editDistance <= maxDistance)
+                {
+                    results[child.Key] = child.Value;
+                }
+            }
+
+            return results;
+        }
+
+        // Function to calculate the maximum allowable edit distance based on the similarity threshold
+        private int CalculateMaxEditDistance(List<string> potentialTerm, double similarityThreshold)
+        {
+            int termLength = potentialTerm.Sum(word => word.Length);
+            return (int)Math.Floor(termLength * (1 - similarityThreshold));
+        }
+        private int CalculateEditDistanceWithSuffixCheck(string word1, string word2, int suffixLength)
+        {
+            int m = word1.Length;
+            int n = word2.Length;
+
+            // If words differ significantly in length, it's not just a suffix change
+            if (Math.Abs(m - n) > suffixLength)
+            {
+                return int.MaxValue;
+            }
+
+            var dp = new int[m + 1, n + 1];
+
+            for (int i = 0; i <= m; i++)
+            {
+                dp[i, 0] = i;
+            }
+
+            for (int j = 0; j <= n; j++)
+            {
+                dp[0, j] = j;
+            }
+
+            for (int i = 1; i <= m; i++)
+            {
+                for (int j = 1; j <= n; j++)
+                {
+                    int cost = (word1[i - 1] == word2[j - 1]) ? 0 : 1;
+
+                    dp[i, j] = Math.Min(
+                        Math.Min(dp[i - 1, j] + 1, dp[i, j - 1] + 1), // Deletion or Insertion
+                        dp[i - 1, j - 1] + cost); // Substitution
+                }
+            }
+
+            // Check if the difference is only in the suffix
+            if (dp[m, n] <= suffixLength)
+            {
+                int minLen = Math.Min(m, n);
+                for (int i = 0; i < minLen - suffixLength; i++)
+                {
+                    if (word1[i] != word2[i])
+                    {
+                        return int.MaxValue; // Prefixes are different, so it's not just a suffix change
+                    }
+                }
+            }
+
+            return dp[m, n];
+        }
+        
+        // Function to calculate the Edit Distance between two words
+        private int CalculateEditDistance(string word1, string word2)
+        {
+            int m = word1.Length;
+            int n = word2.Length;
+            var dp = new int[m + 1, n + 1];
+
+            for (int i = 0; i <= m; i++)
+            {
+                dp[i, 0] = i;
+            }
+
+            for (int j = 0; j <= n; j++)
+            {
+                dp[0, j] = j;
+            }
+
+            for (int i = 1; i <= m; i++)
+            {
+                for (int j = 1; j <= n; j++)
+                {
+                    int cost = (word1[i - 1] == word2[j - 1]) ? 0 : 1;
+
+                    dp[i, j] = Math.Min(
+                        Math.Min(dp[i - 1, j] + 1, dp[i, j - 1] + 1), // Deletion or Insertion
+                        dp[i - 1, j - 1] + cost); // Substitution
+                }
+            }
+
+            return dp[m, n];
+        }
+
+        private string CleanWord(string word)
+        {
+            return word.ToLower().Trim('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '”', '“');
+        }
+
+        // Helper function to add found terms to the dictionary
+        private void AddToFoundTerms(Dictionary<string, List<string>> foundTerms, TrieNode node)
+        {
+            if (!foundTerms.ContainsKey(node.OrigTerm))
+            {
+                foundTerms[node.OrigTerm] = new List<string>();
+            }
+            foundTerms[node.OrigTerm].Add(node.Translation);
+            foundTerms[node.OrigTerm].Add(node.Level);
         }
     }
 }
