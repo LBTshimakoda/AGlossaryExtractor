@@ -269,7 +269,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(47, 48);
+            this.textBox6.Location = new System.Drawing.Point(47, 51);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(52, 20);
             this.textBox6.TabIndex = 14;
@@ -284,7 +284,6 @@
             this.button7.TabIndex = 13;
             this.button7.Text = "test";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Visible = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label10

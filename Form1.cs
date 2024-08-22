@@ -8,6 +8,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -54,7 +55,75 @@ namespace AGlossaryExtractor
             comboBox1.DataSource = langs;
             comboBox2.SelectedIndex = 0;
             comboBox1.SelectedIndex = 2;
-            this.Text = "TSV Glossary Extractor (July 10th, 2024)";
+            this.Text = "TSV Glossary Extractor (August 22nd, 2024)";
+            loadGlossaries();
+        }
+        public async void loadGlossaries()
+        {
+            string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            var files = Directory.GetFiles(path, "*.txt");
+            foreach (var file in files)
+            {
+                if (Regex.IsMatch(file, @"\\MedDRA[^\\]*?\.txt"))
+                {
+                    var text = File.ReadAllText(file);
+                    glossaryTermsMedDRA = await getTermsFromTSV(text);
+                    if (glossaryTermsMedDRA != null)
+                    {
+                        richTextBox1.Text += "MedDRA terms loaded: " + glossaryTermsMedDRA.Count + "\n";
+                        var fname = (new FileInfo(file)).Name;
+                        var termsNote = fname.Substring(0, 6);
+                        if (Regex.IsMatch(fname, "_"))
+                            termsNote = fname.Substring(0, fname.IndexOf("_"));
+                        textBox1.Text = file;
+                        textBox4.Text = termsNote;
+                    }
+                }
+                if(Regex.IsMatch(file, @"\\EDQM[^\\]*?\.txt"))
+                {
+                    var text1 = File.ReadAllText(file);
+                    glossaryTermsEDQM = await getTermsFromTSV(text1);
+                    if (glossaryTermsEDQM != null)
+                    {
+                        richTextBox1.Text += "EDQM terms loaded: " + glossaryTermsEDQM.Count + "\n";
+                        var fname1 = (new FileInfo(file)).Name;
+                        var termsNote1 = fname1.Substring(0, 6);
+                        if (Regex.IsMatch(fname1, "_"))
+                            termsNote1 = fname1.Substring(0, fname1.IndexOf("_"));
+                        textBox3.Text = file;
+                        textBox5.Text = termsNote1;
+                    }
+
+                }
+            }
+            glossaryTerms = glossaryTermsMedDRA.Union(glossaryTermsEDQM).ToList();
+            if (glossaryTerms == null || glossaryTerms.Count == 0)
+            {
+                richTextBox1.Text += "No terms loaded. Check text files.\n";
+                return;
+            }
+            richTextBox1.Text += "Combined terms count: " + glossaryTerms.Count + "\n";
+            // Convert the list to a DataTable
+            DataTable dataTable = new DataTable();
+
+            // Get the properties of the class using reflection
+            var properties = typeof(GlossaryTerm).GetProperties();
+
+            // Add columns to the DataTable based on the class properties
+            foreach (var property in properties)
+            {
+                dataTable.Columns.Add(property.Name);
+            }
+
+            // Add rows to the DataTable
+            foreach (var term in glossaryTerms)
+            {
+                var values = properties.Select(p => p.GetValue(term, null)).ToArray();
+                dataTable.Rows.Add(values);
+            }
+
+            bindingSource.DataSource = dataTable;
+            dataGridView1.DataSource = bindingSource;
         }
         void textBox1_DragDrop(object sender, DragEventArgs e)
         {
@@ -198,6 +267,7 @@ namespace AGlossaryExtractor
             if(glossaryTerms==null || glossaryTerms.Count==0)
             {
                 richTextBox1.Text += "No terms loaded. Check text files.\n";
+                return;
             }
             richTextBox1.Text += "Combined terms count: " + glossaryTerms.Count + "\n";
             // Convert the list to a DataTable
@@ -392,6 +462,8 @@ namespace AGlossaryExtractor
 
         public static List<GlossaryTermScript> getTermsFromTSV2Langs(string tsvContent, string sLang, string tLang)
         {
+            SOURCE_LANG_CODE = sLang;
+            TARGET_LANG_CODE = tLang;
             Dictionary<int, string> langIndex = new Dictionary<int, string>();
             var terms = new List<GlossaryTermScript>();
             int j = 0;
@@ -474,6 +546,8 @@ namespace AGlossaryExtractor
         }
         public List<GlossaryTermScript> extractLangGlossaryTerms(List<GlossaryTerm> terms, string sLang, string tLang)
         {
+            SOURCE_LANG_CODE = sLang;
+            TARGET_LANG_CODE = tLang;
             List<GlossaryTermScript> glossaryTerms1 = new List<GlossaryTermScript>();
 
             var properties = typeof(GlossaryTerm).GetProperties();
@@ -537,6 +611,8 @@ namespace AGlossaryExtractor
             }
             var slang = comboBox2.Text;
             var lang = comboBox1.Text;
+            SOURCE_LANG_CODE = slang;
+            TARGET_LANG_CODE = lang;
             var uniqueSortedTerms = getExtractedTermsForXlz(inputFile, slang, lang);
             if (uniqueSortedTerms != null)
             {
@@ -547,6 +623,8 @@ namespace AGlossaryExtractor
         }
         public List<GlossaryTermScript> getExtractedTermsForXlz(string inputFile, string slang, string tlang)
         {
+            SOURCE_LANG_CODE = slang;
+            TARGET_LANG_CODE = tlang;
             if (glossaryTerms == null || glossaryTerms.Count == 0)
             {
                 //richTextBox2.Text += "Load glossary TXT first.\n";
@@ -730,6 +808,8 @@ namespace AGlossaryExtractor
             }
             return true;
         }
+        public static string SOURCE_LANG_CODE = "en-gb";
+        public static string TARGET_LANG_CODE = "de-de";
         private void button4_Click(object sender, EventArgs e)
         {
             var inputFile = textBox2.Text;
@@ -741,6 +821,8 @@ namespace AGlossaryExtractor
             }
             var slang = comboBox2.Text;
             var lang = comboBox1.Text;
+            SOURCE_LANG_CODE = slang;
+            TARGET_LANG_CODE = lang;
             var MedDRAnote = "MedDRA";
             var EDQMnote = "EDQM";
             if (textBox4.Text != "") MedDRAnote = textBox4.Text;
@@ -1098,9 +1180,181 @@ namespace AGlossaryExtractor
             trie = new Trie();
             foreach (var term in terms)
             {
-                if(term.sLang!=null)
+                if (term.sLang != null)
+                {
                     trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
+                    var termCode = term.sLang.ToLower();
+                    var termCode1 = "";
+                    switch (Form1.SOURCE_LANG_CODE)
+                    {
+                        case "en-gb":
+                        case "en-us":
+                            trie.Insert(Pluralize_en(termCode), term.sLang, term.tLang, term.Level);
+                            break;
+                        case "da-dk":
+                            List<string> endings_da_e = new List<string>() { "en", "et", "er", "erne", "ene" };
+                            List<string> endings_da = new List<string>() { "en", "et", "er", "e", "r", "s", "erne", "ene" };
+                            if (termCode.EndsWith("e"))
+                            {
+                                foreach (var ending in endings_da_e)
+                                {
+                                    termCode1 = termCode.Substring(0, termCode.Length - 1) + ending;
+                                    trie.Insert(termCode1, term.sLang, term.tLang, term.Level);
+                                }
+                            }
+                            else
+                            {
+                                foreach (var ending in endings_da)
+                                {
+                                    termCode1 = termCode + ending;
+                                    trie.Insert(termCode1, term.sLang, term.tLang, term.Level);
+                                }
+                            }
+                            break;
+                    }
+                }
             }
+        }
+        static string Pluralize_da(string noun)
+        {
+            // Irregular nouns dictionary
+            var irregularNouns = new Dictionary<string, string>
+            {
+            { "mand", "mænd" },
+            { "barn", "børn" },
+            { "tand", "tænder" },
+            { "fod", "fødder" },
+            { "mus", "mus" },
+            { "ko", "køer" },
+            { "gås", "gæs" },
+            { "bog", "bøger" },
+            { "nat", "nætter" },
+            { "and", "ænder" },
+            { "hånd", "hænder" },
+            { "bror", "brødre" },
+            { "mor", "mødre" },
+            { "far", "fædre" },
+            { "søster", "søstre" },
+            { "datter", "døtre" },
+            { "fisk", "fisk" },
+            { "lam", "lam" },
+            { "kvinde", "kvinder" }
+            };
+
+            // Check for irregular nouns
+            if (irregularNouns.ContainsKey(noun))
+            {
+                return irregularNouns[noun];
+            }
+
+            // Common gender nouns (en-words)
+            if (IsCommonGender(noun))
+            {
+                if (noun.EndsWith("e"))
+                {
+                    return noun + "r";
+                }
+                else if (noun.EndsWith("r"))
+                {
+                    return noun + "e";
+                }
+                else
+                {
+                    return noun + "er";
+                }
+            }
+
+            // Neuter gender nouns (et-words)
+            if (IsNeuterGender(noun))
+            {
+                if (noun.EndsWith("e"))
+                {
+                    return noun + "r";
+                }
+                else
+                {
+                    return noun + "e";
+                }
+            }
+
+            // Default rule: add "er"
+            return noun + "er";
+        }
+
+        static bool IsCommonGender(string noun)
+        {
+            // Simplified check for common gender (en-words)
+            // In a real application, you might need a more comprehensive check
+            return !IsNeuterGender(noun);
+        }
+
+        static bool IsNeuterGender(string noun)
+        {
+            // Simplified check for neuter gender (et-words)
+            // In a real application, you might need a more comprehensive check
+            return noun.EndsWith("hus") || noun.EndsWith("barn");
+        }
+        static bool IsVowel(char c)
+        {
+            return "aeiou".IndexOf(c) >= 0;
+        }
+        static string Pluralize_en(string noun)
+        {
+            // Irregular nouns dictionary
+            var irregularNouns = new Dictionary<string, string>
+            {
+            { "child", "children" },
+            { "man", "men" },
+            { "woman", "women" },
+            { "mouse", "mice" },
+            { "goose", "geese" },
+            { "foot", "feet" },
+            { "tooth", "teeth" },
+            { "person", "people" },
+            { "cactus", "cacti" },
+            { "focus", "foci" },
+            { "fungus", "fungi" },
+            { "nucleus", "nuclei" },
+            { "syllabus", "syllabi" },
+            { "analysis", "analyses" },
+            { "diagnosis", "diagnoses" },
+            { "oasis", "oases" },
+            { "thesis", "theses" },
+            { "crisis", "crises" },
+            { "phenomenon", "phenomena" },
+            { "criterion", "criteria" }
+            };
+
+            // Check for irregular nouns
+            if (irregularNouns.ContainsKey(noun))
+            {
+                return irregularNouns[noun];
+            }
+
+            // Nouns ending in "s", "x", "z", "ch", "sh"
+            if (noun.EndsWith("s") || noun.EndsWith("x") || noun.EndsWith("z") || noun.EndsWith("ch") || noun.EndsWith("sh"))
+            {
+                return noun + "es";
+            }
+
+            // Nouns ending in a consonant + "y"
+            if (noun.EndsWith("y") && noun.Length > 1 && !IsVowel(noun[noun.Length - 2]))
+            {
+                return noun.Substring(0, noun.Length - 1) + "ies";
+            }
+
+            // Nouns ending in "f" or "fe"
+            if (noun.EndsWith("f"))
+            {
+                return noun.Substring(0, noun.Length - 1) + "ves";
+            }
+            if (noun.EndsWith("fe"))
+            {
+                return noun.Substring(0, noun.Length - 2) + "ves";
+            }
+
+            // Default rule: add "s"
+            return noun + "s";
         }
         public Dictionary<string, List<string>> ExtractTermsFromText(string text)
         {
@@ -1110,7 +1364,7 @@ namespace AGlossaryExtractor
             foreach (string paragraph in paragraphs)
             {
                 var paragraph1 = paragraph;
-                paragraph1 = AddPluralsAndEdForms(paragraph1);
+                //paragraph1 = AddPluralsAndEdForms(paragraph1);
                 SearchTermsInParagraph(paragraph1, foundTerms);
             }
             return RemoveSingleTermsIfLongerVersionsExist(foundTerms, text);
@@ -1208,7 +1462,6 @@ namespace AGlossaryExtractor
         {
             // Split the paragraph into words
             var words = paragraph.Split(new[] { ' ', '\t', '\n', '\r', '/' }, StringSplitOptions.RemoveEmptyEntries);
-            //words = AddPluralsAndEdForms1(words);
             TrieNode root = trie.GetRoot();
             for (int i = 0; i < words.Length; i++)
             {
