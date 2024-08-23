@@ -1184,7 +1184,6 @@ namespace AGlossaryExtractor
                 {
                     trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
                     var termCode = term.sLang.ToLower();
-                    var termCode1 = "";
                     switch (Form1.SOURCE_LANG_CODE)
                     {
                         case "en-gb":
@@ -1192,28 +1191,253 @@ namespace AGlossaryExtractor
                             trie.Insert(Pluralize_en(termCode), term.sLang, term.tLang, term.Level);
                             break;
                         case "da-dk":
-                            List<string> endings_da_e = new List<string>() { "en", "et", "er", "erne", "ene" };
-                            List<string> endings_da = new List<string>() { "en", "et", "er", "e", "r", "s", "erne", "ene" };
-                            if (termCode.EndsWith("e"))
+                            trie.Insert(Pluralize_da(termCode), term.sLang, term.tLang, term.Level);
+                            break;
+                        case "ru-ru":
+                            var ru_sigular_terms = GetPossibleForms_ru(termCode);
+                            foreach (var ru_term in ru_sigular_terms)
                             {
-                                foreach (var ending in endings_da_e)
-                                {
-                                    termCode1 = termCode.Substring(0, termCode.Length - 1) + ending;
-                                    trie.Insert(termCode1, term.sLang, term.tLang, term.Level);
-                                }
+                                trie.Insert(ru_term, term.sLang, term.tLang, term.Level);
                             }
-                            else
+                            var plural_ru_term = Pluralize_ru(termCode);
+                            trie.Insert(plural_ru_term, term.sLang, term.tLang, term.Level);
+                            var ru_plural_terms = GetPossiblePluralForms_ru(plural_ru_term);
+                            foreach (var ru_term in ru_plural_terms)
                             {
-                                foreach (var ending in endings_da)
-                                {
-                                    termCode1 = termCode + ending;
-                                    trie.Insert(termCode1, term.sLang, term.tLang, term.Level);
-                                }
+                                trie.Insert(ru_term, term.sLang, term.tLang, term.Level);
                             }
                             break;
                     }
                 }
             }
+        }
+        static List<string> GetPossiblePluralForms_ru(string noun)
+        {
+            var forms = new List<string> { noun };
+
+            // Irregular plural nouns dictionary
+            var irregularNouns = new Dictionary<string, List<string>>
+        {
+            { "дети", new List<string> { "детей", "детям", "детей", "детьми", "детях" } },
+            { "люди", new List<string> { "людей", "людям", "людей", "людьми", "людях" } }
+        };
+
+            // Check for irregular plural nouns
+            if (irregularNouns.ContainsKey(noun))
+            {
+                forms.AddRange(irregularNouns[noun]);
+                return forms;
+            }
+
+            // Nouns ending in "ы" or "и"
+            if (noun.EndsWith("ы") || noun.EndsWith("и"))
+            {
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ов"); // Genitive
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ам"); // Dative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ы"); // Accusative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ами"); // Instrumental
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ах"); // Prepositional
+            }
+            // Nouns ending in "а"
+            else if (noun.EndsWith("а"))
+            {
+                forms.Add(noun.Substring(0, noun.Length - 1) + ""); // Genitive
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ам"); // Dative
+                forms.Add(noun.Substring(0, noun.Length - 1) + ""); // Accusative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ами"); // Instrumental
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ах"); // Prepositional
+            }
+            // Nouns ending in "я"
+            else if (noun.EndsWith("я"))
+            {
+                forms.Add(noun.Substring(0, noun.Length - 1) + "й"); // Genitive
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ям"); // Dative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "й"); // Accusative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ями"); // Instrumental
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ях"); // Prepositional
+            }
+            // Nouns ending in "о"
+            else if (noun.EndsWith("о"))
+            {
+                forms.Add(noun.Substring(0, noun.Length - 1) + ""); // Genitive
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ам"); // Dative
+                forms.Add(noun.Substring(0, noun.Length - 1) + ""); // Accusative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ами"); // Instrumental
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ах"); // Prepositional
+            }
+            // Nouns ending in "е"
+            else if (noun.EndsWith("е"))
+            {
+                forms.Add(noun.Substring(0, noun.Length - 1) + "й"); // Genitive
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ям"); // Dative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "й"); // Accusative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ями"); // Instrumental
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ях"); // Prepositional
+            }
+
+            return forms;
+        }
+        static List<string> GetPossibleForms_ru(string noun)
+        {
+            var forms = new List<string> { noun };
+
+            // Irregular nouns dictionary
+            var irregularNouns = new Dictionary<string, List<string>>
+        {
+            { "ребёнок", new List<string> { "ребёнка", "ребёнку", "ребёнком", "ребёнке" } },
+            { "человек", new List<string> { "человека", "человеку", "человеком", "человеке" } }
+        };
+
+            // Check for irregular nouns
+            if (irregularNouns.ContainsKey(noun))
+            {
+                forms.AddRange(irregularNouns[noun]);
+                return forms;
+            }
+
+            // Masculine nouns ending in a consonant
+            if (IsMasculineNoun_ru(noun))
+            {
+                forms.Add(noun + "а"); // Genitive
+                forms.Add(noun + "у"); // Dative
+                forms.Add(noun + "ом"); // Instrumental
+                forms.Add(noun + "е"); // Prepositional
+            }
+            // Feminine nouns ending in "а"
+            else if (noun.EndsWith("а"))
+            {
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ы"); // Genitive
+                forms.Add(noun.Substring(0, noun.Length - 1) + "е"); // Dative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "у"); // Accusative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ой"); // Instrumental
+                forms.Add(noun.Substring(0, noun.Length - 1) + "е"); // Prepositional
+            }
+            // Feminine nouns ending in "я"
+            else if (noun.EndsWith("я"))
+            {
+                forms.Add(noun.Substring(0, noun.Length - 1) + "и"); // Genitive
+                forms.Add(noun.Substring(0, noun.Length - 1) + "е"); // Dative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ю"); // Accusative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ей"); // Instrumental
+                forms.Add(noun.Substring(0, noun.Length - 1) + "е"); // Prepositional
+            }
+            // Neuter nouns ending in "о"
+            else if (noun.EndsWith("о"))
+            {
+                forms.Add(noun.Substring(0, noun.Length - 1) + "а"); // Genitive
+                forms.Add(noun.Substring(0, noun.Length - 1) + "у"); // Dative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ом"); // Instrumental
+                forms.Add(noun.Substring(0, noun.Length - 1) + "е"); // Prepositional
+            }
+            // Neuter nouns ending in "е"
+            else if (noun.EndsWith("е"))
+            {
+                forms.Add(noun.Substring(0, noun.Length - 1) + "я"); // Genitive
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ю"); // Dative
+                forms.Add(noun.Substring(0, noun.Length - 1) + "ем"); // Instrumental
+                forms.Add(noun.Substring(0, noun.Length - 1) + "е"); // Prepositional
+            }
+            // Nouns ending in "ь"
+            else if (noun.EndsWith("ь"))
+            {
+                if (IsMasculineNoun_ru(noun))
+                {
+                    forms.Add(noun.Substring(0, noun.Length - 1) + "я"); // Genitive
+                    forms.Add(noun.Substring(0, noun.Length - 1) + "ю"); // Dative
+                    forms.Add(noun.Substring(0, noun.Length - 1) + "ь"); // Accusative
+                    forms.Add(noun.Substring(0, noun.Length - 1) + "ем"); // Instrumental
+                    forms.Add(noun.Substring(0, noun.Length - 1) + "е"); // Prepositional
+                }
+                else
+                {
+                    forms.Add(noun.Substring(0, noun.Length - 1) + "и"); // Genitive
+                    forms.Add(noun.Substring(0, noun.Length - 1) + "и"); // Dative
+                    forms.Add(noun.Substring(0, noun.Length - 1) + "ь"); // Accusative
+                    forms.Add(noun.Substring(0, noun.Length - 1) + "ью"); // Instrumental
+                    forms.Add(noun.Substring(0, noun.Length - 1) + "и"); // Prepositional
+                }
+            }
+
+            return forms;
+        }
+        static string Pluralize_ru(string noun)
+        {
+            // Irregular nouns dictionary
+            var irregularNouns = new Dictionary<string, string>
+        {
+            { "ребёнок", "дети" },
+            { "человек", "люди" }
+        };
+
+            // Check for irregular nouns
+            if (irregularNouns.ContainsKey(noun))
+            {
+                return irregularNouns[noun];
+            }
+
+            // Masculine nouns ending in a consonant
+            if (IsMasculineNoun_ru(noun))
+            {
+                return noun + "ы";
+            }
+            // Feminine nouns ending in "а"
+            else if (noun.EndsWith("а"))
+            {
+                return noun.Substring(0, noun.Length - 1) + "ы";
+            }
+            // Feminine nouns ending in "я"
+            else if (noun.EndsWith("я"))
+            {
+                return noun.Substring(0, noun.Length - 1) + "и";
+            }
+            // Neuter nouns ending in "о"
+            else if (noun.EndsWith("о"))
+            {
+                return noun.Substring(0, noun.Length - 1) + "а";
+            }
+            // Neuter nouns ending in "е"
+            else if (noun.EndsWith("е"))
+            {
+                return noun.Substring(0, noun.Length - 1) + "я";
+            }
+            // Nouns ending in "ь"
+            else if (noun.EndsWith("ь"))
+            {
+                return noun.Substring(0, noun.Length - 1) + "и";
+            }
+            // Default rule: add "ы"
+            else
+            {
+                return noun + "ы";
+            }
+        }
+        static bool IsMasculineNoun_ru(string noun)
+        {
+            // List of common masculine nouns ending in "ь"
+            var masculineNounsEndingInSoftSign = new HashSet<string>
+        {
+            "день", "конь", "путь", "гость", "камень"
+        };
+
+            // List of common feminine nouns ending in "ь"
+            var feminineNounsEndingInSoftSign = new HashSet<string>
+        {
+            "ночь", "мышь", "дочь", "тень", "площадь"
+        };
+
+            // Check if the noun is in the list of masculine or feminine nouns ending in "ь"
+            if (masculineNounsEndingInSoftSign.Contains(noun))
+            {
+                return true;
+            }
+            if (feminineNounsEndingInSoftSign.Contains(noun))
+            {
+                return false;
+            }
+
+            // Simplified check for masculine nouns ending in a consonant or soft sign
+            // In a real application, you might need a more comprehensive check
+            return !noun.EndsWith("а") && !noun.EndsWith("я") && !noun.EndsWith("о") && !noun.EndsWith("е") && !noun.EndsWith("ь");
         }
         static string Pluralize_da(string noun)
         {
@@ -1248,7 +1472,7 @@ namespace AGlossaryExtractor
             }
 
             // Common gender nouns (en-words)
-            if (IsCommonGender(noun))
+            if (IsCommonGender_da(noun))
             {
                 if (noun.EndsWith("e"))
                 {
@@ -1265,7 +1489,7 @@ namespace AGlossaryExtractor
             }
 
             // Neuter gender nouns (et-words)
-            if (IsNeuterGender(noun))
+            if (IsNeuterGender_da(noun))
             {
                 if (noun.EndsWith("e"))
                 {
@@ -1280,15 +1504,13 @@ namespace AGlossaryExtractor
             // Default rule: add "er"
             return noun + "er";
         }
-
-        static bool IsCommonGender(string noun)
+        static bool IsCommonGender_da(string noun)
         {
             // Simplified check for common gender (en-words)
             // In a real application, you might need a more comprehensive check
-            return !IsNeuterGender(noun);
+            return !IsNeuterGender_da(noun);
         }
-
-        static bool IsNeuterGender(string noun)
+        static bool IsNeuterGender_da(string noun)
         {
             // Simplified check for neuter gender (et-words)
             // In a real application, you might need a more comprehensive check
