@@ -1163,7 +1163,51 @@ namespace AGlossaryExtractor
             endNode = node;
             return node.IsEndOfTerm;
         }
-    
+
+        public bool Search(List<string> words, out TrieNode endNode, int ignoreLastNLetters = 0)
+        {
+            TrieNode node = root;
+
+            foreach (var word in words)
+            {
+                bool found = false;
+
+                // Check for an exact match first
+                if (node.Children.ContainsKey(word))
+                {
+                    node = node.Children[word];
+                    found = true;
+                }
+                else if (ignoreLastNLetters > 0)
+                {
+                    // Check for a match with the last N letters removed
+                    for (int n = 1; n <= ignoreLastNLetters && word.Length > n + 2; n++)
+                    {
+                        var truncatedWord = word.Substring(0, word.Length - n);
+                        foreach (var child in node.Children)
+                        {
+                            if (child.Key.StartsWith(truncatedWord) && Math.Abs(child.Key.Length - truncatedWord.Length) < 3)
+                            {
+                                node = child.Value;
+                                //potentialTerm.Add(child.Key);
+                                found = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (!found)
+                {
+                    endNode = null;
+                    return false;
+                }
+            }
+
+            endNode = node;
+            return node.IsEndOfTerm;
+        }
+
         public TrieNode GetRoot()
         {
             return root;
@@ -1182,34 +1226,76 @@ namespace AGlossaryExtractor
             {
                 if (term.sLang != null)
                 {
-                    trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
-                    var termCode = term.sLang.ToLower();
-                    switch (Form1.SOURCE_LANG_CODE)
+                    var words = term.sLang.Split(' ');
+                    if (words.Length > 1)
                     {
-                        case "en-gb":
-                        case "en-us":
-                            trie.Insert(Pluralize_en(termCode), term.sLang, term.tLang, term.Level);
-                            break;
-                        case "da-dk":
-                            trie.Insert(Pluralize_da(termCode), term.sLang, term.tLang, term.Level);
-                            break;
-                        case "ru-ru":
-                            var ru_sigular_terms = GetPossibleForms_ru(termCode);
-                            foreach (var ru_term in ru_sigular_terms)
-                            {
-                                trie.Insert(ru_term, term.sLang, term.tLang, term.Level);
-                            }
-                            var plural_ru_term = Pluralize_ru(termCode);
-                            trie.Insert(plural_ru_term, term.sLang, term.tLang, term.Level);
-                            var ru_plural_terms = GetPossiblePluralForms_ru(plural_ru_term);
-                            foreach (var ru_term in ru_plural_terms)
-                            {
-                                trie.Insert(ru_term, term.sLang, term.tLang, term.Level);
-                            }
-                            break;
+                        trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
+                    }
+                    else
+                    {
+                        List<string> transformedTerms = GenerateTransformedTerms(term.sLang.ToLower());
+
+                        foreach (var transformedTerm in transformedTerms)
+                        {
+                            trie.Insert(transformedTerm, term.sLang, term.tLang, term.Level);
+                        }
                     }
                 }
             }
+        }
+        static List<string> GenerateTransformedTerms(string term)
+        {
+            var words = term.Split(' ');
+            var results = new List<string>();
+            GenerateCombinations(words, 0, new List<string>(), results);
+            return results;
+        }
+        static void GenerateCombinations(string[] words, int index, List<string> current, List<string> results)
+        {
+            if (index == words.Length)
+            {
+                results.Add(string.Join(" ", current));
+                return;
+            }
+
+            // Original word
+            current.Add(words[index]);
+            GenerateCombinations(words, index + 1, current, results);
+            current.RemoveAt(current.Count - 1);
+
+            // Transformed words
+            var transformedWords = TransformWord(words[index]);
+            foreach (var transformedWord in transformedWords)
+            {
+                current.Add(transformedWord);
+                GenerateCombinations(words, index + 1, current, results);
+                current.RemoveAt(current.Count - 1);
+            }
+        }
+        static List<string> TransformWord(string word)
+        {
+            // Example transformation function: returns the original word and its reversed version
+            var transformedWords = new List<string>();
+            transformedWords.Add(word);
+            switch (Form1.SOURCE_LANG_CODE)
+                {
+                case "en-gb":
+                case "en-us":
+                    transformedWords.Add(Pluralize_en(word));
+                    break;
+                case "da-dk":
+                    transformedWords.Add(Pluralize_da(word));
+                    break;
+                case "ru-ru":
+                    var ru_sigular_terms = GetPossibleForms_ru(word);
+                    transformedWords.AddRange(ru_sigular_terms);
+                    var plural_ru_term = Pluralize_ru(word);
+                    transformedWords.Add(plural_ru_term);
+                    var ru_plural_terms = GetPossiblePluralForms_ru(plural_ru_term);
+                    transformedWords.AddRange(ru_plural_terms);
+                    break;
+            }
+            return transformedWords;
         }
         static List<string> GetPossiblePluralForms_ru(string noun)
         {
@@ -1586,10 +1672,10 @@ namespace AGlossaryExtractor
             foreach (string paragraph in paragraphs)
             {
                 var paragraph1 = paragraph;
-                //paragraph1 = AddPluralsAndEdForms(paragraph1);
+                paragraph1 = AddPluralsAndEdForms(paragraph1);
                 SearchTermsInParagraph(paragraph1, foundTerms);
             }
-            return RemoveSingleTermsIfLongerVersionsExist(foundTerms, text);
+            return RemoveSingleTermsIfLongerVersionsExist(foundTerms, text); //foundTerms; // 
         }
         private static bool IsTermSeparatelyInText(string term, string text)
         {
@@ -1657,16 +1743,21 @@ namespace AGlossaryExtractor
             {
                 newwords.Add(word);
             }
-            newwords.Add(".");
-            List<string> newwords1 = new List<string>();
-            foreach (var word in words)
+            if (Form1.SOURCE_LANG_CODE == "en-gb" || Form1.SOURCE_LANG_CODE == "en-us")
             {
-                if (word.EndsWith("s")) newwords1.Add(word.Substring(0, word.Length - 1));
-                else newwords1.Add(word);
+                newwords.Add(".");
+                List<string> newwords1 = new List<string>();
+                foreach (var word in words)
+                {
+                    if (word.EndsWith("s"))
+                        newwords1.Add(word.Substring(0, word.Length - 1));
+                    else
+                        newwords1.Add(word);
+                }
+                newwords1.Add(".");
+                if (string.Join("", newwords) != string.Join("", newwords1))
+                    newwords.AddRange(newwords1);
             }
-            newwords1.Add(".");
-            if (string.Join("", newwords) != string.Join("", newwords1))
-                newwords.AddRange(newwords1);
             //foreach (var word in words)
             //{
             //    if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 1));
@@ -1690,19 +1781,44 @@ namespace AGlossaryExtractor
                 var potentialTerm = new List<string>();
                 TrieNode node = root;
                 int j = i;
+
                 while (j < words.Length)
                 {
-                    string cleanedWord = words[j].ToLower();
-                    cleanedWord = cleanedWord.TrimEnd('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '”');
-                    cleanedWord = cleanedWord.TrimStart('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '“');
+                    string cleanedWord = CleanWord(words[j]);
+                    bool found = false;
+
+                    // Check for exact match first
                     if (node.Children.ContainsKey(cleanedWord))
                     {
                         node = node.Children[cleanedWord];
                         potentialTerm.Add(cleanedWord);
+                        found = true;
+                    }
+                    else
+                    {
+                        // Check for match with the last 1 or 2 letters removed
+                        for (int n = 1; n <= 2 && cleanedWord.Length > n + 2; n++)
+                        {
+                            string truncatedWord = cleanedWord.Substring(0, cleanedWord.Length - n);
+                            foreach (var child in node.Children)
+                            {
+                                if (child.Key.StartsWith(truncatedWord) && Math.Abs(child.Key.Length - truncatedWord.Length) < 3)
+                                {
+                                    node = child.Value;
+                                    potentialTerm.Add(child.Key);
+                                    found = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    if (found)
+                    {
                         if (node.IsEndOfTerm)
                         {
                             TrieNode endNode;
-                            if (trie.Search(potentialTerm, out endNode))
+                            if (trie.Search(potentialTerm, out endNode, 2))
                             {
                                 if (!foundTerms.ContainsKey(node.OrigTerm))
                                 {
@@ -1715,11 +1831,46 @@ namespace AGlossaryExtractor
                     }
                     else
                     {
+                        // If no match is found, break the loop and move to the next starting word
                         break;
                     }
+
                     j++;
                 }
-            }
+            }            
+            //for (int i = 0; i < words.Length; i++)
+            //{
+            //    var potentialTerm = new List<string>();
+            //    TrieNode node = root;
+            //    int j = i;
+            //    while (j < words.Length)
+            //    {
+            //        string cleanedWord = CleanWord(words[j]);
+            //        if (node.Children.ContainsKey(cleanedWord)) 
+            //        {
+            //            node = node.Children[cleanedWord];
+            //            potentialTerm.Add(cleanedWord);
+            //            if (node.IsEndOfTerm)
+            //            {
+            //                TrieNode endNode;
+            //                if (trie.Search(potentialTerm, out endNode, 2))
+            //                {
+            //                    if (!foundTerms.ContainsKey(node.OrigTerm))
+            //                    {
+            //                        foundTerms[node.OrigTerm] = new List<string>();
+            //                    }
+            //                    foundTerms[node.OrigTerm].Add(node.Translation);
+            //                    foundTerms[node.OrigTerm].Add(node.Level);
+            //                }
+            //            }
+            //        }
+            //        else
+            //        {
+            //            break;
+            //        }
+            //        j++;
+            //    }
+            //}
         }
         private void SearchTermsInParagraph1(string paragraph, Dictionary<string, List<string>> foundTerms, double similarityThreshold = 0.97)
         {
@@ -2012,7 +2163,6 @@ namespace AGlossaryExtractor
 
             return results;
         }
-
         // Function to calculate the maximum allowable edit distance based on the similarity threshold
         private int CalculateMaxEditDistance(List<string> potentialTerm, double similarityThreshold)
         {
@@ -2069,7 +2219,7 @@ namespace AGlossaryExtractor
 
             return dp[m, n];
         }
-        
+       
         // Function to calculate the Edit Distance between two words
         private int CalculateEditDistance(string word1, string word2)
         {
@@ -2101,12 +2251,10 @@ namespace AGlossaryExtractor
 
             return dp[m, n];
         }
-
         private string CleanWord(string word)
         {
             return word.ToLower().Trim('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '”', '“');
         }
-
         // Helper function to add found terms to the dictionary
         private void AddToFoundTerms(Dictionary<string, List<string>> foundTerms, TrieNode node)
         {
