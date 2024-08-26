@@ -284,6 +284,7 @@
             this.button7.TabIndex = 13;
             this.button7.Text = "test";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label10

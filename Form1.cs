@@ -55,7 +55,7 @@ namespace AGlossaryExtractor
             comboBox1.DataSource = langs;
             comboBox2.SelectedIndex = 0;
             comboBox1.SelectedIndex = 2;
-            this.Text = "TSV Glossary Extractor (August 22nd, 2024)";
+            this.Text = "TSV Glossary Extractor (August 26th, 2024)";
             loadGlossaries();
         }
         public async void loadGlossaries()
@@ -1181,12 +1181,12 @@ namespace AGlossaryExtractor
                 else if (ignoreLastNLetters > 0)
                 {
                     // Check for a match with the last N letters removed
-                    for (int n = 1; n <= ignoreLastNLetters && word.Length > n + 2; n++)
+                    for (int n = 1; n <= ignoreLastNLetters && word.Length > n + 5; n++)
                     {
                         var truncatedWord = word.Substring(0, word.Length - n);
                         foreach (var child in node.Children)
                         {
-                            if (child.Key.StartsWith(truncatedWord) && Math.Abs(child.Key.Length - truncatedWord.Length) < 3)
+                            if (child.Key.StartsWith(truncatedWord) && Math.Abs(child.Key.Length - truncatedWord.Length) < 2)
                             {
                                 node = child.Value;
                                 //potentialTerm.Add(child.Key);
@@ -1226,20 +1226,20 @@ namespace AGlossaryExtractor
             {
                 if (term.sLang != null)
                 {
-                    var words = term.sLang.Split(' ');
-                    if (words.Length > 1)
-                    {
+                    //var words = term.sLang.Split(' ');
+                    //if (words.Length > 1)
+                    //{
                         trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
-                    }
-                    else
-                    {
-                        List<string> transformedTerms = GenerateTransformedTerms(term.sLang.ToLower());
+                    //}
+                    //else
+                    //{
+                    //    List<string> transformedTerms = GenerateTransformedTerms(term.sLang.ToLower());
 
-                        foreach (var transformedTerm in transformedTerms)
-                        {
-                            trie.Insert(transformedTerm, term.sLang, term.tLang, term.Level);
-                        }
-                    }
+                    //    foreach (var transformedTerm in transformedTerms)
+                    //    {
+                    //        trie.Insert(transformedTerm, term.sLang, term.tLang, term.Level);
+                    //    }
+                    //}
                 }
             }
         }
@@ -1797,12 +1797,12 @@ namespace AGlossaryExtractor
                     else
                     {
                         // Check for match with the last 1 or 2 letters removed
-                        for (int n = 1; n <= 2 && cleanedWord.Length > n + 2; n++)
+                        for (int n = 1; n <= 2 && cleanedWord.Length > n + 5; n++)
                         {
                             string truncatedWord = cleanedWord.Substring(0, cleanedWord.Length - n);
                             foreach (var child in node.Children)
                             {
-                                if (child.Key.StartsWith(truncatedWord) && Math.Abs(child.Key.Length - truncatedWord.Length) < 3)
+                                if (child.Key.StartsWith(truncatedWord) && Math.Abs(child.Key.Length - truncatedWord.Length) < 2)
                                 {
                                     node = child.Value;
                                     potentialTerm.Add(child.Key);
