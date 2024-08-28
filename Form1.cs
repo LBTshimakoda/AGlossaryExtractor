@@ -608,7 +608,7 @@ namespace AGlossaryExtractor
                         if (value != null)
                             glossaryTerm1.sLang = value.ToString();
                         else
-                            glossaryTerm1.sLang = null;
+                            glossaryTerm1.sLang = "";
                     }
                     if (propertyInfo != null && propertyName == tLang.Replace("-", "_"))
                     {
@@ -616,7 +616,7 @@ namespace AGlossaryExtractor
                         if (value != null)
                             glossaryTerm1.tLang = value.ToString();
                         else
-                            glossaryTerm1.tLang = null;
+                            glossaryTerm1.tLang = "";
                     }
                 }
                 if(glossaryTerm1.tLang!=null && glossaryTerm1.tLang != "-")
