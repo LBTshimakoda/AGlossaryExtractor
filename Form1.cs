@@ -24,13 +24,15 @@ namespace AGlossaryExtractor
         { "en-gb", "en-us", "ar-xm", "cs-cz", "de-de", "el-gr", "es-es", "et-ee", "fi-fi", "fr-fr", "hu-hu", "it-it",
                 "ja-jp", "ko-kr", "lv-lv", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ru-ru", "sv-se", "zh-cn",
                 "bg-bg", "da-dk", "ga", "hr-hr", "is-is", "kk-kz", "lt-lt", "mk-mk", "mt-mt", "nb-no", 
-                "ro-ro", "sk-sk", "sl-si", "sq-al", "sr-rs", "tr-tr", "uk-ua", "bs-ba"
+                "ro-ro", "sk-sk", "sl-si", "sq-al", "sr-rs", "tr-tr", "uk-ua", "bs-ba",
+                "ar-eg", "es-mx", "fa-ir", "fr-ca", "he-il", "hi-in", "id-id", "ms-my", "srl-rs", "th-th", "zh-tw"
         };
         public static List<string> slangs = new List<string>()
         { "en-gb", "en-us", "ar-xm", "cs-cz", "de-de", "el-gr", "es-es", "et-ee", "fi-fi", "fr-fr", "hu-hu", "it-it",
                 "ja-jp", "ko-kr", "lv-lv", "nl-nl", "pl-pl", "pt-br", "pt-pt", "ru-ru", "sv-se", "zh-cn",
                 "bg-bg", "da-dk", "ga", "hr-hr", "is-is", "kk-kz", "lt-lt", "mk-mk", "mt-mt", "nb-no",
-                "ro-ro", "sk-sk", "sl-si", "sq-al", "sr-rs", "tr-tr", "uk-ua", "bs-ba"
+                "ro-ro", "sk-sk", "sl-si", "sq-al", "sr-rs", "tr-tr", "uk-ua", "bs-ba",
+                "ar-eg", "es-mx", "fa-ir", "fr-ca", "he-il", "hi-in", "id-id", "ms-my", "srl-rs", "th-th", "zh-tw"
         };
         private BindingSource bindingSource;
         public Form1()
@@ -397,6 +399,17 @@ namespace AGlossaryExtractor
                                 if (s == "tr-tr") term.tr_tr = s;
                                 if (s == "uk-ua") term.uk_ua = s;
                                 if (s == "bs-ba") term.bs_ba = s;
+                                if (s == "ar-eg") term.ar_eg = s;
+                                if (s == "es-mx") term.es_mx = s;
+                                if (s == "fa-ir") term.fa_ir = s;
+                                if (s == "fr-ca") term.fr_ca = s;
+                                if (s == "he-il") term.he_il = s;
+                                if (s == "hi-in") term.hi_in = s;
+                                if (s == "id-id") term.id_id = s;
+                                if (s == "ms-my") term.ms_my = s;
+                                if (s == "srl-rs") term.srl_rs = s;
+                                if (s == "th-th") term.th_th = s;
+                                if (s == "zh-tw") term.zh_tw = s;
 
                                 langIndex.Add(i, s);
                                 i++;
@@ -447,6 +460,17 @@ namespace AGlossaryExtractor
                                 if (langIndex[i] == "tr-tr") term.tr_tr = s;
                                 if (langIndex[i] == "uk-ua") term.uk_ua = s;
                                 if (langIndex[i] == "bs-ba") term.bs_ba = s;
+                                if (langIndex[i] == "ar-eg") term.ar_eg = s;
+                                if (langIndex[i] == "es-mx") term.es_mx = s;
+                                if (langIndex[i] == "fa-ir") term.fa_ir = s;
+                                if (langIndex[i] == "fr-ca") term.fr_ca = s;
+                                if (langIndex[i] == "he-il") term.he_il = s;
+                                if (langIndex[i] == "hi-in") term.hi_in = s;
+                                if (langIndex[i] == "id-id") term.id_id = s;
+                                if (langIndex[i] == "ms-my") term.ms_my = s;
+                                if (langIndex[i] == "srl-rs") term.srl_rs = s;
+                                if (langIndex[i] == "th-th") term.th_th = s;
+                                if (langIndex[i] == "zh-tw") term.zh_tw = s;
 
                                 i++;
                             }
@@ -1092,6 +1116,18 @@ namespace AGlossaryExtractor
         public string tr_tr { get; set; }
         public string uk_ua { get; set; }
         public string bs_ba { get; set; }
+
+        public string ar_eg { get; set; }
+        public string es_mx { get; set; }
+        public string fa_ir { get; set; }
+        public string fr_ca { get; set; }
+        public string he_il { get; set; }
+        public string hi_in { get; set; }
+        public string id_id { get; set; }
+        public string ms_my { get; set; }
+        public string srl_rs { get; set; }
+        public string th_th { get; set; }
+        public string zh_tw { get; set; }
     }
     public class GlossaryTermScript
     {
