@@ -19,7 +19,6 @@ Level: LLT/PT	TRUE	FALSE	FALSE	Chest pain	Боль в грудной клетк�
 Level: LLT/PT	TRUE	FALSE	FALSE	Chest X-ray	Рентгенография органов грудной клетки	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Chills	Озноб	noun
 Level: LLT	TRUE	FALSE	FALSE	Confusion	Спутанность сознания	noun
-	TRUE	FALSE	FALSE	Container	Контейнер	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	COVID-19	Коронавирусная инфекция COVID-19	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Death	Смерть	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Delivery	Родоразрешение	noun
@@ -55,7 +54,6 @@ Level: LLT/PT	TRUE	FALSE	FALSE	Infant	Младенческий возраст	no
 Level: LLT/PT	TRUE	FALSE	FALSE	Infection	Инфекция	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Injection	Инъекция	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Injury	Повреждение	noun
-	TRUE	FALSE	FALSE	Insert	Вкладка	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Interventional procedure	Интервенционная процедура	noun
 Level: LLT	TRUE	FALSE	FALSE	Invasive procedure	Инвазивная процедура	noun
 Level: LLT/PT	TRUE	FALSE	FALSE	Investigation	Исследование	noun

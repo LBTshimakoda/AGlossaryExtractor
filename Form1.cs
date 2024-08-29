@@ -605,21 +605,21 @@ namespace AGlossaryExtractor
                     if (propertyInfo != null && propertyName == sLang.Replace("-", "_"))
                     {
                         var value = propertyInfo.GetValue(term, null);
-                        if (value != null)
+                        if (value != null && value.ToString().Trim() != "")
                             glossaryTerm1.sLang = value.ToString();
                         else
-                            glossaryTerm1.sLang = "";
+                            glossaryTerm1.sLang = null;
                     }
                     if (propertyInfo != null && propertyName == tLang.Replace("-", "_"))
                     {
                         var value = propertyInfo.GetValue(term, null);
-                        if (value != null)
+                        if (value != null && value.ToString().Trim() != "")
                             glossaryTerm1.tLang = value.ToString();
                         else
-                            glossaryTerm1.tLang = "";
+                            glossaryTerm1.tLang = null;
                     }
                 }
-                if(glossaryTerm1.tLang!=null && glossaryTerm1.tLang != "-")
+                if(glossaryTerm1.sLang!=null && glossaryTerm1.tLang!=null && glossaryTerm1.tLang != "-" && glossaryTerm1.tLang.Trim() != "")
                     glossaryTerms1.Add(glossaryTerm1);
             }
             return glossaryTerms1;
@@ -785,50 +785,6 @@ namespace AGlossaryExtractor
                     }
                     writer.WriteLine(term.Level + "\t" + sLanguage + "\t" + tLanguage);
                 }
-                // Write each glossary term
-                //foreach (var term in glossaryTerms)
-                //{
-                //    if (tLang == "ar-xm") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ar_xm}");
-                //    if (tLang == "cs-cz") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.cs_cz}");
-                //    if (tLang == "de-de") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.de_de}");
-                //    if (tLang == "el-gr") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.el_gr}");
-                //    if (tLang == "es-es") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.es_es}");
-                //    if (tLang == "et-ee") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.et_ee}");
-                //    if (tLang == "fi-fi") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.fi_fi}");
-                //    if (tLang == "fr-fr") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.fr_fr}");
-                //    if (tLang == "hu-hu") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.hu_hu}");
-                //    if (tLang == "it-it") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.it_it}");
-                //    if (tLang == "ja-jp") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ja_jp}");
-                //    if (tLang == "ko-kr") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ko_kr}");
-                //    if (tLang == "lv-lv") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.lv_lv}");
-                //    if (tLang == "nl-nl") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.nl_nl}");
-                //    if (tLang == "pl-pl") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.pl_pl}");
-                //    if (tLang == "pt-br") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.pt_br}");
-                //    if (tLang == "pt-pt") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.pt_pt}");
-                //    if (tLang == "ru-ru") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ru_ru}");
-                //    if (tLang == "sv-se") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.sv_se}");
-                //    if (tLang == "zh-cn") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.zh_cn}");
-
-                //    if (tLang == "en-us") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.en_us}");
-                //    if (tLang == "bg-bg") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.bg_bg}");
-                //    if (tLang == "da-dk") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.da_dk}");
-                //    if (tLang == "qa") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.qa}");
-                //    if (tLang == "hr-hr") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.hr_hr}");
-                //    if (tLang == "is-is") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.is_is}");
-                //    if (tLang == "kk-kz") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.kk_kz}");
-                //    if (tLang == "lt-lt") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.lt_lt}");
-                //    if (tLang == "mk-mk") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.mk_mk}");
-                //    if (tLang == "mt-mt") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.mt_mt}");
-                //    if (tLang == "nb-no") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.nb_no}");
-                //    if (tLang == "ro-ro") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.ro_ro}");
-                //    if (tLang == "sk-sk") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.sk_sk}");
-                //    if (tLang == "sl-si") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.sl_si}");
-                //    if (tLang == "sq-al") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.sq_al}");
-                //    if (tLang == "sr-rs") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.sr_rs}");
-                //    if (tLang == "tr-tr") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.tr_tr}");
-                //    if (tLang == "uk-ua") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.uk_ua}");
-                //    if (tLang == "bs-ba") writer.WriteLine($"{term.Level}\t{term.en_gb}\t{term.bs_ba}");
-                //}
             }
             return true;
         }
@@ -1214,7 +1170,7 @@ namespace AGlossaryExtractor
                     node = node.Children[word];
                     found = true;
                 }
-                else if (ignoreLastNLetters > 0)
+                else if (ignoreLastNLetters > 0 && (Form1.SOURCE_LANG_CODE != "en-gb" && Form1.SOURCE_LANG_CODE != "en-us"))
                 {
                     // Check for a match with the last N letters removed
                     for (int n = 1; n <= ignoreLastNLetters && word.Length > n + 5; n++)
@@ -1262,20 +1218,7 @@ namespace AGlossaryExtractor
             {
                 if (term.sLang != null)
                 {
-                    //var words = term.sLang.Split(' ');
-                    //if (words.Length > 1)
-                    //{
-                        trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
-                    //}
-                    //else
-                    //{
-                    //    List<string> transformedTerms = GenerateTransformedTerms(term.sLang.ToLower());
-
-                    //    foreach (var transformedTerm in transformedTerms)
-                    //    {
-                    //        trie.Insert(transformedTerm, term.sLang, term.tLang, term.Level);
-                    //    }
-                    //}
+                    trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
                 }
             }
         }
@@ -1830,7 +1773,7 @@ namespace AGlossaryExtractor
                         potentialTerm.Add(cleanedWord);
                         found = true;
                     }
-                    else
+                    else if (Form1.SOURCE_LANG_CODE != "en-gb" && Form1.SOURCE_LANG_CODE != "en-us")
                     {
                         // Check for match with the last 1 or 2 letters removed
                         for (int n = 1; n <= 2 && cleanedWord.Length > n + 5; n++)
@@ -1874,39 +1817,6 @@ namespace AGlossaryExtractor
                     j++;
                 }
             }            
-            //for (int i = 0; i < words.Length; i++)
-            //{
-            //    var potentialTerm = new List<string>();
-            //    TrieNode node = root;
-            //    int j = i;
-            //    while (j < words.Length)
-            //    {
-            //        string cleanedWord = CleanWord(words[j]);
-            //        if (node.Children.ContainsKey(cleanedWord)) 
-            //        {
-            //            node = node.Children[cleanedWord];
-            //            potentialTerm.Add(cleanedWord);
-            //            if (node.IsEndOfTerm)
-            //            {
-            //                TrieNode endNode;
-            //                if (trie.Search(potentialTerm, out endNode, 2))
-            //                {
-            //                    if (!foundTerms.ContainsKey(node.OrigTerm))
-            //                    {
-            //                        foundTerms[node.OrigTerm] = new List<string>();
-            //                    }
-            //                    foundTerms[node.OrigTerm].Add(node.Translation);
-            //                    foundTerms[node.OrigTerm].Add(node.Level);
-            //                }
-            //            }
-            //        }
-            //        else
-            //        {
-            //            break;
-            //        }
-            //        j++;
-            //    }
-            //}
         }
         private void SearchTermsInParagraph1(string paragraph, Dictionary<string, List<string>> foundTerms, double similarityThreshold = 0.97)
         {
