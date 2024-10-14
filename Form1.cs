@@ -1219,6 +1219,9 @@ namespace AGlossaryExtractor
                 if (term.sLang != null)
                 {
                     trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
+                    if(term.sLang.Contains(","))
+                        trie.Insert(term.sLang.ToLower().Replace(",", ""), term.sLang.Replace(",", ""), term.tLang, term.Level);
+
                 }
             }
         }
@@ -1646,7 +1649,7 @@ namespace AGlossaryExtractor
         public Dictionary<string, List<string>> ExtractTermsFromText(string text)
         {
             Dictionary<string, List<string>> foundTerms = new Dictionary<string, List<string>>();
-            string[] paragraphs = text.Split(new[] { "\r\n\r\n", "\n\n", ".", ",", "?", "!" }, StringSplitOptions.None);
+            string[] paragraphs = text.Split(new[] { "\r\n\r\n", "\n\n", ".", "?", "!" }, StringSplitOptions.None); //",", 
 
             foreach (string paragraph in paragraphs)
             {
@@ -2199,7 +2202,7 @@ namespace AGlossaryExtractor
         }
         private string CleanWord(string word)
         {
-            return word.ToLower().Trim('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '”', '“');
+            return word.ToLower().Trim('.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '\"', '\'', '/', '\\', '<', '>', '”', '“');//
         }
         // Helper function to add found terms to the dictionary
         private void AddToFoundTerms(Dictionary<string, List<string>> foundTerms, TrieNode node)
