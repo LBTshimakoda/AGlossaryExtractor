@@ -96,7 +96,7 @@ namespace TMSScripts.Scripts
         public string en_us { get; set; }
         public string bg_bg { get; set; }
         public string da_dk { get; set; }
-        public string qa { get; set; }
+        public string ga { get; set; }
         public string hr_hr { get; set; }
         public string is_is { get; set; }
         public string kk_kz { get; set; }
@@ -115,16 +115,16 @@ namespace TMSScripts.Scripts
     }
     public static class TMSscripts
     {
-		
         public static void Script(string inputFile, string correlatedFile, StringDictionary context)
         {
             try
             {
-            	
 	            var slang = context["source_language_code"].ToString();
             	var lang = context["target_language_code"].ToString();
-            	if(lang != "de-de")
-            		throw new Exception("The script is just for one target language. Current language:" + lang);
+            	if(lang == "mt") lang = "mt-mt";
+            	if(lang == "bs") lang = "bs-ba";
+            	//if(lang != "de-de")
+            	//	throw new Exception("The script is just for one target language. Current language:" + lang);
             	var glossaryTermsMedDRAtext = ReadZipContentFromBase64(base64StringEncodedMedDRA);
             	var glossaryTermsMedDRA = getTermsFromTSV(glossaryTermsMedDRAtext);
             	var text1 = ReadZipContentFromBase64(base64StringEncodedEDQM);
@@ -310,7 +310,7 @@ namespace TMSScripts.Scripts
                                 if (s == "en-us") term.en_us = s;
                                 if (s == "bg-bg") term.bg_bg = s;
                                 if (s == "da-dk") term.da_dk = s;
-                                if (s == "qa") term.qa = s;
+                                if (s == "ga") term.ga = s;
                                 if (s == "hr-hr") term.hr_hr = s;
                                 if (s == "is-is") term.is_is = s;
                                 if (s == "kk-kz") term.kk_kz = s;
@@ -360,7 +360,7 @@ namespace TMSScripts.Scripts
                                 if (langIndex[i] == "en-us") term.en_us = s;
                                 if (langIndex[i] == "bg-bg") term.bg_bg = s;
                                 if (langIndex[i] == "da-dk") term.da_dk = s;
-                                if (langIndex[i] == "qa") term.qa = s;
+                                if (langIndex[i] == "ga") term.ga = s;
                                 if (langIndex[i] == "hr-hr") term.hr_hr = s;
                                 if (langIndex[i] == "is-is") term.is_is = s;
                                 if (langIndex[i] == "kk-kz") term.kk_kz = s;
@@ -439,15 +439,12 @@ namespace TMSScripts.Scripts
             {
                 // Write the header
                 //writer.WriteLine("Term\tDefinition");
+                writer.WriteLine("Comment\tMT_Ready\tMT_DoNotTranslate\tMT_CaseSensitive\t" + sLang + "\t" + tLang + "\tPOS");
                 int ind = 0;
-
                 // Write each glossary term
                 foreach (var term in glossaryTerms)
                 {
-                	if(ind==0)
-                		writer.WriteLine("Comment\tMT_Ready\tMT_DoNotTranslate\tMT_CaseSensitive\t" + sLang + "\t" + tLang + "\tPOS");
-                	else
-                    	writer.WriteLine(term.Level + "\tTRUE\tFALSE\tFALSE\t" + term.sLang + "\t" + term.tLang + "\tnoun");
+                    writer.WriteLine(term.Level + "\tTRUE\tFALSE\tFALSE\t" + term.sLang + "\t" + term.tLang + "\tnoun");
                     ind++;
                 }
             }
@@ -626,22 +623,32 @@ namespace TMSScripts.Scripts
             foreach (var term in terms)
             {
                 trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
+                    if(term.sLang.Contains(","))
+                        trie.Insert(term.sLang.ToLower().Replace(",", ""), term.sLang, term.tLang, term.Level);
             }
         }
         public Dictionary<string, List<string>> ExtractTermsFromText(string text)
         {
             Dictionary<string, List<string>> foundTerms = new Dictionary<string, List<string>>();
-            text = AddPluralsAndEdForms(text);
-            string[] paragraphs = text.Split(new[] { "\r\n\r\n", "\n\n", ".", ",", "?", "!" }, StringSplitOptions.None);
+            string[] paragraphs = text.Split(new[] { "\r\n\r\n", "\n\n", ".", "?", "!" }, StringSplitOptions.None); //",", 
 
             foreach (string paragraph in paragraphs)
             {
-                SearchTermsInParagraph(paragraph, foundTerms);
+                var paragraph1 = paragraph;
+                paragraph1 = AddPluralsAndEdForms(paragraph1);
+                SearchTermsInParagraph(paragraph1, foundTerms);
             }
-			
-            return RemoveSingleTermsIfLongerVersionsExist(foundTerms);
+            return RemoveSingleTermsIfLongerVersionsExist(foundTerms, text); //foundTerms; // 
         }
-        public static Dictionary<string, List<string>> RemoveSingleTermsIfLongerVersionsExist(Dictionary<string, List<string>> terms)
+        private static bool IsTermSeparatelyInText(string term, string text)
+        {
+            // Use regex to match whole words to avoid partial matches.
+            // This regex pattern ensures that the term is matched as a whole word.
+            //string pattern = $@"\b{Regex.Escape(term)}\b";
+            //var regex = new Regex(pattern, RegexOptions.IgnoreCase);
+            return text.ToLower().Contains(term.ToLower()); //regex.IsMatch(text)
+        }
+        public static Dictionary<string, List<string>> RemoveSingleTermsIfLongerVersionsExist(Dictionary<string, List<string>> terms, string text)
         {
             // Sort terms by length descending so we handle longer terms first
             var sortedTerms = terms.Keys.OrderByDescending(k => k.Length).ToList();
@@ -654,12 +661,13 @@ namespace TMSScripts.Scripts
                 bool isSubTerm = false;
                 foreach (var filteredTerm in filteredTerms.Keys)
                 {
-                    if (filteredTerm.IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0)
+                    if (filteredTerm.IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0 && !IsTermSeparatelyInText(term, text))
                     {
-                        isSubTerm = true;
-                        break;
+                            isSubTerm = true;
+                            break;
                     }
                 }
+                text = Regex.Replace(text, term, " ", RegexOptions.IgnoreCase);
 
                 if (!isSubTerm)
                 {
@@ -668,8 +676,7 @@ namespace TMSScripts.Scripts
             }
 
             return filteredTerms;
-        }
-    public static Dictionary<string, List<string>> RemoveTermsContainingOtherTerms(Dictionary<string, List<string>> terms)
+        }    public static Dictionary<string, List<string>> RemoveTermsContainingOtherTerms(Dictionary<string, List<string>> terms)
     {
         // Make a copy of the dictionary to avoid modifying the dictionary while iterating
         var filteredTerms = new Dictionary<string, List<string>>(terms);
@@ -698,24 +705,32 @@ namespace TMSScripts.Scripts
             {
                 newwords.Add(word);
             }
-            newwords.Add(".");
-            foreach (var word in words)
-            {
-                if (word.EndsWith("s")) newwords.Add(word.Substring(0, word.Length - 1));
-                else newwords.Add(word);
-            }
-            newwords.Add(".");
-            foreach (var word in words)
-            {
-                if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 1));
-                else newwords.Add(word);
-            }
-            newwords.Add(".");
-            foreach (var word in words)
-            {
-                if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 2));
-                else newwords.Add(word);
-            }
+            //if (SOURCE_LANG_CODE == "en-gb" || SOURCE_LANG_CODE == "en-us")
+            //{
+                newwords.Add(".");
+                List<string> newwords1 = new List<string>();
+                foreach (var word in words)
+                {
+                    if (word.EndsWith("s"))
+                        newwords1.Add(word.Substring(0, word.Length - 1));
+                    else
+                        newwords1.Add(word);
+                }
+                newwords1.Add(".");
+                if (string.Join("", newwords) != string.Join("", newwords1))
+                    newwords.AddRange(newwords1);
+            //}
+            //foreach (var word in words)
+            //{
+            //    if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 1));
+            //    else newwords.Add(word);
+            //}
+            //newwords.Add(".");
+            //foreach (var word in words)
+            //{
+            //    if (word.EndsWith("ed")) newwords.Add(word.Substring(0, word.Length - 2));
+            //    else newwords.Add(word);
+            //}
             return string.Join(" ", newwords.ToList());
         }
         private void SearchTermsInParagraph(string paragraph, Dictionary<string, List<string>> foundTerms)

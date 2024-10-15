@@ -57,7 +57,7 @@ namespace AGlossaryExtractor
             comboBox1.DataSource = langs;
             comboBox2.SelectedIndex = 0;
             comboBox1.SelectedIndex = 2;
-            this.Text = "TSV Glossary Extractor (August 26th, 2024)";
+            this.Text = "TSV Glossary Extractor (October 15th, 2024)";
             loadGlossaries();
         }
         public async void loadGlossaries()
@@ -1220,7 +1220,7 @@ namespace AGlossaryExtractor
                 {
                     trie.Insert(term.sLang.ToLower(), term.sLang, term.tLang, term.Level);
                     if(term.sLang.Contains(","))
-                        trie.Insert(term.sLang.ToLower().Replace(",", ""), term.sLang.Replace(",", ""), term.tLang, term.Level);
+                        trie.Insert(term.sLang.ToLower().Replace(",", ""), term.sLang, term.tLang, term.Level);
 
                 }
             }
@@ -1858,72 +1858,72 @@ namespace AGlossaryExtractor
                 }
             }
         }
-        //private void SearchTermsInParagraph(string paragraph, Dictionary<string, List<string>> foundTerms, double similarityThreshold = 0.97, int suffixLength = 3)
-        //{
-        //    var words = paragraph.Split(new[] { ' ', '\t', '\n', '\r', '/' }, StringSplitOptions.RemoveEmptyEntries);
-        //    TrieNode root = trie.GetRoot();
+        private void SearchTermsInParagraph(string paragraph, Dictionary<string, List<string>> foundTerms, double similarityThreshold = 0.97, int suffixLength = 3)
+        {
+            var words = paragraph.Split(new[] { ' ', '\t', '\n', '\r', '/' }, StringSplitOptions.RemoveEmptyEntries);
+            TrieNode root = trie.GetRoot();
 
-        //    for (int i = 0; i < words.Length; i++)
-        //    {
-        //        TrieNode node = root;
-        //        var potentialTerm = new List<string>();
-        //        int j = i;
-        //        bool foundExactMatch = true;
+            for (int i = 0; i < words.Length; i++)
+            {
+                TrieNode node = root;
+                var potentialTerm = new List<string>();
+                int j = i;
+                bool foundExactMatch = true;
 
-        //        while (j < words.Length)
-        //        {
-        //            string cleanedWord = CleanWord(words[j]);
+                while (j < words.Length)
+                {
+                    string cleanedWord = CleanWord(words[j]);
 
-        //            if (node.Children.ContainsKey(cleanedWord))
-        //            {
-        //                node = node.Children[cleanedWord];
-        //                potentialTerm.Add(cleanedWord);
+                    if (node.Children.ContainsKey(cleanedWord))
+                    {
+                        node = node.Children[cleanedWord];
+                        potentialTerm.Add(cleanedWord);
 
-        //                if (node.IsEndOfTerm)
-        //                {
-        //                    AddToFoundTerms(foundTerms, node);
-        //                }
-        //                // Continue searching for exact matches in subsequent words
-        //                int maxDistance = CalculateMaxEditDistance(potentialTerm, similarityThreshold);
-        //                SearchRemainingWords(node, words, j + 1, potentialTerm, foundTerms, maxDistance, similarityThreshold, suffixLength);
-        //                //SearchRemainingWords(node, words, j + 1, potentialTerm, foundTerms, similarityThreshold);
-        //            }
-        //            else if (potentialTerm.Count >= 1) // Trigger fuzzy matching 
-        //            {
-        //                foundExactMatch = false;
+                        if (node.IsEndOfTerm)
+                        {
+                            AddToFoundTerms(foundTerms, node);
+                        }
+                        // Continue searching for exact matches in subsequent words
+                        int maxDistance = CalculateMaxEditDistance(potentialTerm, similarityThreshold);
+                        SearchRemainingWords(node, words, j + 1, potentialTerm, foundTerms, maxDistance, similarityThreshold, suffixLength);
+                        //SearchRemainingWords(node, words, j + 1, potentialTerm, foundTerms, similarityThreshold);
+                    }
+                    else if (potentialTerm.Count >= 1) // Trigger fuzzy matching 
+                    {
+                        foundExactMatch = false;
 
-        //                // Calculate the max allowable edit distance based on the 90% similarity threshold
-        //                int maxDistance = CalculateMaxEditDistance(potentialTerm, similarityThreshold);
+                        // Calculate the max allowable edit distance based on the 90% similarity threshold
+                        int maxDistance = CalculateMaxEditDistance(potentialTerm, similarityThreshold);
 
-        //                var fuzzyMatches = FuzzySearchForCombinedTerm(potentialTerm, cleanedWord, node, maxDistance, suffixLength);
+                        var fuzzyMatches = FuzzySearchForCombinedTerm(potentialTerm, cleanedWord, node, maxDistance, suffixLength);
 
-        //                foreach (var fuzzyMatch in fuzzyMatches)
-        //                {
-        //                    TrieNode fuzzyNode = fuzzyMatch.Value;
+                        foreach (var fuzzyMatch in fuzzyMatches)
+                        {
+                            TrieNode fuzzyNode = fuzzyMatch.Value;
 
-        //                    if (fuzzyNode.IsEndOfTerm)
-        //                    {
-        //                        AddToFoundTerms(foundTerms, fuzzyNode);
-        //                    }
+                            if (fuzzyNode.IsEndOfTerm)
+                            {
+                                AddToFoundTerms(foundTerms, fuzzyNode);
+                            }
 
-        //                    SearchRemainingWords(fuzzyNode, words, j + 1, fuzzyMatch.Key, foundTerms, maxDistance, similarityThreshold, suffixLength);
-        //                }
-        //                break;
-        //            }
-        //            else
-        //            {
-        //                foundExactMatch = false;
-        //                break;
-        //            }
-        //            j++;
-        //        }
+                            SearchRemainingWords(fuzzyNode, words, j + 1, fuzzyMatch.Key, foundTerms, maxDistance, similarityThreshold, suffixLength);
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        foundExactMatch = false;
+                        break;
+                    }
+                    j++;
+                }
 
-        //        if (!foundExactMatch)
-        //        {
-        //            continue;
-        //        }
-        //    }
-        //}
+                if (!foundExactMatch)
+                {
+                    continue;
+                }
+            }
+        }
         private void FuzzyMatchRemainingWords(TrieNode currentNode, string[] words, int startIndex, List<string> potentialTerm, Dictionary<string, List<string>> foundTerms, double similarityThreshold)
         {
             string combinedTermString = string.Join(" ", potentialTerm);
@@ -2033,7 +2033,7 @@ namespace AGlossaryExtractor
             }
         }
 
-        // Fuzzy search for a combined term with suffix-based edit distance check
+        //Fuzzy search for a combined term with suffix-based edit distance check
         private Dictionary<List<string>, TrieNode> FuzzySearchForCombinedTerm(List<string> potentialTerm, string nextWord, TrieNode node, int maxDistance, int suffixLength)
         {
             var results = new Dictionary<List<string>, TrieNode>();
