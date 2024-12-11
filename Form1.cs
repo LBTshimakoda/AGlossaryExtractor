@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using Microsoft.VisualBasic.FileIO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AGlossaryExtractor
 {
@@ -50,6 +51,22 @@ namespace AGlossaryExtractor
             this.textBox3.DragOver += new DragEventHandler(textBox3_DragOver);
             this.textBox3.DragDrop += new DragEventHandler(textBox3_DragDrop);
             this.textBox3.DragEnter += new DragEventHandler(textBox3_DragEnter);
+            this.textBox7.AllowDrop = true;
+            this.textBox7.DragOver += new DragEventHandler(textBox7_DragOver);
+            this.textBox7.DragDrop += new DragEventHandler(textBox7_DragDrop);
+            this.textBox7.DragEnter += new DragEventHandler(textBox7_DragEnter);
+
+            this.comboBox3.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.comboBox3.SelectedIndex = 1;
+
+            this.comboBox4.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.comboBox4.SelectedIndex = 1;
+
+
             tabPage1.Text = @"TXT";
             tabPage2.Text = @"XLZ";
             this.bindingSource = new BindingSource();
@@ -57,7 +74,7 @@ namespace AGlossaryExtractor
             comboBox1.DataSource = langs;
             comboBox2.SelectedIndex = 0;
             comboBox1.SelectedIndex = 2;
-            this.Text = "TSV Glossary Extractor (October 15th, 2024)";
+            this.Text = "TSV Glossary Extractor (December 11th, 2024)";
             loadGlossaries();
         }
         public async void loadGlossaries()
@@ -163,6 +180,42 @@ namespace AGlossaryExtractor
             else
                 e.Effect = DragDropEffects.None;
         }
+        void textBox7_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                //if (Directory.Exists(files[0]))
+                //{
+                //  this.textBox1.Text = files[0];
+                //}
+
+                if (files[0].EndsWith(".txt"))
+                {
+                    this.textBox7.Text = files[0];
+                    var fname = (new FileInfo(files[0])).Name;
+                    var termsNote = fname.Substring(0, 6);
+                    if (Regex.IsMatch(fname, "_"))
+                        termsNote = fname.Substring(0, fname.IndexOf("_"));
+                    this.textBox8.Text = termsNote;
+                }
+            }
+        }
+        void textBox7_DragOver(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+        void textBox7_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
+        }
         void textBox2_DragDrop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -233,10 +286,18 @@ namespace AGlossaryExtractor
         public static List<GlossaryTerm> glossaryTerms = new List<GlossaryTerm>();
         public static List<GlossaryTerm> glossaryTermsMedDRA = new List<GlossaryTerm>();
         public static List<GlossaryTerm> glossaryTermsEDQM = new List<GlossaryTerm>();
+        public static List<GlossaryTerm> glossaryTermsCustom = new List<GlossaryTerm>();
+        public static void ClearGlossaries()
+        {
+            glossaryTerms.Clear();
+            glossaryTermsMedDRA.Clear();
+            glossaryTermsEDQM.Clear();
+            glossaryTermsCustom.Clear();
+        }
         private async void button1_Click(object sender, EventArgs e)
         {
+            ClearGlossaries();
             var inputFile = textBox1.Text;
-            var inputFile1 = textBox3.Text;
             if (File.Exists(inputFile))
             {
                 var text = File.ReadAllText(inputFile);
@@ -251,6 +312,7 @@ namespace AGlossaryExtractor
                     textBox4.Text = termsNote;
                 }
             }
+            var inputFile1 = textBox3.Text;
             if (File.Exists(inputFile1))
             {
                 var text1 = File.ReadAllText(inputFile1);
@@ -265,8 +327,24 @@ namespace AGlossaryExtractor
                     textBox5.Text = termsNote1;
                 }
             }
+            var inputFile2 = textBox7.Text;
+            if (File.Exists(inputFile2))
+            {
+                var text2 = File.ReadAllText(inputFile2);
+                glossaryTermsCustom = await getTermsFromTSV(text2);
+                if (glossaryTermsCustom != null)
+                {
+                    richTextBox1.Text += "Custom terms loaded: " + glossaryTermsCustom.Count + "\n";
+                    var fname2 = (new FileInfo(inputFile2)).Name;
+                    var termsNote2 = fname2.Substring(0, 6);
+                    if (Regex.IsMatch(fname2, "_"))
+                        termsNote2 = fname2.Substring(0, fname2.IndexOf("_"));
+                    textBox8.Text = termsNote2;
+                }
+            }
             glossaryTerms = glossaryTermsMedDRA.Union(glossaryTermsEDQM).ToList();
-            if(glossaryTerms==null || glossaryTerms.Count==0)
+            glossaryTerms = glossaryTerms.Union(glossaryTermsCustom).ToList();
+            if (glossaryTerms==null || glossaryTerms.Count==0)
             {
                 richTextBox1.Text += "No terms loaded. Check text files.\n";
                 return;
@@ -656,13 +734,20 @@ namespace AGlossaryExtractor
             }
             var sLang1 = slang;
             if (slang == "en-us") sLang1 = "en-gb"; // only en-gb in MedDRA for English
+
             var termsMedDRA = extractLangGlossaryTerms(glossaryTermsMedDRA, sLang1, tlang);
             GlossaryExtractor extractorMedDRA = new GlossaryExtractor(termsMedDRA);
+
             var sLang2 = slang;
             if (slang == "en-gb") sLang2 = "en-us"; // only en-us in EDQM for English
+
             var termsEDQM = extractLangGlossaryTerms(glossaryTermsEDQM, sLang2, tlang);
             GlossaryExtractor extractorEDQM = new GlossaryExtractor(termsEDQM);
-            if (termsMedDRA == null && termsEDQM == null)
+
+            var termsCustom = extractLangGlossaryTerms(glossaryTermsCustom, slang, tlang);
+            GlossaryExtractor extractorCustom = new GlossaryExtractor(termsCustom);
+
+            if (termsMedDRA == null && termsEDQM == null && termsCustom == null)
                 return null;
             int newCounter = 0;
             var extractedTerms = new List<GlossaryTermScript>();
@@ -674,6 +759,7 @@ namespace AGlossaryExtractor
                 var source = tu.GetSource(false);
                 Dictionary<string, List<string>> foundTermsMedDRA = extractorMedDRA.ExtractTermsFromText(source);
                 Dictionary<string, List<string>> foundTermsEDQM = extractorEDQM.ExtractTermsFromText(source);
+                Dictionary<string, List<string>> foundTermsCustom = extractorCustom.ExtractTermsFromText(source);
                 if (foundTermsMedDRA.Count > 0)
                 {
                     var note = "";
@@ -706,6 +792,22 @@ namespace AGlossaryExtractor
                     //tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", "EDQM"), note));
                     //newCounter += foundTermsMedDRA.Count;
                 }
+                if (foundTermsCustom.Count > 0)
+                {
+                    var note = "";
+                    foreach (var term in foundTermsCustom)
+                    {
+                        note += term.Key + " = " + term.Value[0] + "\n";
+                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
+                        if (!checks.Contains(term.Key))
+                        {
+                            checks.Add(term.Key);
+                            extractedTerms.Add(extractedTerm);
+                        }
+                    }
+                    //tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", CustomNote), note));
+                    //newCounter += foundTermsCustom.Count;
+                }
             }
             var uniqueSortedTerms = extractedTerms.OrderBy(term => term.sLang).ToList();
             return uniqueSortedTerms;
@@ -720,8 +822,10 @@ namespace AGlossaryExtractor
             Process.Start("\"" + Path.Combine(psi.WorkingDirectory, psi.FileName).Replace("%20", " ") + "\"");
         }
 
-        static void SaveSimpleGlossaryTermsToTsv(List<GlossaryTermScript> glossaryTerms, string filePath, string sLang, string tLang)
+        private void SaveSimpleGlossaryTermsToTsv(List<GlossaryTermScript> glossaryTerms, string filePath, string sLang, string tLang)
         {
+            var MT_DoNotTranslateValue = comboBox3.SelectedItem.ToString();
+            var MT_CaseSensitiveValue = comboBox4.SelectedItem.ToString();
             // Use StreamWriter with UTF-8 encoding and BOM
             using (StreamWriter writer = new StreamWriter(filePath, false, new UTF8Encoding(true)))
             {
@@ -731,13 +835,11 @@ namespace AGlossaryExtractor
 
                 // Write each glossary term
                 foreach (var term in glossaryTerms)
-                {
-                        writer.WriteLine(term.Level + "\tTRUE\tFALSE\tFALSE\t" + term.sLang + "\t" + term.tLang + "\tnoun");
-                }
+                    writer.WriteLine(term.Level + "\tTrue\t" + MT_DoNotTranslateValue + "\t" + MT_CaseSensitiveValue + "\t" + term.sLang + "\t" + term.tLang + "\tnoun");
             }
         }
 
-        public bool SaveLangGlossaryTermsToTsv(List<GlossaryTerm> glossaryTerms, string filePath, string sLang, string tLang)
+        public bool SaveLangGlossaryTermsToTsv1(List<GlossaryTerm> glossaryTerms, string filePath, string sLang, string tLang)
         {
             var properties = typeof(GlossaryTerm).GetProperties();
             List<string> propertyNames = new List<string>();
@@ -805,17 +907,27 @@ namespace AGlossaryExtractor
             TARGET_LANG_CODE = lang;
             var MedDRAnote = "MedDRA";
             var EDQMnote = "EDQM";
+            var CustomNote = "Custom";
             if (textBox4.Text != "") MedDRAnote = textBox4.Text;
             if (textBox5.Text != "") EDQMnote = textBox5.Text;
+            if (textBox8.Text != "") CustomNote = textBox8.Text;
             //richTextBox2.Text = lang;
+
             var sLang1 = slang;
             if (slang == "en-us") sLang1 = "en-gb"; // only en-gb in MedDRA for English
+
             var termsMedDRA = extractLangGlossaryTerms(glossaryTermsMedDRA, sLang1, lang);
             GlossaryExtractor extractorMedDRA = new GlossaryExtractor(termsMedDRA);
+
             var sLang2 = slang;
             if (slang == "en-gb") sLang2 = "en-us"; // only en-us in EDQM for English
+
             var termsEDQM = extractLangGlossaryTerms(glossaryTermsEDQM, sLang2, lang);
             GlossaryExtractor extractorEDQM = new GlossaryExtractor(termsEDQM);
+
+            var termsCustom = extractLangGlossaryTerms(glossaryTermsCustom, slang, lang);
+            GlossaryExtractor extractorCustom = new GlossaryExtractor(termsCustom);
+
             var fio = new FileInfo(inputFile);
             var extension = fio.Extension;
             var fname = fio.Name.Substring(0, fio.Name.LastIndexOf(".")); 
@@ -833,6 +945,7 @@ namespace AGlossaryExtractor
                 var source = tu.GetSource(false);
                 Dictionary<string, List<string>> foundTermsMedDRA = extractorMedDRA.ExtractTermsFromText(source);
                 Dictionary<string, List<string>> foundTermsEDQM = extractorEDQM.ExtractTermsFromText(source);
+                Dictionary<string, List<string>> foundTermsCustom = extractorCustom.ExtractTermsFromText(source);
                 if (foundTermsMedDRA.Count > 0)
                 {
                     var note = "";
@@ -864,6 +977,22 @@ namespace AGlossaryExtractor
                     }
                     tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", EDQMnote), note));
                     newCounter += foundTermsEDQM.Count;
+                }
+                if (foundTermsCustom.Count > 0)
+                {
+                    var note = "";
+                    foreach (var term in foundTermsCustom)
+                    {
+                        note += term.Key + " = " + term.Value[0] + "\n";
+                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
+                        if (!checks.Contains(term.Key))
+                        {
+                            checks.Add(term.Key);
+                            extractedTerms.Add(extractedTerm);
+                        }
+                    }
+                    tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", CustomNote), note));
+                    newCounter += foundTermsCustom.Count;
                 }
             }
             xlz.Save2();
@@ -901,7 +1030,7 @@ namespace AGlossaryExtractor
             {
 
                 var sourceFilePath = inputFile + "_" + slang + "_" + lang + ".txt";
-                if(!SaveLangGlossaryTermsToTsv(glossaryTermsMedDRA, sourceFilePath, slang, lang))
+                if(!SaveLangGlossaryTermsToTsv1(glossaryTermsMedDRA, sourceFilePath, slang, lang))
                     return;
                 var fio = new FileInfo(sourceFilePath);
                 var fname = fio.Name;

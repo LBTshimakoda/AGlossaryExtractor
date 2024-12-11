@@ -1,0 +1,94 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	de-de	POS
+Level: LLT/PT	True	True	True	Accident	Unfall	noun
+Level: LLT/PT	True	True	True	Adverse event	Unerwuenschtes Ereignis	noun
+Level: LLT	True	True	True	Allergic reaction	Allergische Reaktion	noun
+Level: LLT	True	True	True	Anesthesia	Ausgeschaltetes Schmerzempfinden	noun
+Level: LLT/PT	True	True	True	Bacterial infection	Bakterielle Infektion	noun
+Level: LLT	True	True	True	Bed rest	Bettruhe	noun
+Level: LLT	True	True	True	Bleeding	Bluten	noun
+Level: LLT/PT	True	True	True	Bleeding time	Blutungszeit	noun
+Level: LLT	True	True	True	Blind	Blind	noun
+	True	True	True	block	Stein	noun
+Level: LLT	True	True	True	Blood pressure	Blutdruck	noun
+Level: LLT/PT	True	True	True	Blood test	Bluttest	noun
+Level: LLT	True	True	True	Brain damage	Hirnschaden	noun
+Level: LLT	True	True	True	Bruise	Blauer Fleck	noun
+Level: LLT	True	True	True	Bruising	Blaue Flecken	noun
+Level: LLT	True	True	True	Cardiac catheterization	Herzkatheterisierung	noun
+Level: LLT/PT	True	True	True	Chest pain	Brustkorbschmerz	noun
+Level: LLT/PT	True	True	True	Chest X-ray	Roentgen Thorax	noun
+Level: LLT/PT	True	True	True	Chills	Schuettelfrost	noun
+Level: LLT	True	True	True	Confusion	Verwirrtheit	noun
+Level: LLT/PT	True	True	True	COVID-19	COVID-19	noun
+Level: LLT/PT	True	True	True	Death	Tod	noun
+Level: LLT/PT	True	True	True	Delivery	Entbindung	noun
+Level: LLT/PT	True	True	True	Dental cleaning	Zahnreinigung	noun
+Level: LLT	True	True	True	Device embolization	Embolisation bedingt durch Medizinprodukt	noun
+Level: LLT/PT	True	True	True	Device malfunction	Funktionsstoerung eines Medizinprodukts	noun
+Level: LLT/PT	True	True	True	Discharge	Absonderung	noun
+Level: LLT/PT	True	True	True	Discomfort	Unbehagen	noun
+Level: LLT/PT	True	True	True	Dizziness	Schwindelgefuehl	noun
+	True	True	True	drop	Tropfen	noun
+Level: LLT	True	True	True	Drowsiness	Benommenheit	noun
+Level: LLT/PT	True	True	True	Dry mouth	Mundtrockenheit	noun
+Level: LLT	True	True	True	ECG	EKG	noun
+Level: LLT	True	True	True	Echocardiography	Echokardiographie	noun
+Level: LLT/PT	True	True	True	Electrocardiogram	Elektrokardiogramm	noun
+Level: LLT	True	True	True	Embolus	Embolus	noun
+Level: LLT	True	True	True	Fainting	Bewusstlos werden	noun
+Level: LLT/PT	True	True	True	Fatigue	Ermuedung	noun
+Level: LLT	True	True	True	General anesthesia	Allgemeine Anaesthesie	noun
+Level: LLT	True	True	True	Head pain	Kopfschmerz	noun
+Level: LLT/PT	True	True	True	Headache	Kopfschmerzen	noun
+Level: LLT	True	True	True	Heart attack	Herzanfall	noun
+Level: LLT	True	True	True	Heart failure	Kardiales Versagen	noun
+Level: LLT/PT	True	True	True	Heart failure with preserved ejection fraction	Herzinsuffizienz mit erhaltener Auswurffraktion	noun
+Level: LLT/PT	True	True	True	Heart failure with reduced ejection fraction	Herzinsuffizienz mit verringerter Auswurffraktion	noun
+Level: LLT	True	True	True	Hemoglobin	Haemoglobin	noun
+Level: LLT	True	True	True	Hemorrhage	Blutung	noun
+Level: LLT	True	True	True	Hoarseness	Heiserkeit	noun
+Level: LLT/PT	True	True	True	Illness	Leiden	noun
+	True	True	True	Implant	Implantat	noun
+	True	True	True	Implantation	zur Implantation	noun
+Level: LLT/PT	True	True	True	Infant	Saeugling	noun
+Level: LLT/PT	True	True	True	Infection	Infektion	noun
+Level: LLT/PT	True	True	True	Injection	Injektion	noun
+Level: LLT/PT	True	True	True	Injury	Verletzung	noun
+Level: LLT/PT	True	True	True	Interventional procedure	Interventionelles Verfahren	noun
+Level: LLT	True	True	True	Invasive procedure	Invasives Verfahren	noun
+Level: LLT/PT	True	True	True	Investigation	Untersuchung	noun
+Level: LLT	True	True	True	Itching	Jucken	noun
+Level: LLT	True	True	True	Lead	Blei	noun
+Level: LLT/PT	True	True	True	Migraine	Migraene	noun
+Level: LLT/PT	True	True	True	Nausea	Uebelkeit	noun
+Level: LLT/PT	True	True	True	Obstruction	Obstruktion	noun
+Level: LLT/PT	True	True	True	Office visit	Sprechstundenbesuch	noun
+Level: LLT/PT	True	True	True	Oxygen saturation	Sauerstoffsaettigung	noun
+Level: LLT/PT	True	True	True	Pain	Schmerz	noun
+Level: LLT	True	True	True	Paresthesia	Paraesthesie	noun
+Level: LLT/PT	True	True	True	Perforation	Perforation	noun
+Level: LLT/PT	True	True	True	Physical examination	Koerperliche Untersuchung	noun
+Level: LLT	True	True	True	Pins and needles	Nadelstiche	noun
+Level: LLT	True	True	True	Pregnant	Schwanger	noun
+Level: LLT/PT	True	True	True	Pulmonary hypertension	Pulmonale Hypertonie	noun
+Level: LLT/PT	True	True	True	Rash	Ausschlag	noun
+Level: LLT/PT	True	True	True	Regurgitation	Regurgitation	noun
+Level: LLT	True	True	True	Scarring	Narben	noun
+Level: LLT/PT	True	True	True	Sedation	Sedierung	noun
+Level: LLT/PT	True	True	True	Seizure	Krampfanfall	noun
+Level: LLT/PT	True	True	True	Sepsis	Sepsis	noun
+Level: LLT	True	True	True	Shortness of breath	Kurzatmigkeit	noun
+Level: LLT	True	True	True	Sore throat	Rauer Hals	noun
+Level: LLT	True	True	True	Stroke	Schlaganfall	noun
+Level: LLT/PT	True	True	True	Surgery	Operativer Eingriff	noun
+Level: LLT	True	True	True	Surgical intervention	Operative Intervention	noun
+Level: LLT/PT	True	True	True	Swelling	Schwellung	noun
+	True	True	True	System	System	noun
+Level: LLT	True	True	True	Thrombus	Thrombus	noun
+Level: LLT	True	True	True	TIA	TIA	noun
+Level: LLT	True	True	True	Tingling	Kribbeln	noun
+Level: LLT	True	True	True	Transesophageal echocardiography	Transoesophageale Echokardiographie	noun
+	True	True	True	tube	Tube	noun
+	True	True	True	valve	Ventil	noun
+	True	True	True	Vessel	Behältnis	noun
+Level: LLT/PT	True	True	True	Vomiting	Erbrechen	noun

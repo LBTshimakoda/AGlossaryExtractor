@@ -1,0 +1,94 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	fr-fr	POS
+Level: LLT/PT	TRUE	FALSE	FALSE	Accident	Accident	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Adverse event	Évènement indésirable	noun
+Level: LLT	TRUE	FALSE	FALSE	Allergic reaction	Réaction allergique	noun
+Level: LLT	TRUE	FALSE	FALSE	Anesthesia	Anesthésie	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bacterial infection	Infection bactérienne	noun
+Level: LLT	TRUE	FALSE	FALSE	Bed rest	Alitement	noun
+Level: LLT	TRUE	FALSE	FALSE	Bleeding	Saignement	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Bleeding time	Temps de saignement	noun
+Level: LLT	TRUE	FALSE	FALSE	Blind	Aveugle	noun
+	TRUE	FALSE	FALSE	block	Bloc	noun
+Level: LLT	TRUE	FALSE	FALSE	Blood pressure	Pression artérielle	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Blood test	Test sanguin	noun
+Level: LLT	TRUE	FALSE	FALSE	Brain damage	Lésion du cerveau	noun
+Level: LLT	TRUE	FALSE	FALSE	Bruise	Bleu	noun
+Level: LLT	TRUE	FALSE	FALSE	Bruising	Bleus	noun
+Level: LLT	TRUE	FALSE	FALSE	Cardiac catheterization	Cathétérisme cardiaque	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest pain	Douleur thoracique	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chest X-ray	Radiographie du thorax	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Chills	Frissons	noun
+Level: LLT	TRUE	FALSE	FALSE	Confusion	Confusion mentale	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	COVID-19	Covid-19	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Death	Mort	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Delivery	Accouchement	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dental cleaning	Nettoyage dentaire	noun
+Level: LLT	TRUE	FALSE	FALSE	Device embolization	Embolisation du dispositif	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Device malfunction	Mauvais fonctionnement du dispositif	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Discharge	Écoulement	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Discomfort	Gêne	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dizziness	Sensation vertigineuse	noun
+	TRUE	FALSE	FALSE	drop	Goutte	noun
+Level: LLT	TRUE	FALSE	FALSE	Drowsiness	Endormissement	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Dry mouth	Bouche sèche	noun
+Level: LLT	TRUE	FALSE	FALSE	ECG	ECG	noun
+Level: LLT	TRUE	FALSE	FALSE	Echocardiography	Échocardiographie	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Electrocardiogram	Électrocardiogramme	noun
+Level: LLT	TRUE	FALSE	FALSE	Embolus	Embole	noun
+Level: LLT	TRUE	FALSE	FALSE	Fainting	Évanouissement	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Fatigue	Fatigue	noun
+Level: LLT	TRUE	FALSE	FALSE	General anesthesia	Anesthésie générale	noun
+Level: LLT	TRUE	FALSE	FALSE	Head pain	Mal de tête	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Headache	Céphalée	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart attack	Crise cardiaque	noun
+Level: LLT	TRUE	FALSE	FALSE	Heart failure	Insuffisance cardiaque	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with preserved ejection fraction	Insuffisance cardiaque avec fraction d'éjection préservée	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with reduced ejection fraction	Insuffisance cardiaque avec diminution de la fraction d'éjection	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemoglobin	Hémoglobine	noun
+Level: LLT	TRUE	FALSE	FALSE	Hemorrhage	Hémorragie	noun
+Level: LLT	TRUE	FALSE	FALSE	Hoarseness	Enrouement	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Illness	Maladie	noun
+	TRUE	FALSE	FALSE	Implant	Implant	noun
+	TRUE	FALSE	FALSE	Implantation	Implantation	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infant	Nourrisson	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Infection	Infection	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Injection	Injection	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Injury	Lésion	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Interventional procedure	Intervention	noun
+Level: LLT	TRUE	FALSE	FALSE	Invasive procedure	Intervention invasive	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Investigation	Investigation	noun
+Level: LLT	TRUE	FALSE	FALSE	Itching	Démangeaisons	noun
+Level: LLT	TRUE	FALSE	FALSE	Lead	Plomb	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Migraine	Migraine	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Nausea	Nausée	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Obstruction	Obstruction	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Office visit	Consultation médicale	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Oxygen saturation	Saturation en oxygène	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pain	Douleur	noun
+Level: LLT	TRUE	FALSE	FALSE	Paresthesia	Paresthésie	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Perforation	Perforation	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Physical examination	Examen physique	noun
+Level: LLT	TRUE	FALSE	FALSE	Pins and needles	Sensation de picotements cutanés	noun
+Level: LLT	TRUE	FALSE	FALSE	Pregnant	Enceinte	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Pulmonary hypertension	Hypertension pulmonaire	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Rash	Rash	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Regurgitation	Régurgitation	noun
+Level: LLT	TRUE	FALSE	FALSE	Scarring	Cicatrice	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Sedation	Sédation	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Seizure	Convulsion	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Sepsis	Sepsis	noun
+Level: LLT	TRUE	FALSE	FALSE	Shortness of breath	Difficulté respiratoire	noun
+Level: LLT	TRUE	FALSE	FALSE	Sore throat	Mal de gorge	noun
+Level: LLT	TRUE	FALSE	FALSE	Stroke	Accident vasculaire cérébral	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Surgery	Chirurgie	noun
+Level: LLT	TRUE	FALSE	FALSE	Surgical intervention	Intervention chirurgicale	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Swelling	Tuméfaction	noun
+	TRUE	FALSE	FALSE	System	Système	noun
+Level: LLT	TRUE	FALSE	FALSE	Thrombus	Thrombus	noun
+Level: LLT	TRUE	FALSE	FALSE	TIA	AIT	noun
+Level: LLT	TRUE	FALSE	FALSE	Tingling	Picotements	noun
+Level: LLT	TRUE	FALSE	FALSE	Transesophageal echocardiography	Échocardiographie transoesophagienne	noun
+	TRUE	FALSE	FALSE	tube	Tube	noun
+	TRUE	FALSE	FALSE	valve	Valve	noun
+	TRUE	FALSE	FALSE	Vessel	Récipient	noun
+Level: LLT/PT	TRUE	FALSE	FALSE	Vomiting	Vomissement	noun
