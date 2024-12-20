@@ -1,85 +1,86 @@
 ﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	ar-xm	POS
-Level: LLT/PT	TRUE	FALSE	FALSE	Accident	حادث	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Adverse event	حَدَث غَيْر مَرْغُوب	noun
-Level: LLT	TRUE	FALSE	FALSE	Allergic reaction	رد فعل تحسسي	noun
-Level: LLT	TRUE	FALSE	FALSE	Anesthesia	تَخْدير	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Bacterial infection	عدوى جرثومية	noun
-Level: LLT	TRUE	FALSE	FALSE	Bed rest	الراحة في الفراش	noun
-Level: LLT	TRUE	FALSE	FALSE	Bleeding	نزيف	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Bleeding time	وقت النزف	noun
-Level: LLT	TRUE	FALSE	FALSE	Blind	العمى	noun
-Level: LLT	TRUE	FALSE	FALSE	Blood pressure	ضغط الدم	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Blood test	اختبار الدم	noun
-Level: LLT	TRUE	FALSE	FALSE	Brain damage	تلف الدماغ	noun
-Level: LLT	TRUE	FALSE	FALSE	Bruise	كدمة	noun
-Level: LLT	TRUE	FALSE	FALSE	Bruising	كدمة	noun
-Level: LLT	TRUE	FALSE	FALSE	Cardiac catheterization	قسطرة القلب	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Chest pain	ألم الصَدْر	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Chest X-ray	الأشعة السينية على الصَدْر	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Chills	القشعريرة	noun
-Level: LLT	TRUE	FALSE	FALSE	Confusion	ارتباك	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	COVID-19	مرض كوفيد 2019 (كورونا)	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Death	الوفاة	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Delivery	الولادة	noun
-Level: LLT	TRUE	FALSE	FALSE	Device embolization	انصمام مرتبط بجهاز	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Device malfunction	اختلال وظيفة الجهاز/خلل وظيفي للجهاز	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Discharge	التفريغ	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Discomfort	عدم الارتياح	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Dizziness	الدوخة	noun
-Level: LLT	TRUE	FALSE	FALSE	Drowsiness	الخمول	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Dry mouth	جفاف الفَم	noun
-Level: LLT	TRUE	FALSE	FALSE	ECG	تخطيط كهربية القلب ECG	noun
-Level: LLT	TRUE	FALSE	FALSE	Echocardiography	تخطيط صدى القلب	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Electrocardiogram	تخطيط كهربية القلب	noun
-Level: LLT	TRUE	FALSE	FALSE	Embolus	صمة	noun
-Level: LLT	TRUE	FALSE	FALSE	Fainting	الإغماء	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Fatigue	التَّعَب	noun
-Level: LLT	TRUE	FALSE	FALSE	General anesthesia	التخدير العام	noun
-Level: LLT	TRUE	FALSE	FALSE	Head pain	ألم في الرأس	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Headache	صداع	noun
-Level: LLT	TRUE	FALSE	FALSE	Heart attack	نوبة قلبية	noun
-Level: LLT	TRUE	FALSE	FALSE	Heart failure	فشل قلبي	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with preserved ejection fraction	فشل قلبي مع حفظ الكسر القذفيّ	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Heart failure with reduced ejection fraction	فشل قلبي مع تقليل الكسر القذفيّ	noun
-Level: LLT	TRUE	FALSE	FALSE	Hemoglobin	الهيموغلوبين	noun
-Level: LLT	TRUE	FALSE	FALSE	Hemorrhage	نزيف	noun
-Level: LLT	TRUE	FALSE	FALSE	Hoarseness	بُحَّة	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Illness	المرض	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Infant	رضيع	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Infection	عدوى	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Injection	حقن	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Injury	إصابة	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Interventional procedure	إجراء تدخلي	noun
-Level: LLT	TRUE	FALSE	FALSE	Invasive procedure	إجراء باضع	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Investigation	فحص استقصائي لمعرفة التشخيص أو تأكيده	noun
-Level: LLT	TRUE	FALSE	FALSE	Itching	حِكَّة	noun
-Level: LLT	TRUE	FALSE	FALSE	Lead	الرصاص	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Migraine	شقيقة	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Nausea	الغَثَيان	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Obstruction	انسداد	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Office visit	الزيارة المكتبية	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Oxygen saturation	تشبع الأكسجين	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Pain	ألم	noun
-Level: LLT	TRUE	FALSE	FALSE	Paresthesia	مذل	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Perforation	الانثقاب	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Physical examination	الفحص البدني	noun
-Level: LLT	TRUE	FALSE	FALSE	Pins and needles	الشعور بنغزات وتنميل	noun
-Level: LLT	TRUE	FALSE	FALSE	Pregnant	حامل	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Pulmonary hypertension	ارتفاع ضَغْطِ الدَّم الرِئَوِيّ	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Rash	طَفْح	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Regurgitation	القَلَس	noun
-Level: LLT	TRUE	FALSE	FALSE	Scarring	تندب	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Sedation	تهدئة	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Seizure	نوبة	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Sepsis	إنتان	noun
-Level: LLT	TRUE	FALSE	FALSE	Shortness of breath	قصور في التنفس	noun
-Level: LLT	TRUE	FALSE	FALSE	Sore throat	الْتِهابُ الحَلْق	noun
-Level: LLT	TRUE	FALSE	FALSE	Stroke	سكتة دماغية	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Surgery	جراحة	noun
-Level: LLT	TRUE	FALSE	FALSE	Surgical intervention	تدخل جراحي	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Swelling	التَوَرُّم	noun
-Level: LLT	TRUE	FALSE	FALSE	Thrombus	خثرة	noun
-Level: LLT	TRUE	FALSE	FALSE	TIA	نوبة إقفارية عابرة (TIA)	noun
-Level: LLT	TRUE	FALSE	FALSE	Tingling	تنميل	noun
-Level: LLT	TRUE	FALSE	FALSE	Transesophageal echocardiography	تخطيط صدى القلب عبر المريء	noun
-Level: LLT/PT	TRUE	FALSE	FALSE	Vomiting	تَقَيُّء	noun
+Level: LLT/PT	True	False	False	Accident	حادث	noun
+Level: LLT/PT	True	False	False	Adverse event	حَدَث غَيْر مَرْغُوب	noun
+Level: LLT	True	False	False	Allergic reaction	رد فعل تحسسي	noun
+Level: LLT	True	False	False	Anesthesia	تَخْدير	noun
+Level: LLT/PT	True	False	False	Bacterial infection	عدوى جرثومية	noun
+Level: LLT	True	False	False	Bed rest	الراحة في الفراش	noun
+Level: LLT	True	False	False	Bleeding	نزيف	noun
+Level: LLT/PT	True	False	False	Bleeding time	وقت النزف	noun
+Level: LLT	True	False	False	Blind	العمى	noun
+Level: LLT	True	False	False	Blood pressure	ضغط الدم	noun
+Level: LLT/PT	True	False	False	Blood test	اختبار الدم	noun
+Level: LLT	True	False	False	Brain damage	تلف الدماغ	noun
+Level: LLT	True	False	False	Bruise	كدمة	noun
+Level: LLT	True	False	False	Bruising	كدمة	noun
+Level: LLT	True	False	False	Cardiac catheterization	قسطرة القلب	noun
+Level: LLT/PT	True	False	False	Chest pain	ألم الصَدْر	noun
+Level: LLT/PT	True	False	False	Chest X-ray	الأشعة السينية على الصَدْر	noun
+Level: LLT/PT	True	False	False	Chills	القشعريرة	noun
+Level: LLT	True	False	False	Confusion	ارتباك	noun
+Level: LLT/PT	True	False	False	COVID-19	مرض كوفيد 2019 (كورونا)	noun
+Level: LLT/PT	True	False	False	Death	الوفاة	noun
+Level: LLT/PT	True	False	False	Delivery	الولادة	noun
+Level: LLT/PT	True	False	False	Dental cleaning	تنظيف الأسنان	noun
+Level: LLT	True	False	False	Device embolization	انصمام مرتبط بجهاز	noun
+Level: LLT/PT	True	False	False	Device malfunction	اختلال وظيفة الجهاز/خلل وظيفي للجهاز	noun
+Level: LLT/PT	True	False	False	Discharge	التفريغ	noun
+Level: LLT/PT	True	False	False	Discomfort	عدم الارتياح	noun
+Level: LLT/PT	True	False	False	Dizziness	الدوخة	noun
+Level: LLT	True	False	False	Drowsiness	الخمول	noun
+Level: LLT/PT	True	False	False	Dry mouth	جفاف الفَم	noun
+Level: LLT	True	False	False	ECG	تخطيط كهربية القلب ECG	noun
+Level: LLT	True	False	False	Echocardiography	تخطيط صدى القلب	noun
+Level: LLT/PT	True	False	False	Electrocardiogram	تخطيط كهربية القلب	noun
+Level: LLT	True	False	False	Embolus	صمة	noun
+Level: LLT	True	False	False	Fainting	الإغماء	noun
+Level: LLT/PT	True	False	False	Fatigue	التَّعَب	noun
+Level: LLT	True	False	False	General anesthesia	التخدير العام	noun
+Level: LLT	True	False	False	Head pain	ألم في الرأس	noun
+Level: LLT/PT	True	False	False	Headache	صداع	noun
+Level: LLT	True	False	False	Heart attack	نوبة قلبية	noun
+Level: LLT	True	False	False	Heart failure	فشل قلبي	noun
+Level: LLT/PT	True	False	False	Heart failure with preserved ejection fraction	فشل قلبي مع حفظ الكسر القذفيّ	noun
+Level: LLT/PT	True	False	False	Heart failure with reduced ejection fraction	فشل قلبي مع تقليل الكسر القذفيّ	noun
+Level: LLT	True	False	False	Hemoglobin	الهيموغلوبين	noun
+Level: LLT	True	False	False	Hemorrhage	نزيف	noun
+Level: LLT	True	False	False	Hoarseness	بُحَّة	noun
+Level: LLT/PT	True	False	False	Illness	المرض	noun
+Level: LLT/PT	True	False	False	Infant	رضيع	noun
+Level: LLT/PT	True	False	False	Infection	عدوى	noun
+Level: LLT/PT	True	False	False	Injection	حقن	noun
+Level: LLT/PT	True	False	False	Injury	إصابة	noun
+Level: LLT/PT	True	False	False	Interventional procedure	إجراء تدخلي	noun
+Level: LLT	True	False	False	Invasive procedure	إجراء باضع	noun
+Level: LLT/PT	True	False	False	Investigation	فحص استقصائي لمعرفة التشخيص أو تأكيده	noun
+Level: LLT	True	False	False	Itching	حِكَّة	noun
+Level: LLT	True	False	False	Lead	الرصاص	noun
+Level: LLT/PT	True	False	False	Migraine	شقيقة	noun
+Level: LLT/PT	True	False	False	Nausea	الغَثَيان	noun
+Level: LLT/PT	True	False	False	Obstruction	انسداد	noun
+Level: LLT/PT	True	False	False	Office visit	الزيارة المكتبية	noun
+Level: LLT/PT	True	False	False	Oxygen saturation	تشبع الأكسجين	noun
+Level: LLT/PT	True	False	False	Pain	ألم	noun
+Level: LLT	True	False	False	Paresthesia	مذل	noun
+Level: LLT/PT	True	False	False	Perforation	الانثقاب	noun
+Level: LLT/PT	True	False	False	Physical examination	الفحص البدني	noun
+Level: LLT	True	False	False	Pins and needles	الشعور بنغزات وتنميل	noun
+Level: LLT	True	False	False	Pregnant	حامل	noun
+Level: LLT/PT	True	False	False	Pulmonary hypertension	ارتفاع ضَغْطِ الدَّم الرِئَوِيّ	noun
+Level: LLT/PT	True	False	False	Rash	طَفْح	noun
+Level: LLT/PT	True	False	False	Regurgitation	القَلَس	noun
+Level: LLT	True	False	False	Scarring	تندب	noun
+Level: LLT/PT	True	False	False	Sedation	تهدئة	noun
+Level: LLT/PT	True	False	False	Seizure	نوبة	noun
+Level: LLT/PT	True	False	False	Sepsis	إنتان	noun
+Level: LLT	True	False	False	Shortness of breath	قصور في التنفس	noun
+Level: LLT	True	False	False	Sore throat	الْتِهابُ الحَلْق	noun
+Level: LLT	True	False	False	Stroke	سكتة دماغية	noun
+Level: LLT/PT	True	False	False	Surgery	جراحة	noun
+Level: LLT	True	False	False	Surgical intervention	تدخل جراحي	noun
+Level: LLT/PT	True	False	False	Swelling	التَوَرُّم	noun
+Level: LLT	True	False	False	Thrombus	خثرة	noun
+Level: LLT	True	False	False	TIA	نوبة إقفارية عابرة (TIA)	noun
+Level: LLT	True	False	False	Tingling	تنميل	noun
+Level: LLT	True	False	False	Transesophageal echocardiography	تخطيط صدى القلب عبر المريء	noun
+Level: LLT/PT	True	False	False	Vomiting	تَقَيُّء	noun

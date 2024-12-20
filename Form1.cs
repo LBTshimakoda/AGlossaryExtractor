@@ -74,8 +74,9 @@ namespace AGlossaryExtractor
             comboBox1.DataSource = langs;
             comboBox2.SelectedIndex = 0;
             comboBox1.SelectedIndex = 2;
-            this.Text = "TSV Glossary Extractor (December 11th, 2024)";
+            this.Text = "TSV Glossary Extractor (December 20th, 2024)";
             loadGlossaries();
+            checkBox1.Checked = true;
         }
         public async void loadGlossaries()
         {
@@ -751,6 +752,12 @@ namespace AGlossaryExtractor
                 return null;
             int newCounter = 0;
             var extractedTerms = new List<GlossaryTermScript>();
+            var extractedTermsMedDRA = new List<GlossaryTermScript>();
+            var extractedTermsEDQM = new List<GlossaryTermScript>();
+            var extractedTermsCustom = new List<GlossaryTermScript>();
+            var uniqueSortedTermsMedDRA = new List<GlossaryTermScript>();
+            var uniqueSortedTermsEDQM = new List<GlossaryTermScript>();
+            var uniqueSortedTermsCustom = new List<GlossaryTermScript>();
             var checks = new List<string>();
             var xlz = new Xlz(inputFile);
             var tus = xlz.TranslatableTransUnits;
@@ -766,11 +773,11 @@ namespace AGlossaryExtractor
                     foreach (var term in foundTermsMedDRA)
                     {
                         note += term.Key + " = " + term.Value[0] + "\n";
-                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
+                        var extractedTerm = new GlossaryTermScript { File = "MedDRA", Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
                         if (!checks.Contains(term.Key))
                         {
                             checks.Add(term.Key);
-                            extractedTerms.Add(extractedTerm);
+                            extractedTermsMedDRA.Add(extractedTerm);
                         }
                     }
                     //tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", "MedDRA"), note));
@@ -782,11 +789,11 @@ namespace AGlossaryExtractor
                     foreach (var term in foundTermsEDQM)
                     {
                         note += term.Key + " = " + term.Value[0] + "\n";
-                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
+                        var extractedTerm = new GlossaryTermScript { File = "EDQM", Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
                         if (!checks.Contains(term.Key))
                         {
                             checks.Add(term.Key);
-                            extractedTerms.Add(extractedTerm);
+                            extractedTermsEDQM.Add(extractedTerm);
                         }
                     }
                     //tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", "EDQM"), note));
@@ -798,19 +805,34 @@ namespace AGlossaryExtractor
                     foreach (var term in foundTermsCustom)
                     {
                         note += term.Key + " = " + term.Value[0] + "\n";
-                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
+                        var extractedTerm = new GlossaryTermScript { File = "Custom", Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
                         if (!checks.Contains(term.Key))
                         {
                             checks.Add(term.Key);
-                            extractedTerms.Add(extractedTerm);
+                            extractedTermsCustom.Add(extractedTerm);
                         }
                     }
                     //tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", CustomNote), note));
                     //newCounter += foundTermsCustom.Count;
                 }
             }
-            var uniqueSortedTerms = extractedTerms.OrderBy(term => term.sLang).ToList();
-            return uniqueSortedTerms;
+            uniqueSortedTermsMedDRA = extractedTermsMedDRA.OrderBy(term => term.sLang).ToList();
+            uniqueSortedTermsEDQM = extractedTermsEDQM.OrderBy(term => term.sLang).ToList();
+            uniqueSortedTermsCustom = extractedTermsCustom.OrderBy(term => term.sLang).ToList();
+            if (checkBox1.Checked)
+            {
+                var uniqueSortedTerms = uniqueSortedTermsMedDRA.Union(uniqueSortedTermsEDQM).ToList();
+                uniqueSortedTerms = uniqueSortedTerms.Union(uniqueSortedTermsCustom).ToList();
+                uniqueSortedTerms = uniqueSortedTerms.OrderBy(term => term.sLang).ToList();
+                return uniqueSortedTerms;
+            }
+            else
+            {
+                var uniqueSortedTerms1 = uniqueSortedTermsMedDRA.Union(uniqueSortedTermsEDQM).ToList();
+                uniqueSortedTerms1 = uniqueSortedTerms1.Union(uniqueSortedTermsCustom).ToList();
+                uniqueSortedTerms1 = uniqueSortedTerms1.ToList();
+                return uniqueSortedTerms1;
+            }
         }
         private void richTextBox2_OnLinkClicked(object sender, LinkClickedEventArgs e)
         {
@@ -952,7 +974,7 @@ namespace AGlossaryExtractor
                     foreach (var term in foundTermsMedDRA)
                     {
                         note += term.Key + " = " + term.Value[0] + "\n";
-                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
+                        var extractedTerm = new GlossaryTermScript { File = "MedDRA", Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
                         if (!checks.Contains(term.Key))
                         {
                             checks.Add(term.Key);
@@ -968,7 +990,7 @@ namespace AGlossaryExtractor
                     foreach (var term in foundTermsEDQM)
                     {
                         note += term.Key + " = " + term.Value[0] + "\n";
-                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
+                        var extractedTerm = new GlossaryTermScript { File = "EDQM", Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
                         if (!checks.Contains(term.Key))
                         {
                             checks.Add(term.Key);
@@ -984,7 +1006,7 @@ namespace AGlossaryExtractor
                     foreach (var term in foundTermsCustom)
                     {
                         note += term.Key + " = " + term.Value[0] + "\n";
-                        var extractedTerm = new GlossaryTermScript { Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
+                        var extractedTerm = new GlossaryTermScript { File = "Custom", Level = term.Value[1], sLang = term.Key, tLang = term.Value[0] };
                         if (!checks.Contains(term.Key))
                         {
                             checks.Add(term.Key);
@@ -1156,6 +1178,11 @@ namespace AGlossaryExtractor
                 }
             }
         }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     public class GlossaryTerm
     {
@@ -1216,6 +1243,7 @@ namespace AGlossaryExtractor
     }
     public class GlossaryTermScript
     {
+        public string File { get; set; }
         public string Level { get; set; }
         public string sLang { get; set; }
         public string tLang { get; set; }

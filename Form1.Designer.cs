@@ -50,6 +50,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -65,10 +69,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -279,6 +280,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.checkBox1);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.comboBox4);
@@ -305,6 +307,41 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(457, 105);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(99, 13);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "MT_CaseSensitive:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(173, 105);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(107, 13);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "MT_DoNotTranslate:";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(560, 104);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.TabIndex = 16;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(284, 104);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 15;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // textBox6
             // 
@@ -443,39 +480,15 @@
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox3
+            // checkBox1
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(284, 104);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 15;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(560, 104);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 16;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(173, 105);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(107, 13);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "MT_DoNotTranslate:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(457, 105);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 13);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "MT_CaseSensitive:";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(11, 104);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(87, 17);
+            this.checkBox1.TabIndex = 19;
+            this.checkBox1.Text = "Sort by terms";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -538,6 +551,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
