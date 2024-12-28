@@ -1,0 +1,10 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	en-us	POS
+	True	False	False	block	block	noun
+	True	False	False	drop	drop	noun
+	True	False	False	Implant	Implant	noun
+	True	False	False	Implantation	Implantation	noun
+	True	False	False	Injection	Injection	noun
+	True	False	False	System	System	noun
+	True	False	False	tube	tube	noun
+	True	False	False	valve	valve	noun
+	True	False	False	Vessel	Vessel	noun

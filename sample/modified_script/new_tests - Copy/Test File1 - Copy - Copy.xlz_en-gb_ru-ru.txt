@@ -1,0 +1,94 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-gb	ru-ru	POS
+Level: LLT/PT	True	False	False	Accident	Происшествие или несчастный случай	noun
+Level: LLT/PT	True	False	False	Adverse event	Нежелательное явление	noun
+Level: LLT	True	False	False	Allergic reaction	Аллергическая реакция	noun
+Level: LLT	True	False	False	Anesthesia	Отсутствие чувствительности	noun
+Level: LLT/PT	True	False	False	Bacterial infection	Бактериальная инфекция	noun
+Level: LLT	True	False	False	Bed rest	Постельный режим	noun
+Level: LLT	True	False	False	Bleeding	Кровотечение	noun
+Level: LLT/PT	True	False	False	Bleeding time	Время кровотечения	noun
+Level: LLT	True	False	False	Blind	Полное отсутствие зрения	noun
+	True	False	False	block	Блок	noun
+Level: LLT	True	False	False	Blood pressure	Артериальное давление	noun
+Level: LLT/PT	True	False	False	Blood test	Анализ крови	noun
+Level: LLT	True	False	False	Brain damage	Повреждение головного мозга	noun
+Level: LLT	True	False	False	Bruise	Кровоподтек	noun
+Level: LLT	True	False	False	Bruising	Кровоподтёк	noun
+Level: LLT	True	False	False	Cardiac catheterization	Катетеризация сердца	noun
+Level: LLT/PT	True	False	False	Chest pain	Боль в грудной клетке	noun
+Level: LLT/PT	True	False	False	Chest X-ray	Рентгенография органов грудной клетки	noun
+Level: LLT/PT	True	False	False	Chills	Озноб	noun
+Level: LLT	True	False	False	Confusion	Спутанность сознания	noun
+Level: LLT/PT	True	False	False	COVID-19	Коронавирусная инфекция COVID-19	noun
+Level: LLT/PT	True	False	False	Death	Смерть	noun
+Level: LLT/PT	True	False	False	Delivery	Родоразрешение	noun
+Level: LLT/PT	True	False	False	Dental cleaning	Чистка зубов	noun
+Level: LLT	True	False	False	Device embolization	Эмболизация изделием	noun
+Level: LLT/PT	True	False	False	Device malfunction	Неисправность устройства	noun
+Level: LLT/PT	True	False	False	Discharge	Выделения	noun
+Level: LLT/PT	True	False	False	Discomfort	Дискомфорт	noun
+Level: LLT/PT	True	False	False	Dizziness	Головокружение	noun
+	True	False	False	drop	Капля	noun
+Level: LLT	True	False	False	Drowsiness	Состояние сонливости	noun
+Level: LLT/PT	True	False	False	Dry mouth	Сухость во рту	noun
+Level: LLT	True	False	False	ECG	ЭКГ	noun
+Level: LLT	True	False	False	Echocardiography	Эхокардиография	noun
+Level: LLT/PT	True	False	False	Electrocardiogram	Электрокардиограмма	noun
+Level: LLT	True	False	False	Embolus	Эмбол	noun
+Level: LLT	True	False	False	Fainting	Состояние обморока	noun
+Level: LLT/PT	True	False	False	Fatigue	Усталость	noun
+Level: LLT	True	False	False	General anesthesia	Общая анестезия	noun
+Level: LLT	True	False	False	Head pain	Головная боль	noun
+Level: LLT/PT	True	False	False	Headache	Головная боль	noun
+Level: LLT	True	False	False	Heart attack	Сердечный приступ	noun
+Level: LLT	True	False	False	Heart failure	Сердечная недостаточность	noun
+Level: LLT/PT	True	False	False	Heart failure with preserved ejection fraction	Сердечная недостаточность с сохраненной фракцией выброса	noun
+Level: LLT/PT	True	False	False	Heart failure with reduced ejection fraction	Сердечная недостаточность со сниженной фракцией выброса	noun
+Level: LLT	True	False	False	Hemoglobin	Гемоглобин	noun
+Level: LLT	True	False	False	Hemorrhage	Геморрагия	noun
+Level: LLT	True	False	False	Hoarseness	Охриплость	noun
+Level: LLT/PT	True	False	False	Illness	Заболевание	noun
+	True	False	False	Implant	Имплантат	noun
+	True	False	False	Implantation	Имплантация	noun
+Level: LLT/PT	True	False	False	Infant	Младенческий возраст	noun
+Level: LLT/PT	True	False	False	Infection	Инфекция	noun
+Level: LLT/PT	True	False	False	Injection	Инъекция	noun
+Level: LLT/PT	True	False	False	Injury	Повреждение	noun
+Level: LLT/PT	True	False	False	Interventional procedure	Интервенционная процедура	noun
+Level: LLT	True	False	False	Invasive procedure	Инвазивная процедура	noun
+Level: LLT/PT	True	False	False	Investigation	Исследование	noun
+Level: LLT	True	False	False	Itching	Зуд	noun
+Level: LLT	True	False	False	Lead	Свинец	noun
+Level: LLT/PT	True	False	False	Migraine	Мигрень	noun
+Level: LLT/PT	True	False	False	Nausea	Тошнота	noun
+Level: LLT/PT	True	False	False	Obstruction	Непроходимость	noun
+Level: LLT/PT	True	False	False	Office visit	Визит в клинику	noun
+Level: LLT/PT	True	False	False	Oxygen saturation	Насыщение кислородом	noun
+Level: LLT/PT	True	False	False	Pain	Боль	noun
+Level: LLT	True	False	False	Paresthesia	Ощущение жжения, покалывания, ползания мурашек	noun
+Level: LLT/PT	True	False	False	Perforation	Перфорация	noun
+Level: LLT/PT	True	False	False	Physical examination	Физикальное обследование	noun
+Level: LLT	True	False	False	Pins and needles	Ощущение покалывания	noun
+Level: LLT	True	False	False	Pregnant	Беременная	noun
+Level: LLT/PT	True	False	False	Pulmonary hypertension	Легочная гипертензия	noun
+Level: LLT/PT	True	False	False	Rash	Сыпь	noun
+Level: LLT/PT	True	False	False	Regurgitation	Регургитация	noun
+Level: LLT	True	False	False	Scarring	Рубцевание	noun
+Level: LLT/PT	True	False	False	Sedation	Седативное состояние	noun
+Level: LLT/PT	True	False	False	Seizure	Приступ	noun
+Level: LLT/PT	True	False	False	Sepsis	Сепсис	noun
+Level: LLT	True	False	False	Shortness of breath	Затрудненное дыхание	noun
+Level: LLT	True	False	False	Sore throat	Боль в горле	noun
+Level: LLT	True	False	False	Stroke	Инсульт	noun
+Level: LLT/PT	True	False	False	Surgery	Оперативное лечение	noun
+Level: LLT	True	False	False	Surgical intervention	Хирургическое вмешательство	noun
+Level: LLT/PT	True	False	False	Swelling	Отечность	noun
+	True	False	False	System	Система	noun
+Level: LLT	True	False	False	Thrombus	Тромб	noun
+Level: LLT	True	False	False	TIA	ТИА	noun
+Level: LLT	True	False	False	Tingling	Чувство покалывания	noun
+Level: LLT	True	False	False	Transesophageal echocardiography	Чреспищеводная эхокардиография	noun
+	True	False	False	tube	Туба	noun
+	True	False	False	valve	Клапан	noun
+	True	False	False	Vessel	Сосуд	noun
+Level: LLT/PT	True	False	False	Vomiting	Рвота	noun

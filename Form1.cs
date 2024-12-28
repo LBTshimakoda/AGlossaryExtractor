@@ -716,6 +716,7 @@ namespace AGlossaryExtractor
             var lang = comboBox1.Text;
             SOURCE_LANG_CODE = slang;
             TARGET_LANG_CODE = lang;
+            var SaveXlz = false;
             var uniqueSortedTerms = getExtractedTermsForXlz(inputFile, slang, lang);
             if (uniqueSortedTerms != null)
             {
@@ -724,7 +725,7 @@ namespace AGlossaryExtractor
                 richTextBox2.Text += "\n" + String.Format("Extracted Terms saved to glossary: <file://{0}> ", inputFile + "_" + slang + "_" + lang + ".txt") + "\n";
             }
         }
-        public List<GlossaryTermScript> getExtractedTermsForXlz(string inputFile, string slang, string tlang)
+        public List<GlossaryTermScript> getExtractedTermsForXlz(string inputFile, string slang, string tlang, bool SaveXlz = false)
         {
             SOURCE_LANG_CODE = slang;
             TARGET_LANG_CODE = tlang;
@@ -750,6 +751,20 @@ namespace AGlossaryExtractor
 
             if (termsMedDRA == null && termsEDQM == null && termsCustom == null)
                 return null;
+            var fio = new FileInfo(inputFile);
+            var extension = fio.Extension;
+            var fname = fio.Name.Substring(0, fio.Name.LastIndexOf("."));
+            var dir = fio.DirectoryName;
+            var outputFile = Path.Combine(dir, fname + "_withNotes" + extension);
+            if (SaveXlz)
+            {
+                if (File.Exists(outputFile)) File.Delete(outputFile);
+                File.Copy(inputFile, outputFile);
+            }
+            else
+            {
+                outputFile = inputFile;
+            }
             int newCounter = 0;
             var extractedTerms = new List<GlossaryTermScript>();
             var extractedTermsMedDRA = new List<GlossaryTermScript>();
@@ -759,7 +774,7 @@ namespace AGlossaryExtractor
             var uniqueSortedTermsEDQM = new List<GlossaryTermScript>();
             var uniqueSortedTermsCustom = new List<GlossaryTermScript>();
             var checks = new List<string>();
-            var xlz = new Xlz(inputFile);
+            var xlz = new Xlz(outputFile);
             var tus = xlz.TranslatableTransUnits;
             foreach (var tu in tus)
             {
@@ -780,8 +795,8 @@ namespace AGlossaryExtractor
                             extractedTermsMedDRA.Add(extractedTerm);
                         }
                     }
-                    //tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", "MedDRA"), note));
-                    //newCounter += foundTermsMedDRA.Count;
+                    tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", "MedDRA"), note));
+                    newCounter += foundTermsMedDRA.Count;
                 }
                 if (foundTermsEDQM.Count > 0)
                 {
@@ -796,8 +811,8 @@ namespace AGlossaryExtractor
                             extractedTermsEDQM.Add(extractedTerm);
                         }
                     }
-                    //tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", "EDQM"), note));
-                    //newCounter += foundTermsMedDRA.Count;
+                    tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", "EDQM"), note));
+                    newCounter += foundTermsEDQM.Count;
                 }
                 if (foundTermsCustom.Count > 0)
                 {
@@ -812,9 +827,15 @@ namespace AGlossaryExtractor
                             extractedTermsCustom.Add(extractedTerm);
                         }
                     }
-                    //tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", CustomNote), note));
-                    //newCounter += foundTermsCustom.Count;
+                    tu.Add(new XElement("note", new XAttribute("annotates", "Glossary"), new XAttribute("from", "Custom"), note));
+                    newCounter += foundTermsCustom.Count;
                 }
+            }
+            if(SaveXlz)
+            {
+                xlz.Save2();
+                richTextBox2.Text += String.Format("Extracted Terms added to xlz file: <file://{0}> ", outputFile) + "\n";
+                return null;
             }
             uniqueSortedTermsMedDRA = extractedTermsMedDRA.OrderBy(term => term.sLang).ToList();
             uniqueSortedTermsEDQM = extractedTermsEDQM.OrderBy(term => term.sLang).ToList();
@@ -934,7 +955,9 @@ namespace AGlossaryExtractor
             if (textBox5.Text != "") EDQMnote = textBox5.Text;
             if (textBox8.Text != "") CustomNote = textBox8.Text;
             //richTextBox2.Text = lang;
-
+            var SaveXlz = true;
+            var uniqueSortedTerms = getExtractedTermsForXlz(inputFile, slang, lang, SaveXlz);
+            return;
             var sLang1 = slang;
             if (slang == "en-us") sLang1 = "en-gb"; // only en-gb in MedDRA for English
 

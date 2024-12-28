@@ -1,0 +1,86 @@
+﻿Comment	MT_Ready	MT_DoNotTranslate	MT_CaseSensitive	en-us	en-gb	POS
+Level: LLT/PT	True	False	False	Accident	Accident	noun
+Level: LLT/PT	True	False	False	Adverse event	Adverse event	noun
+Level: LLT	True	False	False	Allergic reaction	Allergic reaction	noun
+Level: LLT	True	False	False	Anesthesia	Anesthesia	noun
+Level: LLT/PT	True	False	False	Bacterial infection	Bacterial infection	noun
+Level: LLT	True	False	False	Bed rest	Bed rest	noun
+Level: LLT	True	False	False	Bleeding	Bleeding	noun
+Level: LLT/PT	True	False	False	Bleeding time	Bleeding time	noun
+Level: LLT	True	False	False	Blind	Blind	noun
+Level: LLT	True	False	False	Blood pressure	Blood pressure	noun
+Level: LLT/PT	True	False	False	Blood test	Blood test	noun
+Level: LLT	True	False	False	Brain damage	Brain damage	noun
+Level: LLT	True	False	False	Bruise	Bruise	noun
+Level: LLT	True	False	False	Bruising	Bruising	noun
+Level: LLT	True	False	False	Cardiac catheterization	Cardiac catheterization	noun
+Level: LLT/PT	True	False	False	Chest pain	Chest pain	noun
+Level: LLT/PT	True	False	False	Chest X-ray	Chest X-ray	noun
+Level: LLT/PT	True	False	False	Chills	Chills	noun
+Level: LLT	True	False	False	Confusion	Confusion	noun
+Level: LLT/PT	True	False	False	COVID-19	COVID-19	noun
+Level: LLT/PT	True	False	False	Death	Death	noun
+Level: LLT/PT	True	False	False	Delivery	Delivery	noun
+Level: LLT/PT	True	False	False	Dental cleaning	Dental cleaning	noun
+Level: LLT	True	False	False	Device embolization	Device embolization	noun
+Level: LLT/PT	True	False	False	Device malfunction	Device malfunction	noun
+Level: LLT/PT	True	False	False	Discharge	Discharge	noun
+Level: LLT/PT	True	False	False	Discomfort	Discomfort	noun
+Level: LLT/PT	True	False	False	Dizziness	Dizziness	noun
+Level: LLT	True	False	False	Drowsiness	Drowsiness	noun
+Level: LLT/PT	True	False	False	Dry mouth	Dry mouth	noun
+Level: LLT	True	False	False	ECG	ECG	noun
+Level: LLT	True	False	False	Echocardiography	Echocardiography	noun
+Level: LLT/PT	True	False	False	Electrocardiogram	Electrocardiogram	noun
+Level: LLT	True	False	False	Embolus	Embolus	noun
+Level: LLT	True	False	False	Fainting	Fainting	noun
+Level: LLT/PT	True	False	False	Fatigue	Fatigue	noun
+Level: LLT	True	False	False	General anesthesia	General anesthesia	noun
+Level: LLT	True	False	False	Head pain	Head pain	noun
+Level: LLT/PT	True	False	False	Headache	Headache	noun
+Level: LLT	True	False	False	Heart attack	Heart attack	noun
+Level: LLT	True	False	False	Heart failure	Heart failure	noun
+Level: LLT/PT	True	False	False	Heart failure with preserved ejection fraction	Heart failure with preserved ejection fraction	noun
+Level: LLT/PT	True	False	False	Heart failure with reduced ejection fraction	Heart failure with reduced ejection fraction	noun
+Level: LLT	True	False	False	Hemoglobin	Hemoglobin	noun
+Level: LLT	True	False	False	Hemorrhage	Hemorrhage	noun
+Level: LLT	True	False	False	Hoarseness	Hoarseness	noun
+Level: LLT/PT	True	False	False	Illness	Illness	noun
+Level: LLT/PT	True	False	False	Infant	Infant	noun
+Level: LLT/PT	True	False	False	Infection	Infection	noun
+Level: LLT/PT	True	False	False	Injection	Injection	noun
+Level: LLT/PT	True	False	False	Injury	Injury	noun
+Level: LLT/PT	True	False	False	Interventional procedure	Interventional procedure	noun
+Level: LLT	True	False	False	Invasive procedure	Invasive procedure	noun
+Level: LLT/PT	True	False	False	Investigation	Investigation	noun
+Level: LLT	True	False	False	Itching	Itching	noun
+Level: LLT	True	False	False	Lead	Lead	noun
+Level: LLT/PT	True	False	False	Migraine	Migraine	noun
+Level: LLT/PT	True	False	False	Nausea	Nausea	noun
+Level: LLT/PT	True	False	False	Obstruction	Obstruction	noun
+Level: LLT/PT	True	False	False	Office visit	Office visit	noun
+Level: LLT/PT	True	False	False	Oxygen saturation	Oxygen saturation	noun
+Level: LLT/PT	True	False	False	Pain	Pain	noun
+Level: LLT	True	False	False	Paresthesia	Paresthesia	noun
+Level: LLT/PT	True	False	False	Perforation	Perforation	noun
+Level: LLT/PT	True	False	False	Physical examination	Physical examination	noun
+Level: LLT	True	False	False	Pins and needles	Pins and needles	noun
+Level: LLT	True	False	False	Pregnant	Pregnant	noun
+Level: LLT/PT	True	False	False	Pulmonary hypertension	Pulmonary hypertension	noun
+Level: LLT/PT	True	False	False	Rash	Rash	noun
+Level: LLT/PT	True	False	False	Regurgitation	Regurgitation	noun
+Level: LLT	True	False	False	Scarring	Scarring	noun
+Level: LLT/PT	True	False	False	Sedation	Sedation	noun
+Level: LLT/PT	True	False	False	Seizure	Seizure	noun
+Level: LLT/PT	True	False	False	Sepsis	Sepsis	noun
+Level: LLT	True	False	False	Shortness of breath	Shortness of breath	noun
+Level: LLT	True	False	False	Sore throat	Sore throat	noun
+Level: LLT	True	False	False	Stroke	Stroke	noun
+Level: LLT/PT	True	False	False	Surgery	Surgery	noun
+Level: LLT	True	False	False	Surgical intervention	Surgical intervention	noun
+Level: LLT/PT	True	False	False	Swelling	Swelling	noun
+Level: LLT	True	False	False	Thrombus	Thrombus	noun
+Level: LLT	True	False	False	TIA	TIA	noun
+Level: LLT	True	False	False	Tingling	Tingling	noun
+Level: LLT	True	False	False	Transesophageal echocardiography	Transesophageal echocardiography	noun
+Level: LLT/PT	True	False	False	Vomiting	Vomiting	noun
